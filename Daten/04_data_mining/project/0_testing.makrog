@@ -1,0 +1,6 @@
+%% Data mining,  File,  Load classifier 
+eval(gaitfindobj_callback('MI_Classifier_Import'));
+
+%% Classification,  Data mining,  Apply 
+eval(gaitfindobj_callback('MI_EMKlassi_An'));
+

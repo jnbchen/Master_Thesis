@@ -1,0 +1,3 @@
+%% Hierarchischer Bayes-Klassifikator,  Data-Mining,  Entwurf 
+eval(gaitfindobj_callback('MI_EMHierchKlassi_En'));
+

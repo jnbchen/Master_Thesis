@@ -1,0 +1,289 @@
+\chapter{Methodology}
+
+\section{Data processing}
+
+\begin{figure}
+\centering
+\footnotesize
+\begin{tikzpicture}[node distance = 2cm]
+
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse, minimum height=3em,text width=5em, text centered]
+\tikzstyle{do} = [draw, dashed, ellipse, minimum height=3em, minimum width=6em, text centered]
+
+
+\node [cloud] (sensor) {Data};
+\node [block, below= of sensor] (extract) {Feature extraction};
+\node [block, below= of extract] (selection) {Feature selection};
+\node [block, below= of selection] (aggregation) {Feature aggregation};
+\node [block, below= of aggregation] (classification) {Classification};
+\node [cloud, below= of classification] (output) {Output};
+
+\node [do, above right = 2em and 2em of classification, node distance=1.5cm] (testing) {Training};
+\node [do, below right = 2em and 2em of classification, node distance=1.5cm] (training) {Testing};
+
+    
+\path [line] (sensor) -- node [left] {Vehicle dynamic} node [right] {matrix} (extract);
+
+\path [line] (extract) -- node[left] {$n$-dimension features} node[right] {vector} (selection);
+
+\path [line] (selection) -- node [left, fill=white] {$\tilde{n}$-dimension features} node [right, fill=white] {vector ($\tilde{n} \leq n$)} (aggregation);
+
+\path [line] (aggregation) -- node[left] {$\mathring{n} $-dimension features} node[right] {vect. ($\mathring{n} \leq \tilde{n})$} (classification);
+
+\path [line] (classification) -- node[left] {Class $K_i$} node[right] {$i=1,...,k$} (output);  
+ 
+
+ \path [line,dashed] (training) -- (classification);
+ \path [line,dashed] (testing) -- (classification);
+
+\end{tikzpicture}
+
+\caption{Overview of the method to predict road features of class $K_i$ based on vehicle dynamic data from simulation.}%
+\label{fig:flowchart}%
+\end{figure}
+
+The goal is to find a function $f_X$, which classifies the road infrastructure, e.g. the road condition, based on the vehicle dynamic data from the simulation.
+%
+A supervised learning approach and a \ac{SVM} is used to find such a function.
+%
+\ac{SVM} is a supervised learning technique that can only be used for classification and regression
+tasks.
+%
+The biggest advantage of a \ac{SVM} is that it is the only technique that is explicitly based on
+learning theory.
+%
+Other techniques like neuronal networks and decision trees have local minima as problems, which the SVM does not have, as it always tries to separate the data points with maximum margin and hence always finds the global minimum.
+%
+A basic \ac{SVM} is a binary, linear classifier, meaning it can only distinguish between two different classes that are linearly separable.
+%
+For the use in problems that can not be separated with a straight line, the kernel-trick is applied to map the data points in a higher dimensional space where they can again be separated by a line.
+
+It is often used for problems with a high number of features, as its performance is not affected by the number of features.
+%
+Features are extracted from the raw data to reduce the dimension and to characterize the vehicle response due to various road obstacles and builds derived values intended to be informative and non-redundant.
+%
+Besides, each feature set must be labeled with the ground truth data, otherwise the features are meaningless.
+
+Determining a subset of the initial features is called feature selection.
+%
+The selected features are expected to contain the relevant information from the input data, so that the desired task can be performed by using this reduced representation instead of the complete initial data \cite{alpaydin2014introduction}.
+%
+The central premise when using a feature selection technique is that the data contains many features that are either redundant or irrelevant, and can thus be removed without incurring much loss of information~\cite{bermingham2015application}.
+%
+Redundant or irrelevant features are two distinct notions, since one relevant feature may be redundant in the presence of another relevant feature with which it is strongly correlated.
+This results in a $n$-dimensional feature vector, which dimension can be reduced with feature selection and feature aggregation~\cite{guyon2003introduction}.
+%
+With statistical methods, redundant or irrelevant features can be eliminated, which enhances the generalization and avoids over-fitting.
+%
+In this thesis \ac{MANOVA} is used to select the best features.
+
+The dimension of the feature vector can be further reduced through feature aggregation.
+%
+For this purpose \ac{LDA} is applied.
+%
+After the classifier is trained, the model can be tested with new labeled data.
+%
+Figure~\ref{fig:flowchart} summarizes the methods to process the vehicle dynamic data.
+
+From the correct and false predicted instances, we can calculate a confusion matrix $M=(m_{ij})\in \mathbb{N}^{k \times k}$ for classes $K_i, i=1,\dotsc,k$.
+%
+In the confusion matrix, $m_{ii}$ presents the \textit{true positives} for class $i$. 
+%
+The other elements in column $j$ are called \textit{false negatives}, in row $i$ \textit{false positives} and in the diagonal \textit{true negatives}. 
+
+From the confusion matrix, one can calculate multiple performance measures to evaluate the model, such as recall with $\frac{m_{ii}}{\sum_{j=1}^n{m_{ji}}}$ for class $K_i$, the overall accuracy of the classifier with $\frac{\sum_{i=1}^n{m_{ii}}}{\sum_{i=1}^n\sum_{j=1}^n{m_{ij}}}$, or the precision $\frac{m_{ij}}{\sum_{j=1}^n{m_{ij}}} = \pi_{ij}$. 
+%
+The precision presents the fraction of retrieved instances that are relevant and can be seen as the probability $\pi_{ij}$ of the classifier to predict class $i$ as class $j$ for $i,j=1,\dotsc,l$.
+%
+An overview for performance measures for different calculation problems can be found in \cite{Sokolova2009427}.
+%
+The data is processed with the \textsc{SciXMiner} toolbox for \textsc{Matlab}~\cite{mikut2017matlab}.
+
+
+
+
+ 
+ \section{Road events and data labelling}
+ 
+ The Data which is used for the training and testing for the classifier is simulated by the different road model and vehicle model which is introduced in chapter \ref{chaptr:simulation}.
+ %
+ There are six classes of the events including asphalt road, pothole, manhole cover, railway crossing and unevenness road used in the simulation.
+ %
+ Each of the events represents a type of obstacle is labeled from 1 to 6 as the output variables for the classification of training and as the ground truths in the process of testing.
+ %
+ The length and height of the events can be randomly varied from 0.5 to 2.5 times over the road profile.
+ %
+ This road model is described in Sec.~\ref{sec:roadmodel}.
+ %
+ For training and testing several road profiles with multiple road events are created as the input variables of the simulation.
+ %
+ Particularly, the profiles of the road model for testing are randomly created to investigate the robustness of the classifier which is trained by a fixed road model with a amount of variations.
+
+
+
+
+
+ 
+ \section{Feature extraction}
+ \label{sec:feature_ex}
+
+ With the road model as the input of the full car model we can get the response outputs including vertical acceleration, roll acceleration and pitch acceleration of the vehicle body in time or space domain. 
+ %
+ The advantage of the space domain over the time domain is that every event is located at the same spot no matter how fast the car is driving, which makes it convenient and efficient to divide the windows of the data.
+ %
+ Furthermore, the vehicle vibration is dependent on the velocity, which can be minimized by transforming the time series data into space series data \cite{ward_speed-independent_2009}.
+
+ The features should carry the representative information of the current road segment and be able to distinguish the difference of the response of each event.
+ %
+ All the 98 extracted features are calculated in a certain window length of $5m$ and overlap $50\%$ from the whole response outputs. 
+ %
+ The features include the mean velocity of the vehicle; maximum, minimum and mean value of the signals; range between the maximum and minimum; duration between the two extreme, \ac{RMS} which is defined as the square root of the mean square, and \ac{Std}.
+ %
+ These features can reflect the character of the data in the space domain.
+ 
+ As well as \ac{intBP} from $1Hz$ to $30Hz$ with the interval $2Hz$ which indicates the weight of the selected frequency in all the pass band, \ac{maxBP} from $1Hz$ to $30Hz$ with the interval $2Hz$ which indicates the maximum magnitude of the selected frequency, \ac{PSD} which describes the distribution of power into frequency components, and the spectral centroid which indicates where the ’center of mass’ of the spectrum is and hence represents the the most common frequency in this window.
+ %
+ These features can reflect the character of the data in the frequency domain.
+ 
+
+
+\section{Display and evaluation of the classification}
+\label{sec:evaluation}
+ 
+The results will be evaluated in this chapter by the confusion matrix and graphics.
+%
+In the display of the graphic the axles represent the selected features, the color of the point cloud represents different events.
+%
+The clouds may be overlapped or separated, which represent the performance of the classifier with those selected features.
+
+In the confusion matrix each class has one row and one column in this matrix and they are arranged in the same order.
+%
+The rows represent the actual class membership and columns represent the predicted class.
+%
+This means that all correctly classified data points are the diagonal elements of the matrix.
+%
+While other points are classified false.
+%
+An example of a confusion matrix is presented in table \ref{tbl:confusion_matrix}.
+
+\begin{table}[]
+\centering
+\caption{Example of a confusion matrix}
+\label{tbl:confusion_matrix}
+\begin{tabular}{cccc}
+\hline
+ & \multicolumn{3}{c}{Prediction} \\ \hline
+ &  & + & - \\
+Actual class & + & true positive & false negative \\
+ & - & false positive & true negative \\ \hline
+\end{tabular}
+\end{table}
+
+There are three performance measures to get meaningful information from the confusion matrix.
+%
+The first measure is 'Precision'.
+%
+This measure represents for each class the percentage of correctly classified members of this class among all points that were predicted as members of this class by the classifier.
+%
+Take the confusion matrix \ref{tbl:confusion_matrix} as the example of calculation
+
+\begin{equation}
+    Precision_{+} = \frac{\Sigma true~Positives}{\Sigma predicted~condition~positive}
+\end{equation}
+
+The second measure is 'Recall'.
+%
+It represents for each class the percentage of correctly classified members of this class among all actual members of this class.
+
+\begin{equation}
+    Recall_{+} = \frac{\Sigma true~positives}{\Sigma total~number~of~actual~Positives}
+\end{equation}
+
+The last measure is 'Accuracy'.
+%
+It is a general evaluation of the performance of a classifier.
+
+\begin{equation}
+    Accuracy = \frac{\Sigma true~positives + \Sigma true~negatives}{\Sigma total~number~of~data~point}
+\end{equation}
+
+From these performance measures it can be seen whether the classifier performs good for all classes or only several classes.
+
+In supervised learning applications in machine learning and statistical learning theory, generalization error is a measure of how accurately an algorithm is able to predict outcome values for previously unseen data.
+%
+Because learning algorithms are evaluated on finite samples, the evaluation of a learning algorithm may be sensitive to sampling error.
+%
+As a result, measurements of prediction error on the current data may not provide much information about predictive ability on new data.
+ 
+The generalization error $G$ is the difference between the expected error $I[f_n]$ and empirical error $I_S[f_n]$.
+ 
+ \begin{equation}
+    G=I[f_n]-I_S[f_n]
+ \end{equation}
+ 
+ Generalization error can be minimized by avoiding overfitting or overtraining in the learning algorithm.
+ %
+ In general, this error should shrink with the amount of training data before the testing.
+ 
+ 
+ 
+ 
+ \section{Variation of simulation}
+ 
+ There are many parameters influencing the classification process.
+ %
+ Regarding the variation of the vehicles, the model and physical parameters of the vehicle, the type of suspension e.g. passive suspension, passive suspension with anti-roll bar and active suspension as well as different loads e.g. passengers and goods in the vehicle while driving all have a influence on the collected data.
+ 
+ How does the classifier perform when the load of the vehicle changes.
+ %
+ Whether a classifier which is trained by one model of vehicle can be general applied on another vehicle.
+ %
+ What if, when a classifier trained by the data of the passive suspension is used on a vehicle with active suspension.
+ %
+ In terms of the those questions, the simulation of the classification with different vehicle models need to be executed.
+ 
+ The size and physical parameters of different vehicles are shown in table~\ref{tbl:different vehicle}.
+ %
+ The $load_1$ and $load_2$ has an additional mass of 200~$kg$ and 400~$kg$ on the vehicle respectively.
+ %
+ Besides, the stiffness of the tire $k_{tire}$ is represented as $k_{front}/k_{rear}$.
+ %
+ Inclusive the length, width and mass of the chassis, it represents the difference of different models.
+ %
+ Furthermore, the \ac{FCM} with passive suspension, anti-roll bar and active suspension in \ref{sec:full car model} to \ref{sec:active full car model} are implemented to test the performance of the classifier on different type of suspensions.
+ 
+ \begin{table}
+ \centering
+ \caption{Parameter of 3 vehicles}
+ \label{tbl:different vehicle}
+ \begin{tabular}{lccccccc}
+ \hline
+ & $l$ & $b$ & $M$ & $k$ & $d$ & $m_{tire}$ & $k_{tire}$ \\ 
+ & $[m]$ & $[m]$ & $[kg]$ & $[N/m]$ & $[N\cdot s/m]$ & $[kg]$ & $[N/m]$ \\ \hline
+ BMW 116d & 2.69 & 1.71 & 1400 & 160000 & 1000 & 22.5 & 36689/35902 \\
+ BMW 116d $load_1$ & 2.69 & 1.71 & 1600 & 160000 & 1000 & 22.5 & 36689/35902 \\ 
+ BMW 116d $load_2$ & 2.69 & 1.71 & 1800 & 160000 & 1000 & 22.5 & 36689/35902 \\
+ S-Klasse W220 & 2.97 & 1.57 & 2000 & 180000 & 3900 & 22.5 & 61356/54908 \\
+ Sprinter & 3.67 & 1.9 & 2100 & 180000 & 3900 & 25 & 36300/36300 \\ \hline
+ \end{tabular}
+ \end{table}
+ 
+ Not only the variation of the vehicle, different position of the outputs which is introduced in Sec.~\ref{sec:positionofoutput} has also a influence on the classification because the outputs can provide different amount of information in different position of the vehicle.
+ %
+ The \ac{FCM} with different position of outputs e.g. center, axle, side and corner of the vehicle which are indicated by S1, S2, S3 and S4 respectively are implemented to find the best position of the output dependent on the accuracy of the classifier.
+ %
+ The coordinates $(a,b,0)$ of the four positions in the coordinate system of \ac{FCM} are represented in the table~\ref{tbl:position of outputs}.
+ 
+ As stated before, Other important options is the setting of the number of selected features, which is a crucial step for the classification.
+ %
+ Processing with the same data, the accuracy of classifiers which contain different selected features will be compared to determine the best setting of the feature selection.
+ %
+ Another important option is the order of the polynomial kernel for the \ac{SVM}.
+ %
+ This means the order of separation function, which will be calculated by the \ac{SVM}.
+ %
+ A kernel order of one results in a linear separation function in the input space and a kernel order of two in a parabolic separation function.
+ %
+ By comparing the generalization error which measures the accuracy of the classifier to predict outcome values for previously unseen data, the influence of those variations and the best matched settings for the classification can be determined.

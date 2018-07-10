@@ -1,0 +1,121 @@
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}
+\begin{tikzpicture}
+
+
+
+		\def\sizecircle{0.25cm};	
+		\def\spacerforce{0.2cm};
+		\def\force{0.7cm};
+		
+		
+		
+		\def\tireheight{0.4cm};
+		\def\tirewidth{1.8cm};
+		\def\vectorlength{0.39cm};
+		\def\labledistanceleft{0.0cm};
+		\def\labledistanceright{0.15cm};
+		\def\myyshift{-0.19cm}
+		\def\myyshiftbig{-0.29cm}
+		\def\myyshifty{2pt}
+		
+		\def\a{3.2cm};
+		\def\b{1.0cm};
+		\def\c{1.3cm};
+		\def\d{1.21cm};
+		\def\e{1cm};
+		\def\f{1.8cm};
+		\tikzstyle{line}=[];
+     \tikzstyle{spring}=[line,decorate,decoration={zigzag,pre length=2.8cm,post length=2.8cm,segment length=6}]
+		
+		 \tikzstyle{suspension}=[line,decoration={markings, mark connection node=dmp,mark=at position 0.5 with {
+				\node (dmp) [circle,draw=black,inner sep=0pt,minimum size=0.3cm] {};
+				\draw [-latex] ($(dmp) + (-0.16cm,0.22cm)$) -- ($(dmp) + (0.2cm,-0.3cm)$);
+				%\draw [fill=white] (dmp) circle (0.18cm);
+				%\draw [line] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$); \draw [line] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);
+				}}, decorate]
+		
+     \tikzstyle{strasse}=[line,decorate,decoration={snake,pre length=0cm,post length=0.0cm,segment length=30, amplitude = 0.1cm}]%, pattern = north east lines] 
+		
+     \tikzstyle{dampener}=[line,decoration={markings, mark connection node=dmp,mark=at position 0.5 with {
+				\node (dmp) [line,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+				\draw [line] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$); \draw [line] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);}}, decorate]
+				
+     \tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=4cm,minimum height=0.3cm]
+
+     \begin{scope}
+		
+		
+  \coordinate (A0) at (0,0);% node at (A0){A0}; % central top point (To pick)
+	\coordinate (M1) at ($(A0) + (-\a,0)$);% node at (A1){A1}; % central top point (To pick)
+	\coordinate (M2) at ($(A0) + (\a,0)$);
+	\coordinate (E1) at ($(M1) + (-\b,-\c)$);
+	\coordinate (E2) at ($(M2) + (-\b,-\c)$);
+	
+	\coordinate (B1) at ($(E1) + (\f,0)$);
+	\coordinate (B2) at ($(E2) + (-\f,0)$);
+	
+% Massen
+	\node at (M1) [circle,draw=black,fill=black,inner sep=0pt,minimum size=\sizecircle] (mrvr) {};
+	\node at (M2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=\sizecircle] (mrvl) {};
+    \node at (mrvl) [right=\labledistanceright] {$m_2(m_3)$};
+    \node at (mrvr) [right=\labledistanceright] {$m_1(m_4)$};    
+
+
+% Kräfte	
+	\draw [-latex] ($(mrvr) + (0,\force)$) -- ($(mrvr) + (0,\spacerforce)$) node[midway,right=\labledistanceright] {$F_{st}$};
+	\draw [-latex] ($(mrvl) + (0,\spacerforce)$) --($(mrvl) + (0,\force)$) node[midway,right=\labledistanceright] {$F_{st}$};
+	
+	\draw [-latex] ($(B2) + (0,-\force)$) -- ($(B2) + (0,-\spacerforce)$) node[midway,right=\labledistanceright] {$F_{st}\frac{s}{b_{st}}$};
+	\draw [-latex] ($(B1) + (0,-\spacerforce)$) --($(B1) + (0,-\force)$) node[midway,left=\labledistanceright] {$F_{st}\frac{s}{b_{st}}$};
+
+
+\draw [line] (M1) -- (E1) ; 
+\draw [line] (E1) -- ($(E1) + (0,-\d)$) ; 
+
+\draw [line] (M2) -- (E2) ; 
+\draw [line] (M2) --($(M2) + (0,-\d)$) ; 
+\draw [line] (E2) --($(E2) + (0,-\d)$) ; 
+
+\draw [shorten >=0.2cm,shorten <=0.2cm,<->] ($(E1) + (0,-\e)$) --($(E2) + (0,-\e)$) node[midway, yshift=\myyshift] {$s$}; 
+\draw [shorten >=0.2cm,shorten <=0.2cm,<->] ($(E2) + (0,-\e)$) --($(M2) + (0,-\e)$) node[midway,right=\labledistanceright, yshift=\myyshiftbig] {$a_{st}$};
+
+\draw [shorten >=0.2cm,shorten <=0.2cm,<->] ($(B1) + (0,0.4)$) --($(B2) + (0,0.4)$) node[midway, yshift=-\myyshift] (bst) {$b_{st}$};
+
+\node at (bst) [yshift=-3em] {$c_{st}$};
+
+\draw [line] ($(B1) + (0,0.1cm)$) --($(B1) + (0,0.6cm)$) ; 
+\draw [line] ($(B2) + (0,0.1cm)$) --($(B2) + (0,0.6cm)$) ; 
+
+\draw [line] ($(B1) + (-0.2cm,0.1cm)$) --($(B1) + (0.2cm,0.1cm)$) ; 
+\draw [line] ($(B2) + (-0.2cm,0.1cm)$) --($(B2) + (0.2cm,0.1cm)$) ;
+
+\draw [line] ($(B1) + (-0.2cm,-0.1cm)$) --($(B1) + (0.2cm,-0.1cm)$) ; 
+\draw [line] ($(B2) + (-0.2cm,-0.1cm)$) --($(B2) + (0.2cm,-0.1cm)$) ;
+
+\draw [spring] (E1) --(E2) node[midway,yshift=\myyshiftbig] {}; % Feder
+
+
+
+
+
+% Rad unten links
+
+ %    \node at ($(A1) + (0,-\d)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=south,style={draw,outer sep=0pt,line}](A4) {$m_s$}; %Box C2
+ %    \node at ($(A1) + (0cm,\b)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=north,style={draw,outer sep=0pt,line}](A2) {$m_u$}; %Box C2
+%     \draw [thick, -latex](A2.north) -- +(0,\vectorlength); % vektor
+%     \draw [spring] (A2.165) --(A4.195) node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_s$}; % Feder
+ %     \draw [dampener,label=D1,] (A2) -- (A4)node[midway,right=\labledistanceright, yshift=\myyshift] {$c_s$}; % Dämpfer
+	%		\draw [suspension] (A2.15) --(A4.345) node[midway,right=\labledistanceright, yshift=\myyshift] {$f_s$}; % active suspension
+%      \node (ground1) at (-7,-5.5)  [ground, anchor=north] {}; % Boden
+%        \draw [ground] (-1,-5) -- (1,-5);
+ %     \draw [spring] ($(A3)$) -- (A2)node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_{t}$}; % Feder
+			
+
+
+	%		\draw [strasse] ($(A3) + (-\lengthstreet,\spacerstreet)$) -- ($(A3) + (\lengthstreet,\spacerstreet)$) node[midway,right=\lengthstreet] {$r$};
+
+			
+      \end{scope}	
+					
+\end{tikzpicture}

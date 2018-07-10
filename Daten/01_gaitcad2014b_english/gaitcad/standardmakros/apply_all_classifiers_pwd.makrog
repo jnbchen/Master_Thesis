@@ -1,0 +1,24 @@
+% Auswertung in Datei
+set(gaitfindobj('CE_Auswertung_Datei'),'value',1);eval(gaitfindobj_callback('CE_Auswertung_Datei'));
+
+[dat_pfad,pfad]=getsubdir(pwd,'*.class',0);
+
+for i_dat_pfad = 1:length(dat_pfad)
+
+   try
+      datei_load_klass_single = dat_pfad(i_dat_pfad).name;
+      callback_klassifikator_laden;
+
+      %% Klassifikation,  Data-Mining,  Anwendung
+      eval(gaitfindobj_callback('MI_EMKlassi_An'));
+
+   catch
+
+      f_err = fopen([gaitcad_extern.path '\error.log'],'at');
+      errtime = clock;
+      fprintf(f_err, '\n\n%02d.%02d.%02d, %02d:%02d:%02.0f: Error for classifier %s (%s) \n',...
+         errtime([3 2 1 4 5 6]),dat_pfad(i_dat_pfad).name, get(0,'errormessage'));
+      fclose(f_err);
+
+   end;
+end;

@@ -1,0 +1,64 @@
+\chapter{Introduction}
+\label{intro}
+
+The condition of the road infrastructure has severe impacts on the driving comfort, driving driving safety, tire road noise and rolling resistance~\cite{ihs_influence_2005, sandberg_road_1987-1, descornet_road-surface_1990, masino_identification_2017}.
+%
+Subsequently, tire road noise leads to sleep disturbances, general annoyance, or speech interference~\cite{ohrstrom_effects_2006, schwela_world_2000}. 
+%
+Therefore the costs for noise abatement measures increases~\cite{bmvi_statistik_2015} and the value of houses and land close to noisy transport roads decreases~\cite{taylor_effect_1982, wilhelmsson_impact_2000, Theebe2004}.
+%
+A higher rolling resistance leads to higher vehicle operational costs, e.g. for fuel, and decreases the range of electric vehicles~\cite{barrand2008reducing}.
+%
+Furthermore, a delayed detection and maintenance of road damages results in the erosion of the road substance. Subsequently, a complete renewal increases the costs over the life cycle of the road and yields to a complete roadblock and traffic jams~\cite{forschungsgesellschaft_fur_strassen-_und_verkehrswesen_merkblatt_2004}. 
+%
+State departments of transport around the world mainly monitor the road infrastructure manually, which is laborious and time-consuming~\cite{radopoulou_improving_2016}.
+%
+Inspectors collect data manually and rate road segments based on their experience.
+%
+Only few countries employ specialized vehicles with an automated data collection~\cite{koch2011pothole}. 
+%
+However, they are sophisticated and expensive to use~\cite{radopoulou_improving_2016}.
+
+Researches have addressed the common problem of road infrastructure monitoring and present methods, which are based on vehicle sensors and machine learning. 
+%
+The idea is to collect data with a crowd of vehicles with on-board sensors, which sense the environment of the vehicle~\cite{radopoulou_automated_2016}.A literature review about this approach is given in~\cite{radopoulou_automated_2016}.
+%
+The most promising sensors are cameras, such as the Bosch stereo camera, or inertial sensors in the vehicle body.
+
+Novel developed computer vision techniques lead to good results of the detection of road defects.
+%
+However, only high class vehicles with expensive packages, e.g. magic body control from Mercedes-Benz, have a camera on-board.
+%
+Moreover, they are limited to decent weather conditions and higher velocities of the vehicle have a negative impact on the precision~\cite{radopoulou_automated_2016}.
+%
+Furthermore, computer vision needs a lot of storage and computer power since a large amount of data need to be processed.
+
+In contrast to cameras, the inertial sensors are less computational intensive and independent from light conditions.
+%
+Several studies have shown that inertial sensor data from the vehicle body with data processing based on machine learning are suitable to detect road damages or estimate the road roughness~\cite{eriksson_pothole_2008, Chen.2013, ngwangwa_reconstruction_2010, nitsche_comparison_2012, seraj_roads:_2014}.
+%
+Most papers implement a classification, which predicts specific road defects, such as potholes.
+%
+The classifier is trained with inertial sensor data labeled with the desired output, here the road defects.
+%
+After the training process, the classifier is tested with new and unseen labeled data.
+%
+The output of the training and testing process are confusion matrices, from which performance measures can be derived, e.g. the accuracy, precision and recall.
+%
+However, only few kilometres and specific road segments with few variations of the driving conditions are applied in most papers.
+%
+More importantly, no study has performed a sensitivity analysis and has investigated the impact of different influences on the classification accuracy, e.g. the vehicle load, noise of the sensor, or the type of vehicle.
+
+This research cap is closed and a novel simulation environment is presented, which is based on a full car model. The road features, such as potholes, railroad crossing are simulated with functions and those contact with tires is also considered.
+% 
+In this thesis, a basic full car model is enhanced to analyze the impact of different settings of the vehicle on the classification results of road defects.
+%
+The road is modeled as a surface with different degrees of roughness and the \ac{SPD} of our road corresponds to the \ac{SPD} of real road surfaces.
+%
+Furthermore, the position of the inertial sensor in the vehicle is varied in the simulation to identify the position with highest signal-to-noise ratio and which leads to the best classification accuracy.
+
+The advantage of this novel environmental simulation in contrast to real test drives is the reproducibility and the precise investigation of specific influences.
+%
+Furthermore, the costs to perform this analysis is drastically reduced.
+%
+The results of our investigations helps the further development of automatic road condition monitoring system and reduces the efforts to investigate further influences or to test novel classification algorithms.

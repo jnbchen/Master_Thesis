@@ -1,0 +1,6078 @@
+Model {
+  Name			  "full_passive"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Jul 17 16:08:02 2003"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "administrator"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Jul 17 20:31:33 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:22>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    36
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    36
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    36
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "full_passive"
+    Location		    [2, 74, 1014, 744]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "22"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      " white noise left1"
+      Ports		      [0, 1]
+      Position		      [740, 183, 905, 277]
+      BackgroundColor	      "magenta"
+      FontSize		      12
+      SourceBlock	      "simulink3/Sources/Band-Limited\nWhite Noise"
+      SourceType	      "Continuous White Noise."
+      Cov		      "[256*10^-6]"
+      Ts		      "0.01"
+      seed		      "[23341]"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " white noise right1"
+      Ports		      [0, 1]
+      Position		      [1525, 193, 1690, 287]
+      BackgroundColor	      "magenta"
+      FontSize		      12
+      SourceBlock	      "simulink3/Sources/Band-Limited\nWhite Noise"
+      SourceType	      "Continuous White Noise."
+      Cov		      "[256*10^-6]"
+      Ts		      "0.01"
+      seed		      "[23341]"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Full Model 7_dof1"
+      Ports		      [36, 11]
+      Position		      [1290, 469, 1715, 2341]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Full Model 7_dof1"
+	Location		[2, 74, 998, 728]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "dq1"
+	  Position		  [195, 343, 225, 357]
+	  FontSize		  14
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k11"
+	  Position		  [195, 408, 225, 422]
+	  FontSize		  14
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k12"
+	  Position		  [200, 503, 230, 517]
+	  FontSize		  14
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c1"
+	  Position		  [195, 723, 225, 737]
+	  FontSize		  14
+	  Port			  "4"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "m1"
+	  Position		  [1175, 28, 1205, 42]
+	  FontSize		  14
+	  Port			  "5"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "fd1"
+	  Position		  [1195, 663, 1225, 677]
+	  FontSize		  14
+	  Port			  "6"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dq2"
+	  Position		  [1975, 428, 2005, 442]
+	  FontSize		  14
+	  Port			  "7"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k21"
+	  Position		  [1975, 493, 2005, 507]
+	  FontSize		  14
+	  Port			  "8"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k22"
+	  Position		  [1980, 588, 2010, 602]
+	  FontSize		  14
+	  Port			  "9"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c2"
+	  Position		  [1975, 808, 2005, 822]
+	  FontSize		  14
+	  Port			  "10"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "m2"
+	  Position		  [2955, 113, 2985, 127]
+	  FontSize		  14
+	  Port			  "11"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "fd2"
+	  Position		  [2940, 753, 2970, 767]
+	  FontSize		  14
+	  Port			  "12"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dq3"
+	  Position		  [180, 1248, 210, 1262]
+	  FontSize		  14
+	  Port			  "13"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k31"
+	  Position		  [180, 1318, 210, 1332]
+	  FontSize		  14
+	  Port			  "14"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k32"
+	  Position		  [185, 1413, 215, 1427]
+	  FontSize		  14
+	  Port			  "15"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c3"
+	  Position		  [180, 1633, 210, 1647]
+	  FontSize		  14
+	  Port			  "16"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "m3"
+	  Position		  [1165, 1003, 1195, 1017]
+	  FontSize		  14
+	  Port			  "17"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "fd3"
+	  Position		  [1185, 1563, 1215, 1577]
+	  FontSize		  14
+	  Port			  "18"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dq4"
+	  Position		  [2005, 1318, 2035, 1332]
+	  FontSize		  14
+	  Port			  "19"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k41"
+	  Position		  [2005, 1388, 2035, 1402]
+	  FontSize		  14
+	  Port			  "20"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c4"
+	  Position		  [2005, 1703, 2035, 1717]
+	  FontSize		  14
+	  Port			  "21"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "m4"
+	  Position		  [2985, 1008, 3015, 1022]
+	  FontSize		  14
+	  Port			  "22"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "k42"
+	  Position		  [2010, 1483, 2040, 1497]
+	  FontSize		  14
+	  Port			  "23"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "fd4"
+	  Position		  [2985, 1618, 3015, 1632]
+	  FontSize		  14
+	  Port			  "24"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "m"
+	  Position		  [2025, 2273, 2055, 2287]
+	  FontSize		  14
+	  Port			  "25"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [1850, 4103, 1880, 4117]
+	  FontSize		  14
+	  Port			  "26"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "b"
+	  Position		  [1865, 4463, 1895, 4477]
+	  FontSize		  14
+	  Port			  "27"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c"
+	  Position		  [1820, 3403, 1850, 3417]
+	  FontSize		  14
+	  Port			  "28"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "d"
+	  Position		  [1830, 3003, 1860, 3017]
+	  FontSize		  14
+	  Port			  "29"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Jx"
+	  Position		  [2620, 3638, 2650, 3652]
+	  FontSize		  14
+	  Port			  "30"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Jy"
+	  Position		  [3715, 4298, 3745, 4312]
+	  FontSize		  14
+	  Port			  "31"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Fr1"
+	  Position		  [1305, 629, 1340, 651]
+	  FontSize		  14
+	  Port			  "32"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Fr2"
+	  Position		  [3110, 745, 3145, 775]
+	  FontSize		  14
+	  Port			  "33"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Fr3"
+	  Position		  [1295, 1563, 1325, 1577]
+	  FontSize		  14
+	  Port			  "34"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Fr4"
+	  Position		  [3175, 1621, 3210, 1639]
+	  FontSize		  14
+	  Port			  "35"
+	  LatchInput		  off
+	  Interpolate		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "Fr4"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "g"
+	  Position		  [2015, 157, 2065, 183]
+	  FontSize		  14
+	  Port			  "36"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "-1"
+	  Position		  [390, 880, 420, 910]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [1380, 85, 1410, 115]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [3165, 170, 3195, 200]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [1355, 995, 1385, 1025]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [3190, 1065, 3220, 1095]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  Position		  [2215, 2330, 2245, 2360]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant5"
+	  Position		  [2670, 3670, 2700, 3700]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant6"
+	  Position		  [3710, 4330, 3740, 4360]
+	  FontSize		  14
+	  Value			  "-1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain4=-1"
+	  Position		  [2920, 1835, 2950, 1865]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain=-1"
+	  Position		  [2495, 1945, 2525, 1975]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  Ports			  [1, 1]
+	  Position		  [2580, 2330, 2610, 2360]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \nddz1"
+	  Ports			  [1, 1]
+	  Position		  [1520, 570, 1550, 600]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \nddz2"
+	  Ports			  [1, 1]
+	  Position		  [3300, 655, 3330, 685]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \nddz3"
+	  Ports			  [1, 1]
+	  Position		  [1505, 1480, 1535, 1510]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \nddz4"
+	  Ports			  [1, 1]
+	  Position		  [3330, 1550, 3360, 1580]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndq1"
+	  Ports			  [1, 1]
+	  Position		  [555, 340, 585, 370]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndq2"
+	  Ports			  [1, 1]
+	  Position		  [2335, 425, 2365, 455]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndq3"
+	  Ports			  [1, 1]
+	  Position		  [540, 1250, 570, 1280]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndq4"
+	  Ports			  [1, 1]
+	  Position		  [2365, 1320, 2395, 1350]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz1"
+	  Ports			  [1, 1]
+	  Position		  [570, 460, 600, 490]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz1'"
+	  Ports			  [1, 1]
+	  Position		  [740, 555, 770, 585]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz2"
+	  Ports			  [1, 1]
+	  Position		  [2350, 545, 2380, 575]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz2'"
+	  Ports			  [1, 1]
+	  Position		  [2520, 640, 2550, 670]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz2'2"
+	  Ports			  [1, 1]
+	  Position		  [2550, 1535, 2580, 1565]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz3"
+	  Ports			  [1, 1]
+	  Position		  [555, 1370, 585, 1400]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz3'"
+	  Ports			  [1, 1]
+	  Position		  [725, 1465, 755, 1495]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator for \ndz4"
+	  Ports			  [1, 1]
+	  Position		  [2380, 1440, 2410, 1470]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator2"
+	  Ports			  [1, 1]
+	  Position		  [3115, 3560, 3145, 3590]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator4"
+	  Ports			  [1, 1]
+	  Position		  [4110, 4260, 4140, 4290]
+	  FontSize		  14
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction"
+	  Ports			  [2, 1]
+	  Position		  [1440, 41, 1485, 119]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction1"
+	  Ports			  [2, 1]
+	  Position		  [3220, 126, 3265, 204]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction2"
+	  Ports			  [2, 1]
+	  Position		  [1425, 951, 1470, 1029]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction3"
+	  Ports			  [2, 1]
+	  Position		  [3250, 1021, 3295, 1099]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction4"
+	  Ports			  [2, 1]
+	  Position		  [2290, 2286, 2335, 2364]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction5"
+	  Ports			  [2, 1]
+	  Position		  [2740, 3626, 2785, 3704]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction6"
+	  Ports			  [2, 1]
+	  Position		  [3840, 4286, 3885, 4364]
+	  FontSize		  14
+	  Operator		  "pow"
+	  OutputSignalType	  "auto"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [845, 329, 890, 431]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [930, 484, 975, 586]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product10"
+	  Ports			  [2, 1]
+	  Position		  [1585, 63, 1630, 132]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product11"
+	  Ports			  [2, 1]
+	  Position		  [895, 1564, 940, 1666]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product12"
+	  Ports			  [2, 1]
+	  Position		  [2655, 1309, 2700, 1411]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product13"
+	  Ports			  [2, 1]
+	  Position		  [2740, 1464, 2785, 1566]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product14"
+	  Ports			  [2, 1]
+	  Position		  [3395, 1043, 3440, 1112]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product15"
+	  Ports			  [2, 1]
+	  Position		  [2720, 1634, 2765, 1736]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product16"
+	  Ports			  [2, 1]
+	  Position		  [475, 869, 520, 971]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product17"
+	  Ports			  [2, 1]
+	  Position		  [2615, 1044, 2660, 1146]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product18"
+	  Ports			  [2, 1]
+	  Position		  [2650, 1934, 2695, 2036]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product19"
+	  Ports			  [2, 1]
+	  Position		  [770, 1859, 815, 1961]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [910, 654, 955, 756]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product20"
+	  Ports			  [2, 1]
+	  Position		  [2435, 2308, 2480, 2377]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product21"
+	  Ports			  [2, 1]
+	  Position		  [1920, 2862, 2020, 3058]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product22"
+	  Ports			  [2, 1]
+	  Position		  [1945, 3262, 2045, 3458]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product23"
+	  Ports			  [2, 1]
+	  Position		  [1925, 3602, 2025, 3798]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product24"
+	  Ports			  [2, 1]
+	  Position		  [2815, 2907, 2915, 3103]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product25"
+	  Ports			  [2, 1]
+	  Position		  [3935, 4177, 4035, 4373]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product26"
+	  Ports			  [2, 1]
+	  Position		  [2920, 3477, 3020, 3673]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product27"
+	  Ports			  [2, 1]
+	  Position		  [1945, 3962, 2045, 4158]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product28"
+	  Ports			  [2, 1]
+	  Position		  [1955, 4322, 2055, 4518]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product29"
+	  Ports			  [2, 1]
+	  Position		  [3085, 3937, 3185, 4133]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [2, 1]
+	  Position		  [2625, 414, 2670, 516]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product30"
+	  Ports			  [2, 1]
+	  Position		  [3120, 4427, 3220, 4623]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product31"
+	  Ports			  [2, 1]
+	  Position		  [4015, 3927, 4115, 4123]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product32"
+	  Ports			  [2, 1]
+	  Position		  [3470, 3427, 3570, 3623]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product33"
+	  Ports			  [2, 1]
+	  Position		  [4265, 4577, 4365, 4773]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product34"
+	  Ports			  [2, 1]
+	  Position		  [3465, 3672, 3565, 3868]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product35"
+	  Ports			  [2, 1]
+	  Position		  [1260, 158, 1305, 227]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product36"
+	  Ports			  [2, 1]
+	  Position		  [3035, 238, 3080, 307]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product37"
+	  Ports			  [2, 1]
+	  Position		  [3075, 1108, 3120, 1177]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product38"
+	  Ports			  [2, 1]
+	  Position		  [1255, 1033, 1300, 1102]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product39"
+	  Ports			  [2, 1]
+	  Position		  [2235, 2533, 2280, 2602]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product4"
+	  Ports			  [2, 1]
+	  Position		  [2710, 569, 2755, 671]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product40"
+	  Ports			  [2, 1]
+	  Position		  [3400, 4557, 3430, 4648]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product41"
+	  Ports			  [2, 1]
+	  Position		  [3995, 4712, 4025, 4803]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product43"
+	  Ports			  [2, 1]
+	  Position		  [2280, 3914, 2310, 3996]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product44"
+	  Ports			  [2, 1]
+	  Position		  [2370, 4099, 2400, 4181]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product5"
+	  Ports			  [2, 1]
+	  Position		  [3365, 148, 3410, 217]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product6"
+	  Ports			  [2, 1]
+	  Position		  [2690, 739, 2735, 841]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product7"
+	  Ports			  [2, 1]
+	  Position		  [830, 1239, 875, 1341]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product8"
+	  Ports			  [2, 1]
+	  Position		  [915, 1394, 960, 1496]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product9"
+	  Ports			  [2, 1]
+	  Position		  [1570, 973, 1615, 1042]
+	  FontSize		  14
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [700, 345, 720, 365]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [775, 465, 795, 485]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum10"
+	  Ports			  [2, 1]
+	  Position		  [585, 1535, 605, 1555]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum11"
+	  Ports			  [6, 1]
+	  Position		  [1180, 1350, 1290, 1460]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum12"
+	  Ports			  [2, 1]
+	  Position		  [2510, 1325, 2530, 1345]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum13"
+	  Ports			  [2, 1]
+	  Position		  [2585, 1445, 2605, 1465]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum14"
+	  Ports			  [2, 1]
+	  Position		  [2410, 1605, 2430, 1625]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum15"
+	  Ports			  [6, 1]
+	  Position		  [3005, 1455, 3075, 1525]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum16"
+	  Ports			  [17, 1]
+	  Position		  [1685, 2290, 2045, 2630]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-++-++-++-+++----"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum17"
+	  Ports			  [4, 1]
+	  Position		  [1640, 2815, 1830, 3005]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum18"
+	  Ports			  [4, 1]
+	  Position		  [1635, 3215, 1825, 3405]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum19"
+	  Ports			  [2, 1]
+	  Position		  [1670, 3595, 1780, 3705]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [600, 625, 620, 645]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum20"
+	  Ports			  [2, 1]
+	  Position		  [2635, 2900, 2745, 3010]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum21"
+	  Ports			  [6, 1]
+	  Position		  [2325, 3405, 2555, 3645]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++--++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum22"
+	  Ports			  [4, 1]
+	  Position		  [1640, 3915, 1830, 4105]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum23"
+	  Ports			  [6, 1]
+	  Position		  [3385, 4090, 3665, 4360]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|--++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum24"
+	  Ports			  [4, 1]
+	  Position		  [1640, 4275, 1830, 4465]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum25"
+	  Ports			  [2, 1]
+	  Position		  [2905, 3930, 3015, 4040]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum26"
+	  Ports			  [2, 1]
+	  Position		  [2910, 4420, 3020, 4530]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum27"
+	  Ports			  [2, 1]
+	  Position		  [3880, 3430, 4070, 3620]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum28"
+	  Ports			  [2, 1]
+	  Position		  [2795, 2250, 2985, 2440]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum29"
+	  Ports			  [2, 1]
+	  Position		  [4545, 4455, 4645, 4555]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [6, 1]
+	  Position		  [1195, 435, 1305, 545]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum30"
+	  Ports			  [2, 1]
+	  Position		  [4450, 2455, 4560, 2565]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum31"
+	  Ports			  [2, 1]
+	  Position		  [4445, 3715, 4555, 3825]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum32"
+	  Ports			  [2, 1]
+	  Position		  [4315, 2125, 4425, 2235]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum33"
+	  Ports			  [2, 1]
+	  Position		  [4310, 3345, 4420, 3455]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum34"
+	  Ports			  [2, 1]
+	  Position		  [3705, 2285, 3815, 2395]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum35"
+	  Ports			  [2, 1]
+	  Position		  [3650, 4485, 3690, 4525]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|--"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum36"
+	  Ports			  [2, 1]
+	  Position		  [3880, 4715, 3920, 4755]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum37"
+	  Ports			  [2, 1]
+	  Position		  [3655, 4875, 3695, 4915]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum38"
+	  Ports			  [2, 1]
+	  Position		  [3155, 4860, 3195, 4900]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|--"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [2480, 430, 2500, 450]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum5"
+	  Ports			  [2, 1]
+	  Position		  [2555, 550, 2575, 570]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum6"
+	  Ports			  [2, 1]
+	  Position		  [2380, 710, 2400, 730]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum7"
+	  Ports			  [6, 1]
+	  Position		  [2975, 535, 3075, 635]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|++++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum8"
+	  Ports			  [2, 1]
+	  Position		  [685, 1255, 705, 1275]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum9"
+	  Ports			  [2, 1]
+	  Position		  [760, 1375, 780, 1395]
+	  ShowName		  off
+	  FontSize		  14
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "gain2=-1"
+	  Position		  [2485, 1055, 2515, 1085]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "gain3=-1"
+	  Position		  [665, 1870, 695, 1900]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "gain5=-1"
+	  Position		  [1070, 1760, 1100, 1790]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "gain6=-1\n"
+	  Position		  [1085, 815, 1115, 845]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "gain7=-1"
+	  Position		  [2865, 900, 2895, 930]
+	  FontSize		  14
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddz1"
+	  Position		  [1505, 503, 1535, 517]
+	  FontSize		  14
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddz2"
+	  Position		  [3285, 588, 3315, 602]
+	  FontSize		  14
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddz3"
+	  Position		  [1490, 1413, 1520, 1427]
+	  FontSize		  14
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddz4"
+	  Position		  [3315, 1483, 3345, 1497]
+	  FontSize		  14
+	  Port			  "4"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddz"
+	  Position		  [2570, 2478, 2600, 2492]
+	  FontSize		  14
+	  Port			  "5"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dz1'"
+	  Position		  [3340, 2338, 3370, 2352]
+	  FontSize		  14
+	  Port			  "6"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dz4'"
+	  Position		  [3955, 2333, 3985, 2347]
+	  FontSize		  14
+	  Port			  "7"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dz2'"
+	  Position		  [4605, 2368, 4635, 2382]
+	  FontSize		  14
+	  Port			  "8"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dz3'"
+	  Position		  [4530, 2253, 4560, 2267]
+	  FontSize		  14
+	  Port			  "9"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddfai"
+	  Position		  [3105, 3428, 3135, 3442]
+	  FontSize		  14
+	  Port			  "10"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ddseta"
+	  Position		  [4095, 4478, 4125, 4492]
+	  FontSize		  14
+	  Port			  "11"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Integrator for \nddz1"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 205; -1100, 0; 0, -105]
+	  Branch {
+	    Points		    [0, -210]
+	    DstBlock		    "Integrator for \ndz1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [105, 0]
+	    DstBlock		    "Sum2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, -280; 130, 0; 0, -95]
+	  DstBlock		  "Product10"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  Points		  [0, 0; 90, 0]
+	  Branch {
+	    Points		    [80, 0; 0, -215]
+	    DstBlock		    "Sum3"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "gain6=-1\n"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 45]
+	  DstBlock		  "Product2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c1"
+	  SrcPort		  1
+	  DstBlock		  "Product2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  Points		  [125, 0; 0, -80]
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 85; 20, 0]
+	  Branch {
+	    DstBlock		    "Product1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 290; -525, 0; 0, 45]
+	    DstBlock		    "-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "k12"
+	  SrcPort		  1
+	  Points		  [0, 0; 25, 0]
+	  Branch {
+	    Points		    [0, 435]
+	    DstBlock		    "Product16"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz1'"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [215, 0; 0, 50]
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "k11"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndq1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz1"
+	  SrcPort		  1
+	  Points		  [0, 0; 105, 0]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "dq1"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "Integrator for \ndq1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "m1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 65]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Product35"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [80, 0; 0, -40]
+	    DstBlock		    "Math\nFunction"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction"
+	  SrcPort		  1
+	  DstBlock		  "Product10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product10"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 335; -230, 0; 0, 75; 45, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Integrator for \nddz1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ddz1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "fd1"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -35]
+	  Branch {
+	    Points		    [-75, 0]
+	    DstBlock		    "Sum3"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    "[0, 305; -525, 0; 0, 160; -645, 0; 0, 152"
+"0; 1545, 0]"
+	    Branch {
+	      Points		      [45, 0; 0, 125; 735, 0]
+	      Branch {
+		Points			[750, 0; 0, 1150; -315, 0; 0, 90]
+		DstBlock		"Sum25"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 210]
+		DstBlock		"Sum20"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, -107]
+	      DstBlock		      "Sum16"
+	      DstPort		      10
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \nddz2"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 205; -1100, 0; 0, -105]
+	  Branch {
+	    Points		    [0, -210]
+	    DstBlock		    "Integrator for \ndz2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [105, 0]
+	    DstBlock		    "Sum6"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum7"
+	  SrcPort		  1
+	  Points		  [90, 0; 0, -290; 130, 0; 0, -95]
+	  DstBlock		  "Product5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product6"
+	  SrcPort		  1
+	  Points		  [0, 0; 85, 0]
+	  Branch {
+	    Points		    [0, 5; 100, 0; 0, -210]
+	    DstBlock		    "Sum7"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "gain7=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum6"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 45]
+	  DstBlock		  "Product6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c2"
+	  SrcPort		  1
+	  DstBlock		  "Product6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product4"
+	  SrcPort		  1
+	  Points		  [145, 0; 5, -60]
+	  DstBlock		  "Sum7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 85; 40, 0]
+	  Branch {
+	    DstBlock		    "Product4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 385; -190, 0; 0, 40]
+	    DstBlock		    "gain2=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "k22"
+	  SrcPort		  1
+	  Points		  [0, 0; 85, 0]
+	  Branch {
+	    Points		    [0, 525]
+	    DstBlock		    "Product17"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz2'"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Sum5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  Points		  [215, 0; 0, 64]
+	  DstBlock		  "Sum7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "k21"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  DstBlock		  "Product3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Product3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndq2"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz2"
+	  SrcPort		  1
+	  Points		  [0, 0; 105, 0]
+	  Branch {
+	    DstBlock		    "Sum4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "dq2"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "Integrator for \ndq2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "m2"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 65]
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "Product36"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [95, 0; 0, -40]
+	    DstBlock		    "Math\nFunction1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction1"
+	  SrcPort		  1
+	  DstBlock		  "Product5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product5"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 335; -230, 0; 0, 75; 45, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Integrator for \nddz2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ddz2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [2, 0]
+	  SrcBlock		  "fd2"
+	  SrcPort		  1
+	  Points		  [70, 0; 0, -20]
+	  Branch {
+	    Labels		    [5, 0]
+	    Points		    "[0, 250; -185, 0; 0, 250; -1115, 0; 0, 10"
+"60]"
+	    Branch {
+	      Points		      [-120, 0; 0, 480; 760, 0; 0, 260]
+	      Branch {
+		Points			"[0, 215; -210, 0; 0, 565; 555, 0; 0, "
+"655]"
+		DstBlock		"Sum26"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[305, 0]
+		DstBlock		"Sum20"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Sum16"
+	      DstPort		      4
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 0; -80, 0; 0, -123]
+	    DstBlock		    "Sum7"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \nddz3"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 205; -1100, 0; 0, -105]
+	  Branch {
+	    Points		    [0, -210]
+	    DstBlock		    "Integrator for \ndz3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [105, 0]
+	    DstBlock		    "Sum10"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum11"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, -285; 130, 0; 0, -95]
+	  DstBlock		  "Product9"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product11"
+	  SrcPort		  1
+	  Points		  [0, 0; 85, 0]
+	  Branch {
+	    Points		    [100, 0; 0, -210]
+	    DstBlock		    "Sum11"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 160]
+	    DstBlock		    "gain5=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum10"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 45]
+	  DstBlock		  "Product11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c3"
+	  SrcPort		  1
+	  DstBlock		  "Product11"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product8"
+	  SrcPort		  1
+	  Points		  [135, 0; 0, -65]
+	  DstBlock		  "Sum11"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum9"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 85; 35, 0]
+	  Branch {
+	    DstBlock		    "Product8"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 360; -305, 0; 0, 55]
+	    DstBlock		    "gain3=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "k32"
+	  SrcPort		  1
+	  Points		  [0, 0; 60, 0]
+	  Branch {
+	    Points		    [0, 515]
+	    DstBlock		    "Product19"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product8"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz3'"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Sum9"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product7"
+	  SrcPort		  1
+	  Points		  [215, 0; 0, 55]
+	  DstBlock		  "Sum11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "k31"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  DstBlock		  "Product7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum8"
+	  SrcPort		  1
+	  DstBlock		  "Product7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndq3"
+	  SrcPort		  1
+	  DstBlock		  "Sum8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz3"
+	  SrcPort		  1
+	  Points		  [0, 0; 105, 0]
+	  Branch {
+	    DstBlock		    "Sum8"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum9"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "dq3"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  DstBlock		  "Integrator for \ndq3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "m3"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Product38"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [105, 0; 0, -40]
+	    DstBlock		    "Math\nFunction2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction2"
+	  SrcPort		  1
+	  DstBlock		  "Product9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product9"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 335; -200, 0; 0, 75; 15, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Integrator for \nddz3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ddz3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "fd3"
+	  SrcPort		  1
+	  Points		  [0, 30; -45, 0; 0, -55; 75, 0]
+	  Branch {
+	    Points		    [0, 980; 60, 0]
+	    Branch {
+	      Points		      [-280, 0; 0, 1200; 695, 0]
+	      Branch {
+		Points			[0, 180; 785, 0; 0, 680; 455, 0]
+		DstBlock		"Sum26"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sum19"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      Points		      [210, 0; 0, -118]
+	      DstBlock		      "Sum16"
+	      DstPort		      7
+	    }
+	  }
+	  Branch {
+	    Points		    [-75, 0]
+	    DstBlock		    "Sum11"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \nddz4"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 205; -1100, 0; 0, -105]
+	  Branch {
+	    Points		    [0, -210]
+	    DstBlock		    "Integrator for \ndz4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [105, 0]
+	    DstBlock		    "Sum14"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum15"
+	  SrcPort		  1
+	  Points		  [120, 0; 0, -225; 125, 0; 0, -170]
+	  DstBlock		  "Product14"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product15"
+	  SrcPort		  1
+	  Points		  [0, 0; 80, 0]
+	  Branch {
+	    Points		    [85, 0; 0, -195]
+	    DstBlock		    "Sum15"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 165]
+	    DstBlock		    "Gain4=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum14"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 45]
+	  DstBlock		  "Product15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c4"
+	  SrcPort		  1
+	  DstBlock		  "Product15"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum13"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 85; 40, 0]
+	  Branch {
+	    DstBlock		    "Product13"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 295; -275, 0; 0, 125]
+	    DstBlock		    "Gain=-1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "k42"
+	  SrcPort		  1
+	  Points		  [0, 0; 85, 0]
+	  Branch {
+	    Points		    [0, 520]
+	    DstBlock		    "Product18"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product13"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz2'2"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Sum13"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product12"
+	  SrcPort		  1
+	  Points		  [215, 0; 0, 87]
+	  DstBlock		  "Sum15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "k41"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  DstBlock		  "Product12"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum12"
+	  SrcPort		  1
+	  DstBlock		  "Product12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndq4"
+	  SrcPort		  1
+	  DstBlock		  "Sum12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator for \ndz4"
+	  SrcPort		  1
+	  Points		  [0, 0; 105, 0]
+	  Branch {
+	    DstBlock		    "Sum12"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum13"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "dq4"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  DstBlock		  "Integrator for \ndq4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "m4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 65]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Product37"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [75, 0; 0, -40]
+	    DstBlock		    "Math\nFunction3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction3"
+	  SrcPort		  1
+	  DstBlock		  "Product14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product14"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 335; -230, 0; 0, 75; 45, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Integrator for \nddz4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ddz4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "fd4"
+	  SrcPort		  1
+	  Points		  [110, 0; 0, 30]
+	  Branch {
+	    Points		    [0, 545; -1270, 0]
+	    Branch {
+	      Points		      [-780, 0; 0, 1450]
+	      Branch {
+		Points			[0, 220; 1700, 0; 0, 225; 180, 0]
+		DstBlock		"Sum25"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sum19"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 50; -25, 0; 0, 28]
+	      DstBlock		      "Sum16"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [-160, 0; 0, -130; 15, 0; 0, -10]
+	    DstBlock		    "Sum15"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "-1"
+	  SrcPort		  1
+	  DstBlock		  "Product16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product16"
+	  SrcPort		  1
+	  Points		  [155, 0; 0, 120; -650, 0; 0, 1645; 1415, 0]
+	  Branch {
+	    Points		    [268, 0]
+	    DstBlock		    "Sum16"
+	    DstPort		    12
+	  }
+	  Branch {
+	    Points		    [0, 370]
+	    Branch {
+	      Points		      [290, 0]
+	      DstBlock		      "Sum17"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [-235, 0; 0, 878]
+	      DstBlock		      "Sum22"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gain2=-1"
+	  SrcPort		  1
+	  DstBlock		  "Product17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product17"
+	  SrcPort		  1
+	  Points		  [155, 0; 0, 95; -1270, 0; 0, 1295]
+	  Branch {
+	    Points		    [0, 15; 100, 0; 0, -125; 43, 0]
+	    DstBlock		    "Sum16"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 425; -5, 0]
+	    Branch {
+	      DstBlock		      "Sum17"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 1460]
+	      DstBlock		      "Sum24"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gain3=-1"
+	  SrcPort		  1
+	  DstBlock		  "Product19"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product19"
+	  SrcPort		  1
+	  Points		  [95, 0; 0, 685; 385, 0]
+	  Branch {
+	    Points		    [0, 792]
+	    Branch {
+	      DstBlock		      "Sum18"
+	      DstPort		      3
+	    }
+	    Branch {
+	      Points		      [5, 0; 0, 1083; 353, 0]
+	      DstBlock		      "Sum24"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    Points		    "[135, 0; 0, -115; 236, -2; 10, -1; 0, -2;"
+" -11, 0; 0, 3]"
+	    DstBlock		    "Sum16"
+	    DstPort		    9
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain=-1"
+	  SrcPort		  1
+	  DstBlock		  "Product18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product18"
+	  SrcPort		  1
+	  Points		  [200, 0; 0, 150; -1110, 0]
+	  Branch {
+	    Points		    [-15, 0; 0, 110]
+	    DstBlock		    "Sum16"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [-425, 0; 0, 1175]
+	    Branch {
+	      DstBlock		      "Sum18"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 835; 370, 0]
+	      DstBlock		      "Sum22"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain4=-1"
+	  SrcPort		  1
+	  Points		  [115, 0; 0, 320; -1246, 0]
+	  Branch {
+	    Points		    [0, 85; -24, 0; 0, 32]
+	    DstBlock		    "Sum16"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [-419, 0; 0, 1063]
+	    Branch {
+	      DstBlock		      "Sum18"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 854]
+	      DstBlock		      "Sum22"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gain5=-1"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, 785; 70, 0]
+	  Branch {
+	    Points		    [220, 0; 0, -118]
+	    DstBlock		    "Sum16"
+	    DstPort		    8
+	  }
+	  Branch {
+	    Points		    [-5, 0; 0, 905]
+	    Branch {
+	      Points		      [475, 0]
+	      DstBlock		      "Sum18"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [-5, 0; 0, 1040; 485, 0]
+	      DstBlock		      "Sum24"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gain6=-1\n"
+	  SrcPort		  1
+	  Points		  "[95, 0; 0, 85; -505, 0; 0, 155; -645, 0; 0,"
+" 1585; 1430, 0]"
+	  Branch {
+	    Points		    [165, 0]
+	    DstBlock		    "Sum16"
+	    DstPort		    11
+	  }
+	  Branch {
+	    Points		    [0, 332]
+	    Branch {
+	      DstBlock		      "Sum17"
+	      DstPort		      3
+	    }
+	    Branch {
+	      Points		      [-340, 0; 0, 1023]
+	      DstBlock		      "Sum22"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gain7=-1"
+	  SrcPort		  1
+	  Points		  "[105, 0; 0, 50; -170, 0; 0, 250; -1120, 0; "
+"0, 1040]"
+	  Branch {
+	    Points		    [0, 90]
+	    DstBlock		    "Sum16"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [0, 5; -115, 0; 0, 570; -10, 0]
+	    Branch {
+	      Points		      [0, 3]
+	      DstBlock		      "Sum17"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 1463]
+	      DstBlock		      "Sum24"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum16"
+	  SrcPort		  1
+	  Points		  [330, 0; 0, -100]
+	  DstBlock		  "Product20"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "m"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 65]
+	  Branch {
+	    Points		    [0, 205]
+	    DstBlock		    "Product39"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [115, 0; 0, -40]
+	    DstBlock		    "Math\nFunction4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction4"
+	  SrcPort		  1
+	  DstBlock		  "Product20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product20"
+	  SrcPort		  1
+	  Points		  [0, 0; 30, 0]
+	  Branch {
+	    DstBlock		    "Integrator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "ddz"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  Points		  [0, 0; 75, 0]
+	  Branch {
+	    DstBlock		    "Sum28"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 165; 810, 0]
+	    Branch {
+	      Points		      [675, 0]
+	      Branch {
+		DstBlock		"Sum30"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -330]
+		DstBlock		"Sum32"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, -170]
+	      DstBlock		      "Sum34"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum17"
+	  SrcPort		  1
+	  DstBlock		  "Product21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "d"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Product21"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 155; 815, 0]
+	    Branch {
+	      Points		      [50, 0]
+	      Branch {
+		Points			[645, 0; 0, 310]
+		DstBlock		"Product32"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Product24"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 915; -340, 0]
+	      DstBlock		      "Product44"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum18"
+	  SrcPort		  1
+	  DstBlock		  "Product22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, 120]
+	    Branch {
+	      Points		      [0, 120]
+	      DstBlock		      "Product23"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [230, 0; 0, 225]
+	      Branch {
+		Points			[0, 5; 1225, 0; 0, 60]
+		DstBlock		"Product34"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 180]
+		DstBlock		"Product43"
+		DstPort			1
+	      }
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Product22"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum19"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 100]
+	  DstBlock		  "Product23"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum20"
+	  SrcPort		  1
+	  DstBlock		  "Product24"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product21"
+	  SrcPort		  1
+	  Points		  [280, 0; 0, 415; 65, 0; 0, 35]
+	  DstBlock		  "Sum21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product23"
+	  SrcPort		  1
+	  Points		  [245, 0; 0, -110]
+	  DstBlock		  "Sum21"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Product22"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, 260; 105, 0; 0, -95]
+	  DstBlock		  "Sum21"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Product24"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, 320; -820, 0; 0, 135]
+	  DstBlock		  "Sum21"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum21"
+	  SrcPort		  1
+	  DstBlock		  "Product26"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant5"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction5"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -40]
+	  DstBlock		  "Product26"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product26"
+	  SrcPort		  1
+	  Points		  [0, 0; 30, 0]
+	  Branch {
+	    DstBlock		    "Integrator2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -140]
+	    DstBlock		    "ddfai"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator2"
+	  SrcPort		  1
+	  Points		  [0, 0; 210, 0]
+	  Branch {
+	    DstBlock		    "Product32"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 145]
+	    DstBlock		    "Product34"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum22"
+	  SrcPort		  1
+	  DstBlock		  "Product27"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  Points		  [0, 0; 30, 0]
+	  Branch {
+	    Points		    [0, 150; 1120, 0]
+	    Branch {
+	      Points		      [0, -175]
+	      DstBlock		      "Product29"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [285, 0; 0, -285; 595, 0]
+	      Branch {
+		DstBlock		"Product31"
+		DstPort			1
+	      }
+	      Branch {
+		Points			"[0, -70; 535, 0; 0, 950; -500, 0; 0, "
+"-75]"
+		DstBlock		"Product41"
+		DstPort			2
+	      }
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Product27"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product27"
+	  SrcPort		  1
+	  Points		  [225, 0; 0, 160; 1000, 0; 0, -71]
+	  DstBlock		  "Sum23"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum24"
+	  SrcPort		  1
+	  DstBlock		  "Product28"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "b"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    Points		    [0, 215; 1135, 0]
+	    Branch {
+	      Points		      [0, -110]
+	      DstBlock		      "Product30"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [290, 0]
+	      Branch {
+		Points			[860, 0; 0, 40]
+		DstBlock		"Product33"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Product40"
+		DstPort			2
+	      }
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Product28"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product28"
+	  SrcPort		  1
+	  Points		  [550, 0; 0, -65; 725, 0; 0, -130]
+	  DstBlock		  "Sum23"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum25"
+	  SrcPort		  1
+	  DstBlock		  "Product29"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product29"
+	  SrcPort		  1
+	  Points		  [260, 0]
+	  DstBlock		  "Sum23"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum26"
+	  SrcPort		  1
+	  DstBlock		  "Product30"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product30"
+	  SrcPort		  1
+	  Points		  [140, 0; 0, -224]
+	  DstBlock		  "Sum23"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction6"
+	  SrcPort		  1
+	  DstBlock		  "Product25"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum23"
+	  SrcPort		  1
+	  DstBlock		  "Product25"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product25"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Integrator4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 210]
+	    DstBlock		    "ddseta"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator4"
+	  SrcPort		  1
+	  Points		  [0, 0; 45, 0]
+	  Branch {
+	    Points		    [0, -125; -225, 0; 0, -75]
+	    DstBlock		    "Product31"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 350]
+	    DstBlock		    "Product33"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product31"
+	  SrcPort		  1
+	  Points		  [160, 0; 0, -295]
+	  Branch {
+	    Points		    [-305, 0]
+	    DstBlock		    "Sum27"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -330]
+	    DstBlock		    "Sum33"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product32"
+	  SrcPort		  1
+	  Points		  [0, 0; 130, 0]
+	  Branch {
+	    DstBlock		    "Sum27"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 335; 670, 0; 0, 645]
+	    DstBlock		    "Sum29"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum27"
+	  SrcPort		  1
+	  Points		  [90, 0; 0, -880; -1275, 0]
+	  DstBlock		  "Sum28"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum28"
+	  SrcPort		  1
+	  Points		  [0, 0; 265, 0]
+	  Branch {
+	    Points		    "[0, -110; -990, 0; 0, -180; -410, 0; 0, -"
+"1300; -105, 0; 0, -440; -1270, 0; 0, 255; 85, 0]"
+	    Branch {
+	      DstBlock		      "Integrator for \ndz1'"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "dz1'"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product33"
+	  SrcPort		  1
+	  Points		  [0, 0; 130, 0]
+	  Branch {
+	    Points		    [95, 0]
+	    DstBlock		    "Sum29"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum31"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum29"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, -1895; -185, 0]
+	  DstBlock		  "Sum30"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum30"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    Points		    "[80, 0; 0, -1555; -1130, 0; 0, -555; -127"
+"0, 0; 0, 255; 85, 0]"
+	    Branch {
+	      DstBlock		      "Integrator for \ndz2'"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "Sum6"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -135]
+	    DstBlock		    "dz2'"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product34"
+	  SrcPort		  1
+	  Points		  [0, 0; 795, 0]
+	  Branch {
+	    DstBlock		    "Sum31"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum33"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum31"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -895; -255, 0]
+	  DstBlock		  "Sum32"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum32"
+	  SrcPort		  1
+	  Points		  [0, 0; 40, 0]
+	  Branch {
+	    Points		    "[120, 0; 0, -90; -2965, 0; 0, -860; -1160"
+", 0; 0, 250; 85, 0]"
+	    Branch {
+	      DstBlock		      "Integrator for \ndz3'"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "Sum10"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 80]
+	    DstBlock		    "dz3'"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum33"
+	  SrcPort		  1
+	  Points		  [125, 0; 0, -175; -790, 0]
+	  DstBlock		  "Sum34"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum34"
+	  SrcPort		  1
+	  Points		  [0, 0; 60, 0]
+	  Branch {
+	    Points		    "[0, -375; -320, 0; 0, -670; -1270, 0; 0, "
+"255; 85, 0]"
+	    Branch {
+	      DstBlock		      "Integrator for \ndz2'2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "Sum14"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "dz4'"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Fr1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -30; -145, 0]
+	    DstBlock		    "Sum3"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    "[0, 255; 555, 0; 0, 1015; 165, 0; 0, 320;"
+" 50, 0; 0, 475]"
+	    Branch {
+	      Points		      [-363, 0]
+	      DstBlock		      "Sum16"
+	      DstPort		      14
+	    }
+	    Branch {
+	      Points		      "[340, 0; 0, 560; 120, 0; 0, 980; -155, "
+"0; 0, 570; 625, 0]"
+	      Branch {
+		Points			[840, 0]
+		DstBlock		"Sum36"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"Sum38"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Fr2"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -30; -180, 0; 0, -89]
+	    DstBlock		    "Sum7"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [285, 0]
+	    Branch {
+	      Points		      "[0, 185; -1490, 0; 0, 920; 200, 0; 0, 8"
+"15; -370, 0]"
+	      DstBlock		      "Sum16"
+	      DstPort		      15
+	    }
+	    Branch {
+	      Points		      "[280, 0; 0, 1300; -135, 0; 0, 1305; 210"
+", 0; 0, 1215; -140, 0]"
+	      Branch {
+		DstBlock		"Sum35"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 195; -650, 0; 0, 160; 155, 0]
+		DstBlock		"Sum38"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Fr3"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -45; -150, 0]
+	    DstBlock		    "Sum11"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [0, 560; -20, 0; 0, 635; 505, 0]
+	    Branch {
+	      Points		      [0, -123]
+	      DstBlock		      "Sum16"
+	      DstPort		      16
+	    }
+	    Branch {
+	      Labels		      [8, 0]
+	      Points		      "[0, 65; 2050, 0; 0, 470; -130, 0; 0, 52"
+"0; -75, 0; 0, 625; -90, 0; 0, 60]"
+	      Branch {
+		DstBlock		"Sum35"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 390]
+		DstBlock		"Sum37"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product13"
+	  SrcPort		  1
+	  Points		  [115, 0; 0, -50]
+	  DstBlock		  "Sum15"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Fr4"
+	  FontSize		  14
+	  Labels		  [0, 0]
+	  SrcBlock		  "Fr4"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -25; -220, 0]
+	    DstBlock		    "Sum15"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [10, 0; 0, 525]
+	    Branch {
+	      Points		      [-740, 0; 0, 500; -640, 0]
+	      DstBlock		      "Sum16"
+	      DstPort		      17
+	    }
+	    Branch {
+	      Points		      "[210, 0; 0, 1235; -175, 0; 0, 535; 475,"
+" 0; 0, 810]"
+	      Branch {
+		Labels			[-1, 1]
+		DstBlock		"Sum36"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 240; -80, 0]
+		DstBlock		"Sum37"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "g"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 95]
+	  Branch {
+	    Points		    [-880, 0; 0, -55]
+	    DstBlock		    "Product35"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [855, 0; 0, 25]
+	    Branch {
+	      DstBlock		      "Product36"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 65; 640, 0; 0, 865; -560, 0]
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Product37"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 50; -1235, 0]
+		Branch {
+		  Points		  [0, -130; -590, 0; 0, -55]
+		  DstBlock		  "Product38"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  "[0, 725; 190, 0; 0, 340; 70, 0; 0, "
+"250]"
+		  DstBlock		  "Product39"
+		  DstPort		  2
+		}
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product35"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, 390; -165, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Product36"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 395; -100, 0]
+	  DstBlock		  "Sum7"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Product37"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 415; -135, 0]
+	  DstBlock		  "Sum15"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Product38"
+	  SrcPort		  1
+	  Points		  [115, 0; 0, 420; -185, 0]
+	  DstBlock		  "Sum11"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Product39"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 160; -586, 0]
+	  DstBlock		  "Sum16"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "Sum35"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 40; -390, 0; 0, 35]
+	  DstBlock		  "Product40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product40"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum23"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Sum36"
+	  SrcPort		  1
+	  DstBlock		  "Product41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product41"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, -140; -560, 0]
+	  DstBlock		  "Sum23"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Sum37"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, 105; -1605, 0; 0, -1025]
+	  DstBlock		  "Product43"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product43"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -290; 28, 0]
+	  DstBlock		  "Sum21"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Sum38"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, 85; -975, 0; 0, -805]
+	  DstBlock		  "Product44"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product44"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -415; 20, 0]
+	  DstBlock		  "Sum21"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Jx"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant6"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Jy"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction6"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [1576, 569]
+	  Text			  "dz1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1469, 499]
+	  Text			  "ddz1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1342, 498]
+	  Text			  "m1*ddz1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1039, 691]
+	  Text			  "c1*(dz1'-dz1)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [817, 670]
+	  Text			  "dz1'-dz1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [690, 559]
+	  Text			  "dz1'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1048, 520]
+	  Text			  "k12*(z1'-z1)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [761, 519]
+	  Text			  "z1'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [966, 365]
+	  Text			  "k11*(q1-z1)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [755, 343]
+	  Text			  "q1-z1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [699, 454]
+	  Text			  "z1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [648, 341]
+	  Text			  "q1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [317, 342]
+	  Text			  "dq1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1276, 79]
+	  Text			  "m1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1529, 65]
+	  Text			  "1/m1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1171, 539]
+	  Text			  "fd1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1037, 306]
+	  Text			  "dz1'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3356, 654]
+	  Text			  "dz2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3249, 584]
+	  Text			  "ddz2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3122, 583]
+	  Text			  "m1*ddz1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2819, 776]
+	  Text			  "c2*(dz2'-dz2)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2597, 755]
+	  Text			  "dz2'-dz2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2470, 644]
+	  Text			  "dz2'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2828, 605]
+	  Text			  "k22*(z2'-z2)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2551, 614]
+	  Text			  "z2'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2746, 450]
+	  Text			  "k21*(q2-z2)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2535, 428]
+	  Text			  "q2-z2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2459, 549]
+	  Text			  "z2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2428, 426]
+	  Text			  "q2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2097, 427]
+	  Text			  "dq2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3056, 164]
+	  Text			  "m2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3309, 150]
+	  Text			  "1/m2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2956, 644]
+	  Text			  "fd2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2817, 391]
+	  Text			  "dz2'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1561, 1479]
+	  Text			  "dz3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1454, 1404]
+	  Text			  "ddz3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1327, 1408]
+	  Text			  "m3*ddz3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1024, 1601]
+	  Text			  "c3*(dz3'-dz3)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [802, 1580]
+	  Text			  "dz3'-dz3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [675, 1469]
+	  Text			  "dz3'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1033, 1430]
+	  Text			  "k32*(z3'-z3)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [756, 1439]
+	  Text			  "z3'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [951, 1275]
+	  Text			  "k31*(q3-z3)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [740, 1253]
+	  Text			  "q3-z3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [664, 1374]
+	  Text			  "z3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [633, 1251]
+	  Text			  "q3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1514, 975]
+	  Text			  "1/m3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1166, 1479]
+	  Text			  "fd3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1022, 1216]
+	  Text			  "dz3'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3386, 1549]
+	  Text			  "dz4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3284, 1484]
+	  Text			  "ddz4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3152, 1478]
+	  Text			  "m4*ddz4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2849, 1676]
+	  Text			  "c4*(dz4'-dz4)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2557, 1650]
+	  Text			  "dz4'-dz4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2500, 1539]
+	  Text			  "dz4'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2858, 1500]
+	  Text			  "k42*(z4'-z4)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2581, 1509]
+	  Text			  "z4'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2776, 1345]
+	  Text			  "k41*(q4-z4)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2565, 1323]
+	  Text			  "q4-z4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2489, 1444]
+	  Text			  "z4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2458, 1321]
+	  Text			  "q4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3086, 1069]
+	  Text			  "m4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3339, 1045]
+	  Text			  "1/m4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2981, 1514]
+	  Text			  "fd4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2847, 1286]
+	  Text			  "dz4'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1254, 999]
+	  Text			  "m3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [439, 839]
+	  Text			  "(z1'-z1)"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [445, 883]
+	  Text			  "z1-z1'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [598, 909]
+	  Text			  "k12*(z1-z1')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2651, 634]
+	  Text			  "z2'-z2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2553, 1012]
+	  Text			  "z2'-z2\n"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2553, 1059]
+	  Text			  "z2-z2'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2730, 1079]
+	  Text			  "k22*(z2-z2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [836, 1463]
+	  Text			  "z3'-z3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [724, 1818]
+	  Text			  "z3'-z3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [723, 1858]
+	  Text			  "z3-z3'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [879, 1892]
+	  Text			  "k32*(z3-z3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2672, 1534]
+	  Text			  "z4'-z4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2582, 1949]
+	  Text			  "z4-z4'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2811, 1975]
+	  Text			  "k42*(z4-z4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3015, 1834]
+	  Text			  "c4*(dz4-dz4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1173, 1763]
+	  Text			  "z3*(dz3-dz3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1155, 822]
+	  Text			  "c1*(dz1-dz1')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2954, 905]
+	  Text			  "c2*(dz2-dz2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2173, 2477]
+	  Text			  "m*ddz"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2126, 2334]
+	  Text			  "m"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2379, 2310]
+	  Text			  "1/m"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2547, 2333]
+	  Text			  "ddz"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2642, 2337]
+	  Text			  "dz"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1580, 2983]
+	  Text			  "k12*(z1-z1')\n"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1661, 3046]
+	  Text			  "c1*(dz1-dz1')\n"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1734, 2430]
+	  Text			  "c2*(dz2-dz2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1600, 2899]
+	  Text			  "k22*(z2-z2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1654, 2815]
+	  Text			  "c2*(dz2-dz2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1717, 2509]
+	  Text			  "fd3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1673, 3453]
+	  Text			  "z3*(dz3-dz3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1479, 3377]
+	  Text			  "k32*(z3-z3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1861, 2120]
+	  Text			  "k42*(z4-z4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1875, 2159]
+	  Text			  "c4*(dz4-dz4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1556, 3295]
+	  Text			  "k42*(z4-z4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1580, 3219]
+	  Text			  "c4*(dz4-dz4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1652, 3714]
+	  Text			  "fd3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1896, 2188]
+	  Text			  "fd4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1633, 3639]
+	  Text			  "fd4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1749, 2361]
+	  Text			  "fd2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2551, 2945]
+	  Text			  "fd1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2647, 3032]
+	  Text			  "fd2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2819, 3650]
+	  Text			  "1/Jx"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3077, 3573]
+	  Text			  "ddfai"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3202, 3572]
+	  Text			  "dfai"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1611, 3931]
+	  Text			  "c1*(dz1-dz1')\n"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1585, 4013]
+	  Text			  "k12*(z1-z1')\n"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1615, 4074]
+	  Text			  "c4*(dz4-dz4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1681, 4130]
+	  Text			  "k42*(z4-z4')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1629, 4280]
+	  Text			  "c2*(dz2-dz2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1600, 4354]
+	  Text			  "k22*(z2-z2')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1678, 4493]
+	  Text			  "z3*(dz3-dz3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1589, 4457]
+	  Text			  "k32*(z3-z3')"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2872, 3967]
+	  Text			  "fd1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2898, 4081]
+	  Text			  "fd4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2822, 4460]
+	  Text			  "fd2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [2845, 4569]
+	  Text			  "fd3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3899, 4310]
+	  Text			  "1/Jy"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4065, 4265]
+	  Text			  "ddseta"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4161, 4265]
+	  Text			  "dseta"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3942, 3967]
+	  Text			  "a"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4180, 4015]
+	  Text			  "a*dseta"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3652, 3512]
+	  Text			  "d*dfai"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3172, 2328]
+	  Text			  "dz1'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4228, 4714]
+	  Text			  "b"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4608, 2500]
+	  Text			  "dz2'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4435, 4657]
+	  Text			  "b*dseta"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3428, 3811]
+	  Text			  "c"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3418, 3706]
+	  Text			  "dfai"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [4485, 2171]
+	  Text			  "dz3'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3938, 3753]
+	  Text			  "c*dfai"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3849, 2325]
+	  Text			  "dz4'"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1301, 575]
+	  Text			  "m1g"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1236, 1520]
+	  Text			  "Fr3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [1303, 1479]
+	  Text			  "m3g"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3013, 714]
+	  Text			  "Fr2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3069, 664]
+	  Text			  "m2g"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3034, 1596]
+	  Text			  "Fr4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3102, 1549]
+	  Text			  "m4g"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3602, 4434]
+	  Text			  "Fr3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3802, 4523]
+	  Text			  "Fr2"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3879, 4795]
+	  Text			  "Fr1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3622, 4879]
+	  Text			  "Fr3"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3707, 4959]
+	  Text			  "Fr4"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3109, 4875]
+	  Text			  "Fr1"
+	  FontSize		  14
+	}
+	Annotation {
+	  Position		  [3169, 4930]
+	  Text			  "Fr2"
+	  FontSize		  14
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      Ports		      [1]
+      Position		      [1025, 334, 1055, 366]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData12"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Simulaiton Data1"
+      Ports		      [0, 28]
+      Position		      [600, 554, 680, 2081]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Simulaiton Data1"
+	Location		[2, 74, 998, 744]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Damping: c1"
+	  Position		  [35, 140, 65, 170]
+	  FontSize		  12
+	  Value			  "1400"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Damping: c2"
+	  Position		  [30, 365, 60, 395]
+	  FontSize		  12
+	  Value			  "1400"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Damping: c3"
+	  Position		  [30, 600, 60, 630]
+	  FontSize		  12
+	  Value			  "1400"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Damping: c4"
+	  Position		  [40, 775, 70, 805]
+	  FontSize		  12
+	  Value			  "1400"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k21"
+	  Position		  [35, 255, 65, 285]
+	  FontSize		  12
+	  Value			  "181000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k22"
+	  Position		  [25, 310, 55, 340]
+	  FontSize		  12
+	  Value			  "32500"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k31"
+	  Position		  [35, 480, 65, 510]
+	  FontSize		  12
+	  Value			  "181000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k32"
+	  Position		  [25, 535, 55, 565]
+	  FontSize		  12
+	  Value			  "32500"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k41"
+	  Position		  [40, 715, 70, 745]
+	  FontSize		  12
+	  Value			  "181000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  " Sprung Spring: k42"
+	  Position		  [45, 885, 75, 915]
+	  FontSize		  12
+	  Value			  "30000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Distance from C.G. to front wheel: a"
+	  Position		  [50, 1020, 80, 1050]
+	  FontSize		  12
+	  Value			  "1.116"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Distance from C.G. to front wheel: b"
+	  Position		  [45, 1085, 75, 1115]
+	  FontSize		  12
+	  Value			  "1.232"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Distance from C.G. to right wheel: c"
+	  Position		  [65, 1165, 95, 1195]
+	  FontSize		  12
+	  Value			  "0.656"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Distance from C.G. to right wheel: d"
+	  Position		  [60, 1230, 90, 1260]
+	  FontSize		  12
+	  Value			  "0.621"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Unsprung Spring: k11"
+	  Position		  [40, 25, 70, 55]
+	  FontSize		  12
+	  Value			  "181000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Unsprung Spring: k12"
+	  Position		  [40, 80, 70, 110]
+	  FontSize		  12
+	  Value			  "30000"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "friction: Fr1"
+	  Position		  [55, 1435, 85, 1465]
+	  FontSize		  12
+	  Value			  "300"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "friction: Fr2"
+	  Position		  [50, 1500, 80, 1530]
+	  FontSize		  12
+	  Value			  "300"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "friction: Fr3"
+	  Position		  [55, 1580, 85, 1610]
+	  FontSize		  12
+	  Value			  "300"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "friction: Fr4"
+	  Position		  [35, 1645, 65, 1675]
+	  FontSize		  12
+	  Value			  "300"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "gravity"
+	  Position		  [45, 1715, 75, 1745]
+	  FontSize		  12
+	  Value			  "9.8"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mass m"
+	  Position		  [50, 950, 80, 980]
+	  FontSize		  12
+	  Value			  "809"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mass m1"
+	  Position		  [35, 200, 65, 230]
+	  FontSize		  12
+	  Value			  "30.2"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mass m2"
+	  Position		  [35, 425, 65, 455]
+	  FontSize		  12
+	  Value			  "49.7"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mass m3"
+	  Position		  [35, 655, 65, 685]
+	  FontSize		  12
+	  Value			  "49.7"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mass m4"
+	  Position		  [40, 825, 70, 855]
+	  FontSize		  12
+	  Value			  "30.2"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "rotaion: Jy"
+	  Position		  [45, 1375, 75, 1405]
+	  FontSize		  12
+	  Value			  "861.8"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "rotation: Jx"
+	  Position		  [65, 1310, 95, 1340]
+	  FontSize		  12
+	  Value			  "330.5"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k11\n"
+	  Position		  [355, 33, 385, 47]
+	  FontSize		  12
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k12"
+	  Position		  [350, 88, 380, 102]
+	  FontSize		  12
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c1"
+	  Position		  [345, 148, 375, 162]
+	  FontSize		  12
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "m1"
+	  Position		  [335, 208, 365, 222]
+	  FontSize		  12
+	  Port			  "4"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k21"
+	  Position		  [335, 263, 365, 277]
+	  FontSize		  12
+	  Port			  "5"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k22"
+	  Position		  [335, 318, 365, 332]
+	  FontSize		  12
+	  Port			  "6"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c2"
+	  Position		  [340, 373, 370, 387]
+	  FontSize		  12
+	  Port			  "7"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "m2"
+	  Position		  [335, 433, 365, 447]
+	  FontSize		  12
+	  Port			  "8"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k31"
+	  Position		  [335, 488, 365, 502]
+	  FontSize		  12
+	  Port			  "9"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k32"
+	  Position		  [335, 543, 365, 557]
+	  FontSize		  12
+	  Port			  "10"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c3"
+	  Position		  [340, 608, 370, 622]
+	  FontSize		  12
+	  Port			  "11"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "m3"
+	  Position		  [335, 663, 365, 677]
+	  FontSize		  12
+	  Port			  "12"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k41"
+	  Position		  [340, 723, 370, 737]
+	  FontSize		  12
+	  Port			  "13"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c4"
+	  Position		  [350, 783, 380, 797]
+	  FontSize		  12
+	  Port			  "14"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "m4"
+	  Position		  [340, 833, 370, 847]
+	  FontSize		  12
+	  Port			  "15"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k42"
+	  Position		  [335, 893, 365, 907]
+	  FontSize		  12
+	  Port			  "16"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "m"
+	  Position		  [350, 958, 380, 972]
+	  FontSize		  12
+	  Port			  "17"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "a"
+	  Position		  [340, 1028, 370, 1042]
+	  FontSize		  12
+	  Port			  "18"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "b"
+	  Position		  [325, 1098, 355, 1112]
+	  FontSize		  12
+	  Port			  "19"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c"
+	  Position		  [355, 1173, 385, 1187]
+	  FontSize		  12
+	  Port			  "20"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d"
+	  Position		  [340, 1243, 370, 1257]
+	  FontSize		  12
+	  Port			  "21"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Jx"
+	  Position		  [365, 1318, 395, 1332]
+	  FontSize		  12
+	  Port			  "22"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Jy"
+	  Position		  [350, 1388, 380, 1402]
+	  FontSize		  12
+	  Port			  "23"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Fr1"
+	  Position		  [345, 1443, 375, 1457]
+	  FontSize		  12
+	  Port			  "24"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Fr2\n"
+	  Position		  [330, 1513, 360, 1527]
+	  FontSize		  12
+	  Port			  "25"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Fr3"
+	  Position		  [355, 1588, 385, 1602]
+	  FontSize		  12
+	  Port			  "26"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Fr4"
+	  Position		  [340, 1658, 370, 1672]
+	  FontSize		  12
+	  Port			  "27"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "g"
+	  Position		  [320, 1728, 350, 1742]
+	  FontSize		  12
+	  Port			  "28"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Unsprung Spring: k11"
+	  SrcPort		  1
+	  DstBlock		  "k11\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Damping: c1"
+	  SrcPort		  1
+	  DstBlock		  "c1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Damping: c2"
+	  SrcPort		  1
+	  DstBlock		  "c2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Distance from C.G. to front wheel: a"
+	  SrcPort		  1
+	  DstBlock		  "a"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k21"
+	  SrcPort		  1
+	  DstBlock		  "k21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unsprung Spring: k12"
+	  SrcPort		  1
+	  DstBlock		  "k12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k22"
+	  SrcPort		  1
+	  DstBlock		  "k22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mass m1"
+	  SrcPort		  1
+	  DstBlock		  "m1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mass m2"
+	  SrcPort		  1
+	  DstBlock		  "m2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k31"
+	  SrcPort		  1
+	  DstBlock		  "k31"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k32"
+	  SrcPort		  1
+	  DstBlock		  "k32"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Damping: c3"
+	  SrcPort		  1
+	  DstBlock		  "c3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mass m3"
+	  SrcPort		  1
+	  DstBlock		  "m3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k41"
+	  SrcPort		  1
+	  DstBlock		  "k41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Damping: c4"
+	  SrcPort		  1
+	  DstBlock		  "c4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mass m4"
+	  SrcPort		  1
+	  DstBlock		  "m4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Sprung Spring: k42"
+	  SrcPort		  1
+	  DstBlock		  "k42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mass m"
+	  SrcPort		  1
+	  DstBlock		  "m"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Distance from C.G. to front wheel: b"
+	  SrcPort		  1
+	  Points		  [230, 0]
+	  DstBlock		  "b"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Distance from C.G. to right wheel: c"
+	  SrcPort		  1
+	  DstBlock		  "c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Distance from C.G. to right wheel: d"
+	  SrcPort		  1
+	  Points		  [230, 0]
+	  DstBlock		  "d"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rotation: Jx"
+	  SrcPort		  1
+	  DstBlock		  "Jx"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rotaion: Jy"
+	  SrcPort		  1
+	  Points		  [255, 0]
+	  DstBlock		  "Jy"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "friction: Fr1"
+	  SrcPort		  1
+	  DstBlock		  "Fr1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "friction: Fr2"
+	  SrcPort		  1
+	  Points		  [230, 0]
+	  DstBlock		  "Fr2\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "friction: Fr3"
+	  SrcPort		  1
+	  DstBlock		  "Fr3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "friction: Fr4"
+	  SrcPort		  1
+	  Points		  [255, 0]
+	  DstBlock		  "Fr4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gravity"
+	  SrcPort		  1
+	  Points		  [225, 0]
+	  DstBlock		  "g"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport\nDelay2"
+      Position		      [1025, 215, 1055, 245]
+      FontSize		      12
+      DelayTime		      "1"
+      InitialInput	      "0"
+      BufferSize	      "1024"
+      PadeOrder		      "0"
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport\nDelay3"
+      Position		      [1810, 225, 1840, 255]
+      FontSize		      12
+      DelayTime		      "1"
+      InitialInput	      "0"
+      BufferSize	      "1024"
+      PadeOrder		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "fd5"
+      Position		      [1055, 765, 1085, 795]
+      Value		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "fd6"
+      Position		      [1025, 1065, 1055, 1095]
+      Value		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "fd7"
+      Position		      [1045, 1365, 1075, 1395]
+      Value		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "fd8"
+      Position		      [1015, 1665, 1045, 1695]
+      Value		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc fai1"
+      Ports		      [1]
+      Position		      [1895, 2069, 1925, 2101]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData13"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc seta1"
+      Ports		      [1]
+      Position		      [1895, 2239, 1925, 2271]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData14"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc z5"
+      Ports		      [1]
+      Position		      [1845, 1219, 1875, 1251]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData15"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc z6"
+      Ports		      [1]
+      Position		      [1840, 539, 1870, 571]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData16"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc z7"
+      Ports		      [1]
+      Position		      [1850, 709, 1880, 741]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData17"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc z8"
+      Ports		      [1]
+      Position		      [1855, 879, 1885, 911]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData18"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive acc z9"
+      Ports		      [1]
+      Position		      [1850, 1049, 1880, 1081]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData19"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive velocity z1'1"
+      Ports		      [1]
+      Position		      [1885, 1389, 1915, 1421]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData20"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive velocity z2'1"
+      Ports		      [1]
+      Position		      [1890, 1729, 1920, 1761]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData21"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive velocity z3'1"
+      Ports		      [1]
+      Position		      [1895, 1899, 1925, 1931]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData22"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "passive velocity z4'2"
+      Ports		      [1]
+      Position		      [1890, 1559, 1920, 1591]
+      Floating		      off
+      Location		      [188, 365, 512, 604]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData23"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      1
+      DstBlock		      "passive acc z6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      2
+      DstBlock		      "passive acc z7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      3
+      DstBlock		      "passive acc z8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      4
+      DstBlock		      "passive acc z9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      5
+      DstBlock		      "passive acc z5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      6
+      DstBlock		      "passive velocity z1'1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      7
+      DstBlock		      "passive velocity z4'2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      8
+      DstBlock		      "passive velocity z2'1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      9
+      DstBlock		      "passive velocity z3'1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      10
+      DstBlock		      "passive acc fai1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Full Model 7_dof1"
+      SrcPort		      11
+      DstBlock		      "passive acc seta1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      1
+      Points		      [0, 5]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      2
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      3
+      Points		      [0, -5]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      4
+      Points		      [295, 0; 0, -10]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      5
+      Points		      [295, 0; 0, 85]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      6
+      Points		      [285, 0; 0, 80]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      7
+      Points		      [275, 0; 0, 75]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      8
+      Points		      [265, 0; 0, 70]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      9
+      Points		      [255, 0; 0, 165]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      14
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      10
+      Points		      [245, 0; 0, 160]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      15
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      11
+      Points		      [235, 0; 0, 155]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      16
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      12
+      Points		      [225, 0; 0, 150]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      17
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      13
+      Points		      [215, 0; 0, 245]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      20
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      14
+      Points		      [205, 0; 0, 240]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      21
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      15
+      Points		      [195, 0; 0, 235]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      22
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      16
+      Points		      [185, 0; 0, 230]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      23
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      17
+      Points		      [175, 0; 0, 275]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      25
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      18
+      Points		      [165, 0; 0, 270]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      26
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      19
+      Points		      [155, 0; 0, 265]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      27
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      20
+      Points		      [145, 0; 0, 260]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      28
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      21
+      Points		      [135, 0; 0, 255]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      29
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      22
+      Points		      [125, 0; 0, 250]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      30
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      23
+      Points		      [115, 0; 0, 245]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      31
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      24
+      Points		      [105, 0; 0, 240]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      32
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      25
+      Points		      [95, 0; 0, 235]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      33
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      26
+      Points		      [85, 0; 0, 230]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      34
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      27
+      Points		      [70, 0; 0, 225]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      35
+    }
+    Line {
+      SrcBlock		      "Simulaiton Data1"
+      SrcPort		      28
+      Points		      [50, 0; 0, 220]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      36
+    }
+    Line {
+      SrcBlock		      " white noise left1"
+      SrcPort		      1
+      Points		      [65, 0; 0, -30]
+      Branch {
+	Points			[0, 30]
+	Branch {
+	  DstBlock		  "Transport\nDelay2"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 120]
+	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[265, 0; 0, 330]
+	DstBlock		"Full Model 7_dof1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Transport\nDelay2"
+      SrcPort		      1
+      Points		      [45, 0; 0, 600]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      " white noise right1"
+      SrcPort		      1
+      Points		      [65, 0; 0, -30]
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Transport\nDelay3"
+	DstPort			1
+      }
+      Branch {
+	Points			[265, 0; 0, 210; -840, 0; 0, 1010]
+	DstBlock		"Full Model 7_dof1"
+	DstPort			19
+      }
+    }
+    Line {
+      SrcBlock		      "Transport\nDelay3"
+      SrcPort		      1
+      Points		      [45, 0; 0, 80; -745, 0; 0, 810]
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "fd8"
+      SrcPort		      1
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      24
+    }
+    Line {
+      SrcBlock		      "fd5"
+      SrcPort		      1
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "fd6"
+      SrcPort		      1
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      12
+    }
+    Line {
+      SrcBlock		      "fd7"
+      SrcPort		      1
+      DstBlock		      "Full Model 7_dof1"
+      DstPort		      18
+    }
+    Annotation {
+      Position		      [1177, 172]
+      Text		      "Front Road Velocity"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [1169, 242]
+      Text		      "Rear Road Velocity"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [1962, 182]
+      Text		      "Front Road Velocity"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [1954, 252]
+      Text		      "Rear Road Velocity"
+      FontSize		      12
+    }
+  }
+}

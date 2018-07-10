@@ -1,0 +1,71 @@
+
+\pgfplotsset{
+	%xlabela/.style={Test test 123},
+	default_figure/.style={
+   scaled ticks=false,
+   tick label style={/pgf/number format/fixed},
+		every axis label/.append style={font=\footnotesize},
+		legend style={font=\footnotesize, cells={anchor=west}, draw=none},
+		title style={font=\footnotesize},
+		tick label style={font=\footnotesize},
+		every axis label/.append style={font=\footnotesize},
+		every node near coord/.append style={font=\footnotesize},
+		%unit markings=parenthesis, %all units inside (...)
+		ylabel near ticks, xlabel near ticks, %remove white space
+		%thick, %draw everything with thick lines
+		separate axis lines, % important !
+		unbounded coords=jump,
+		scale only axis=true,
+		%cycle list name=mycyclelist,
+	},
+%axis_2_figure/.style={default_figure,width=5cm,height=5cm},
+%axis_1_middle_figure/.style={default_figure,width=5cm,height=5cm},
+%axis_1_wide_figure/.style={default_figure,width=\linewidth,height=4cm},
+%axis_1_big_figure/.style={default_figure,width=\linewidth,height=6.4cm},
+	mygroupplot/.style={default_figure,	height=3cm, width=3.5cm},
+   mygroupplotsmall/.style={default_figure,	height=1.5cm, width=3.5cm},
+	mylineplot/.style={default_figure, height=3.5cm, width=0.7\linewidth},
+compat=1.13,
+  mlspectrogram/.style={
+	default_figure,	height=3.5cm, width=3.5cm,
+		enlargelimits=false, axis on top, use units,
+    xlabel=Time (s),
+    ylabel=Frequency (kHz),
+    colormap={parula}{
+            rgb255=(53,42,135)
+            rgb255=(15,92,221)
+            rgb255=(18,125,216)
+            rgb255=(7,156,207)
+            rgb255=(21,177,180)
+            rgb255=(89,189,140)
+            rgb255=(165,190,107)
+            rgb255=(225,185,82)
+            rgb255=(252,206,46)
+            rgb255=(249,251,14)
+        }, colorbar,
+    colorbar style={ylabel=Power/Frequency (dB/Hz)},
+  },
+}
+
+\newcommand{\myGroupSep}{50pt}
+\newcommand{\myGroupVertSep}{60pt}
+\newcommand{\myGroupVertSepWithout}{50pt}
+\newcommand{\myLabelSep}{7ex}
+\newcommand{\myLegendPosition}{(0.5,1.03)}
+
+
+\definecolor{UniBlau}{cmyk}{1,0.7,0,0}
+\definecolor{UniGruen}{cmyk}{0.6,0,1,0}
+\definecolor{UniOrange}{cmyk}{0,0.3,1,0}
+\definecolor{UniRot}{cmyk}{0.4,1,0,0}
+
+\pgfplotscreateplotcyclelist{mycyclelist}{
+{UniBlau, line width = 1pt},
+{UniGruen, line width = 1pt},
+{UniOrange, line width = 1pt},
+{UniRot, line width = 1pt},
+{UniBlau!50!UniGruen, line width = 1pt},
+{UniGruen!50!UniOrange, line width = 1pt},
+{UniOrange!50!UniRot, line width = 1pt},
+{UniRot!50!UniBlau, line width = 1pt},
+}

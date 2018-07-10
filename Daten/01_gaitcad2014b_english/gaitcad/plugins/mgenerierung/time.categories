@@ -1,0 +1,27 @@
+#CategoryName 'Temporal derivation'
+
+#DefaultTermName 'None'
+
+#TermName 'Velocity'
+#TermRelevance 0.8
+'plugin_geschwindigkeit' 
+'plugin_geschwindigkeit_kausal' 
+'_V'
+' V '
+' V_kausal '
+
+#TermName 'Acceleration'
+#TermRelevance 0.6
+'plugin_beschleunigung' 
+'_A'
+' A '
+
+#TermName 'Jerk'
+#TermRelevance 0.1
+'plugin_ruck' 
+
+#TermName 'Integral / Sum'
+
+
+
+

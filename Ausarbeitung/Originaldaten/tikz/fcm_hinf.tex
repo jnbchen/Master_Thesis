@@ -1,0 +1,86 @@
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}
+ 
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+
+	\tikzstyle{block1} = [draw, fill=none, rectangle, 
+   		minimum height=15em, minimum width=10em]
+	\tikzstyle{block2} = [draw, fill=none, rectangle, 
+    	minimum height=15em, minimum width=7em]
+	\tikzstyle{sblock} = [draw, fill=none, rectangle, 
+    	minimum height=3em, minimum width=4em]
+	\tikzstyle{sum} = [draw, fill=none, circle, node distance=1cm]
+	\tikzstyle{connect} = [draw, fill=black, circle, inner sep=0pt, node distance=0.1cm]
+	\tikzstyle{input} = [coordinate]
+	\tikzstyle{output} = [coordinate]
+
+    \node [input, name = input] {};
+    \node [block1, below right = -2.5em and 12em of input,node distance=6cm] (fcm) {Full car model};
+    \node [block2, below of=fcm,node distance=6cm] (k) {$H\infty$ controller};
+    \node [sblock, below left = -4em and 4em of fcm, node distance=2.5cm] (act) {$Actuator$};
+    \node [sblock, below of = act] (Wa) {$W_{act.}$};   
+    \node [sblock, above right = -3em and 10em of fcm, node distance=2.5cm] (Wz) {$W_{heave}$};
+    \node [sblock, above right = -7em and 10em of fcm, node distance=2.5cm] (Wr) {$W_{roll}$};
+    \node [sblock, below right = -7em and 10em of fcm, node distance=2.5cm] (Wp) {$W_{pitch}$};
+    \node [sblock, below right = -3em and 10em of fcm, node distance=2.5cm] (Wd) {$W_{def.}$};
+    \node [sblock, above right = -3em and 11.5em of k, node distance=2.5cm] (W1) {$W_1$};
+    \node [sblock, above right = -7em and 11.5em of k, node distance=2.5cm] (W2) {$W_2$};
+    \node [sblock, below right = -7em and 11.5em of k, node distance=2.5cm] (W3) {$W_3$};
+    \node [sblock, below right = -3em and 11.5em of k, node distance=2.5cm] (W4) {$W_4$};
+    \node [sum, left of = W1, node distance=3.6cm] (sum1) {};
+    \node [sum, left of = W2, node distance=2.9cm] (sum2) {};
+    \node [sum, left of = W3, node distance=2.2cm] (sum3) {};
+    \node [sum, left of = W4, node distance=1.5cm] (sum4) {};
+    \node [output, right of = Wa] (e1) {$e_1$};
+    \node [output, left of = sum1, node distance=1.2cm] (a1) {};
+    \node [output, left of = sum2, node distance=1.9cm] (a2) {};
+    \node [output, left of = sum3, node distance=2.6cm] (a3) {};
+    \node [output, left of = sum4, node distance=3.3cm] (a4) {};
+    \node [output, right of = W1] (d1) {};
+    \node [output, right of = W2] (d2) {};
+    \node [output, right of = W3] (d3) {};
+    \node [output, right of = W4] (d4) {};
+    \node [output, right of = Wz] (e2) {};
+    \node [output, right of = Wr] (e3) {};
+    \node [output, right of = Wp] (e4) {};
+    \node [output, right of = Wd] (e5) {};
+    \node [output, left of = Wz, node distance=4.25cm] (z) {};
+    \node [output, left of = Wr, node distance=4.25cm] (r) {};
+    \node [output, left of = Wp, node distance=4.25cm] (p) {};
+    \node [output, left of = Wd, node distance=4.25cm] (d) {};
+    \node [connect, above of = sum1, minimum size=0.1cm, node distance = 6cm] (c1) {};
+    \node [connect, above of = sum2, minimum size=0.1cm, node distance = 6cm] (c2) {};
+    \node [connect, above of = sum3, minimum size=0.1cm, node distance = 6cm] (c3) {};
+    \node [connect, above of = sum4, minimum size=0.1cm, node distance = 6cm] (c4) {};
+    
+    \draw [draw,->] (input) -- node {$\vec{w}$} (fcm.495);
+    \draw [->] (k)--++(-6,0) node(lowerleft){} |- node [near end, name = u] {$\vec{u}$} (act);
+    \draw [->] (lowerleft) |- (Wa);
+    \draw [->] (Wa) -- node {$\vec{e_1}$} (e1);
+    \draw [->] (act) -- node {$\vec{f}$} (fcm.-135);
+    \draw [->] (sum1) -- node {$y_1$} (a1);
+    \draw [->] (sum2) -- node {$y_2$} (a2);
+    \draw [->] (sum3) -- node {$y_3$} (a3);
+    \draw [->] (sum4) -- node {$\vec{y_4}$} (a4);
+    \draw [->] (W1) -- node {} (sum1);
+    \draw [->] (W2) -- node {} (sum2);
+    \draw [->] (W3) -- node {} (sum3);
+    \draw [->] (W4) -- node {} (sum4);
+	\draw [->] (d1) -- node {$d_1$} (W1);
+    \draw [->] (d2) -- node {$d_2$} (W2);
+    \draw [->] (d3) -- node {$d_3$} (W3);
+    \draw [->] (d4) -- node {$\vec{d_4}$} (W4);
+    \draw [->] (Wz) -- node {$e_2$} (e2);
+    \draw [->] (Wr) -- node {$e_3$} (e3);
+    \draw [->] (Wp) -- node {$e_4$} (e4);
+    \draw [->] (Wd) -- node {$\vec{e_5}$} (e5);
+    \draw [->] (z) -- node [near end] {$\ddot{z}$} (Wz);
+    \draw [->] (r) -- node [near end] {$\ddot{\theta}$} (Wr);
+    \draw [->] (p) -- node [near end] {$\ddot{\phi}$} (Wp);
+    \draw [->] (d) -- node [near end] {$\ddot{\vec{z_{def.}}}$} (Wd);
+    \draw [->] (c1) -- (sum1);
+    \draw [->] (c2) -- (sum2);
+    \draw [->] (c3) -- (sum3);
+    \draw [->] (c4) -- (sum4);
+
+ \end{tikzpicture}

@@ -1,0 +1,103 @@
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%           Template für KIT-Rahmen           %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% 07.07.2017 Timo von Wysocki
+
+%% Erstellt den Ramen für die ersten vier Seiten inklusive Logos, Internetadressen und Anschriften. Zur Benutzung \titletemplate{Inhalt1}{Inhalt2}. Inhalt 1 wird korrekt in der Schriftfläche der Seite platziert. Inhalt 2 kann eigene Platzierungen oder Modifikationen enthalten.
+
+% Abstände definieren:
+\newcommand{\diameter}{25pt}		% Durchmesser des Bogens des Rahmens
+\newcommand{\border}{19mm}			% Abstand des Rahmens zum Rand in mm
+\newcommand{\logoborder}{7mm}		% Abstand des Logos zum Rand in mm
+\newcommand{\titleBorder}{60mm} 	% Abstand des Textes zum Rand nach oben in mm
+\newcommand{\imageBorder}{133mm}	% Abstand des Bildes zum Rand nach oben in mm
+\newcommand{\reviewerBorder}{45mm}	% Abstand des Projektleiters zum Rand nach unten in mm
+\newcommand{\webBorder}{5mm}		% Abstand der Website zum unteren Rand nach oben in mm
+
+% Berechnen der Länge des Institutsnamens um Box zu erzeugen mit exakt dieser Breite um rechts ausgerichteten linksbündigen Text zu produzieren
+\newlength{\institutsname}
+\settowidth{\institutsname}{Institute of Vehicle Systems Technology} % Berechne die Breite diess Textes, für die ordentliche Ausrichtung des Adressblocks
+
+% Neues Kommando mit 2 Inputparametern. Der erste wird in eine fertige Box geschrieben und platziert, im zweiten können beliebige Kommandos eingefügt werden, auch neue Boxen etc.
+\newcommand{\titletemplate}[2]{
+\begin{titlepage}	% Definiere eine Titlepage
+	
+% KIT-Rahmen um die Titlepage
+\ifFrame
+	\definecolor{FrameColor}{rgb}{0.5,0.5,0.5}
+\else
+	\definecolor{FrameColor}{rgb}{1,1,1}
+\fi	
+
+\begin{tikzpicture}[remember picture, overlay]
+	\draw [color=FrameColor] 
+	($(current page.north west)+(\border,-\border)$) -- % gerade linie von oben links 
+	($(current page.north east)+(-\border-\diameter, -\border)$) % nach oben recht bis vor den Bogen
+	arc (90:0:\diameter) -- % Bogen
+	($(current page.south east)+(-\border, \border)$) % Linie nach unten rechts
+	-- ($(current page.south west)+(\border+\diameter,\border)$) % Linie nach unten Link bis vor den Bogen
+	arc (90:0:-\diameter) -- % Bogen unten links
+	cycle;	% schließe den Bogen	
+	\end{tikzpicture}
+
+	
+	
+
+
+% KIT-Logo:
+\begin{textblock*}{10cm}(\border+ \logoborder ,\border+\logoborder)
+	\includegraphics[width=3.8cm]{./administration/grafiken/KIT.pdf}
+\end{textblock*}
+	
+\ifLogo	
+% Institutslogo:
+\begin{textblock*}{10cm}[1,0](\paperwidth-\border-\logoborder,\border+\logoborder)
+	\raggedleft
+	\includegraphics[width=4.8cm]{./administration/grafiken/institut_fast.png}
+\end{textblock*}
+\else
+% Institutsadresse	
+\begin{textblock*}{\institutsname}	[1,0](\paperwidth-\border-\logoborder,\border+\logoborder) % Ausrichten an Ecke rechts (1) oben (0) der Box	
+		\small{\textbf{Institute of Vehicle Systems Technology}}\\
+		\small{\textbf{Devision of Vehicle Technology}}\\
+		\footnotesize{Head: Prof. Dr. rer. nat. Frank Gauterin}\\
+		\footnotesize{Rintheimer Querallee 2}\\
+		\footnotesize{76131 Karlsruhe}
+\end{textblock*}	
+\fi
+
+% Userinput #1:
+\begin{textblock*}{\textwidth}[0.5,0](\paperwidth/2,\titleBorder)
+#1
+\end{textblock*}
+
+% Userinput #2:
+#2
+
+% KIT-Schriftzug unter Rahmen:
+\ifFrame
+\begin{textblock*}{10cm}[0,0.5](\border+\logoborder,\paperheight-\border+\webBorder)
+\tiny{ 
+	\iflanguage{english}
+		{KIT -- The Research University in the Helmholtz Association}
+		{KIT -- Die Forschungsuniversität in der Helmholtz-Gemeinschaft}
+}
+\end{textblock*}
+\fi
+
+% KIT-WEbsite unter Rahmen
+\ifFrame
+\begin{textblock*}{5cm}[1,0.5](\paperwidth-\border-\logoborder,\paperheight-\border+\webBorder)
+	\raggedleft
+	% Versuche, den Link klickbar zu machen, ohne optischen Rahmen
+	%\hypersetup{hidelinks=true}
+	%\href{www.kit.edu}{\large{	\textbf{www.kit.edu}}}
+	%\hypersetup{hidelinks=false}
+	\large{	\textbf{www.kit.edu}}	
+\end{textblock*}
+\fi
+
+\end{titlepage}}

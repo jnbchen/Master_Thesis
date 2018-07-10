@@ -1,0 +1,32 @@
+% Folgender Code wurde automatisch durch die Aufzeichnung eines Makros erzeugt.
+% Die Zeitreihen und z.T. auch die Einzüge sind Projektspezifisch.
+% Ein Makro kann also nicht zwingend für unterschiedliche Projekte ausgeführt werden.
+% MAKRO AUSWAHLFENSTER Zeitreihe -> Zeitreihe, Zeitreihe -> Einzelmerkmal
+% MAKRO AUSWAHLFENSTER Zeitreihe -> Zeitreihe, Zeitreihe -> Einzelmerkmal...
+auswahl.gen=[];
+auswahl.gen{1}={'DAY'};
+auswahl.gen{2}={'Whole time series (0...100%)'};
+auswahl.gen{3}={'Velocity (V)'};
+eval(gaitfindobj_callback('MI_Extraktion_ZRZR'));
+eval(get(figure_handle(size(figure_handle,1),1),'callback'));
+
+% Die Geschwindigkeitszeitreihen werden nach der Formel f'(t) = 0.5*(f(t+1)-f(t-1)))
+% berechnet. Der Tagwechsel-Trigger muss daher etwas umgebaut werden.
+% Zunächst suche nach allen Tupeln, bei denen die Ableitung ungleich 1 ist:
+% Die neue Zeitreihe steht ganz hinten
+day_abl = squeeze(d_orgs(1, :, end));
+% Hier kommt die Suche
+indx = find(day_abl ~= 0);
+% Durch die Berechnung der Ableitung sind bei einem Wechsel des Tages immer zwei
+% Werte ungleich 0. Der zweite ist der eigentlich gesuchte. Also wird der erste
+% Wert auf 0 gesetzt:
+d_orgs(1, indx(1:2:end), end) = 0;
+% Der erste Tag muss auch erkannt werden:
+d_orgs(1, 1, end) = 1;
+% Die Amplitude des Triggers entspricht der neuen Klasse.
+% Temporär wird eine Klasse eingefügt, die einfach die laufende Nummer
+% des Tages enthält:
+indx = find(squeeze(d_orgs(1, :, end)) ~= 0);
+d_orgs(1, indx, end) = [1:length(indx)];
+% Temporäre Variablen wieder löschen
+clear day_abl indx;

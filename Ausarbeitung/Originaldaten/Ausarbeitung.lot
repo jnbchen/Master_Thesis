@@ -1,0 +1,33 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 2.1}{\ignorespaces Definition of the variables}}{7}{table.2.1}
+\contentsline {table}{\numberline {\relax 2.2}{\ignorespaces Parameter of the simulation}}{14}{table.2.2}
+\contentsline {table}{\numberline {\relax 2.3}{\ignorespaces Position of outputs.}}{23}{table.2.3}
+\contentsline {table}{\numberline {\relax 2.4}{\ignorespaces Ride phase tire model ranking via vertical acceleration \cite {frey2012development}.}}{25}{table.2.4}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 3.1}{\ignorespaces Stiffness and damping ratio of the full car model.}}{33}{table.3.1}
+\contentsline {table}{\numberline {\relax 3.2}{\ignorespaces Parameters for $K$ and size of different events.}}{33}{table.3.2}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces Example of a confusion matrix}}{40}{table.4.1}
+\contentsline {table}{\numberline {\relax 4.2}{\ignorespaces Parameter of 3 vehicles}}{41}{table.4.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 6.1}{\ignorespaces Confusion matrix of the training with BMW 116d passive suspention}}{51}{table.6.1}
+\contentsline {table}{\numberline {\relax 6.2}{\ignorespaces Performance of classifiers for different vehicles.}}{52}{table.6.2}
+\contentsline {table}{\numberline {\relax 6.3}{\ignorespaces Performance of the classifier for BMW 116d applied on different vehicles.}}{54}{table.6.3}
+\contentsline {table}{\numberline {\relax 6.4}{\ignorespaces Confusion matrix of the training with all variations}}{55}{table.6.4}
+\contentsline {table}{\numberline {\relax 6.5}{\ignorespaces Testing results of the classifier of all variations}}{55}{table.6.5}
+\contentsline {table}{\numberline {\relax 6.6}{\ignorespaces Missclassification of application in BWM 116d with passive suspension}}{56}{table.6.6}
+\contentsline {table}{\numberline {\relax 6.7}{\ignorespaces Missclassification of application in BWM 116d with anti-roll bar}}{56}{table.6.7}
+\contentsline {table}{\numberline {\relax 6.8}{\ignorespaces Missclassification of application in BWM 116d with active suspension}}{57}{table.6.8}
+\contentsline {table}{\numberline {\relax 6.9}{\ignorespaces Missclassification of application in S-Klasse W220 with passive suspension}}{57}{table.6.9}
+\contentsline {table}{\numberline {\relax 6.10}{\ignorespaces Missclassification of application in Sprinter with passive suspension}}{57}{table.6.10}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

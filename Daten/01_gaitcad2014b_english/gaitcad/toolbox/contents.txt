@@ -1,0 +1,118 @@
+\begin{verbatim}
+
+ICA - Toolbox
+% FastICA for Matlab 5.x
+% Version 2.1, January 15 2001
+% Copyright (c)
+%Hugo Gävert, Jarmo Hurri, Jaakko Särelä, and Aapo Hyvärinen (GNU-GPL).
+
+fastica.m
+fpica.m
+pcamat.m
+remmean.m
+whiteenv.m
+
+------------------------------------------------------------------------
+
+% SVM and Kernel Methods Matlab Toolbox \cite{Canu03}
+% http://asi.insa-rouen.fr/~arakotom/toolbox/index.html
+% Copyright S CANU - scanu@insa-rouen.fr
+ (GNU-GPL)
+
+cout.m
+monqp.m
+svmclass.m
+svmkernel.m
+svmmulticlass.m
+svmmulticlassoneagianstone.m
+svmmultival.m
+svmmultivaloneagianstone.m
+svmval.m
+
+------------------------------------------------------------------------
+
+SOM Toolbox
+% Version 2.0beta, May 30 2002
+% Copyright 1997-2000 by Esa Alhoniemi, Johan Himberg,
+% Juha Parhankangas and Juha Vesanto (GNU-GPL)
+% http://www.cis.hut.fi/projects/somtoolbox/
+knn.m
+som_eucdist2.m
+vis_valuetype.m
+
+------------------------------------------------------------------------
+lp_solve 5.5.0.7
+
+% http://lpsolve.sourceforge.net/5.5/
+% Co-developers   : Michel Berkelaar, Kjell Eikland, Peter Notebaert
+% Licence terms   : GNU LGPL (Lesser General Public Licence)
+% Citation policy : General references as per LGPL
+%                   Module specific references as specified therein
+
+mxlpsolve.dll
+lpsolve55.dll
+mxlpsolve.m
+lp_maker.m
+
+The *.DLL have to be copied in <matlabroot>/bin/ !
+
+------------------------------------------------------------------------
+Kolmogorov-Smirnov-Test for distributions
+
+% Armin Günther, Universität Greifswald, Germany
+
+kstest.m
+
+------------------------------------------------------------------------
+XML read (BSD licencse)
+
+%Jarek Tuszynski, SAIC
+%http://www.mathworks.com/matlabcentral/fileexchange/12907-xmliotools
+
+xmlread.m
+
+------------------------------------------------------------------------
+Fisherextest:Fisher's Exact Probability Test
+
+%Trujillo-Ortiz, A., R. Hernandez-Walls, A. Castro-Perez, L.
+%Rodriguez-Cardozo, N.A. Ramos-Delgado and R. Garcia-Sanchez.
+%(2004). Fisherextest:Fisher's Exact Probability Test. A
+%MATLAB file. [WWW document]. http://www.mathworks.com/
+%matlabcentral/fileexchange/loadFile.do?objectId=5957
+
+fisherextest.m
+
+------------------------------------------------------------------------
+VAT (visual assessment of tendency) - an algorithm to improve the visualization of data point distance matrices
+
+% Copyright by Timothy Havens, Michigan Tech
+% http://www.ece.mtu.edu/~thavens/code/VAT.m
+
+vat.m
+
+------------------------------------------------------------------------
+
+Association Analysis (Apriori Algorithm):
+Given a set of transactions, find rules that will predict the occurrence of an item based on the occurrences of other
+items in the transaction
+
+% author: Narine Manukyan 07/08/2013
+% Copyright (c) 2013, Narine Manukyan
+
+findRules.m
+
+------------------------------------------------------------------------
+
+Uipickfiles:
+GUI program to select files and/or folders
+
+% Version: 1.15, 2 March 2012
+% Author:  Douglas M. Schwarz
+% Email:   dmschwarz=ieee*org, dmschwarz=urgrad*rochester*edu
+% Real_email = regexprep(Email,{'=','*'},{'@','.'})
+% http://www.mathworks.com/matlabcentral/fileexchange/10867-uipickfiles--uigetfile-on-steroids
+
+uipickfiles.m
+uipickfiles_license.txt
+
+\end{verbatim}

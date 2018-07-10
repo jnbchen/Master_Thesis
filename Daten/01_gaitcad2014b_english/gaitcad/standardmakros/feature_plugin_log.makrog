@@ -1,0 +1,13 @@
+%Example for logarithms of single features
+
+%go through all selected single features
+for i_feat = 1:length(parameter.gui.merkmale_und_klassen.ind_em)
+  %compute logarithm
+  d_org (:,end+1) = log(d_org(:,parameter.gui.merkmale_und_klassen.ind_em(i_feat)));
+  %update variable names
+  dorgbez = strvcatnew(dorgbez(1:size(d_org,2)-1,:),...
+    kill_lz(['LOG ' dorgbez(parameter.gui.merkmale_und_klassen.ind_em(i_feat),:)]));
+end;
+
+%update variables and GUI
+aktparawin;

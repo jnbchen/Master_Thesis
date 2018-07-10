@@ -1,0 +1,7 @@
+% Dateityp für Bilder
+% {'jpeg'}
+set_textauswahl_listbox(gaitfindobj('CE_Allgemein_FileTypeImage'),{'jpeg'});eval(gaitfindobj_callback('CE_Allgemein_FileTypeImage'));
+
+%% Fenster,  Alle Fenster als Bild in Datei drucken 
+eval(gaitfindobj_callback('MI_Fenster_Datei'));
+

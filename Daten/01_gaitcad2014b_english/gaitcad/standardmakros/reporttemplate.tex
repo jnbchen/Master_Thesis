@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{exscale}
+\usepackage[centertags]{amsmath}
+\usepackage[mathscr]{eucal}
+\usepackage[dvips]{epsfig}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{amssymb}
+\usepackage{theorem}
+\usepackage{epic}
+\usepackage{eepic}
+%\usepackage{fancybox}
+%\usepackage{hangcaption}
+%\usepackage{float}
+\usepackage{psfrag}
+\usepackage{supertabular}
+\setcounter{totalnumber}{5}
+
+\usepackage{graphicx}
+ \DeclareGraphicsRule{.png}{eps}{.bb}{}
+
+%\usepackage{supertab}
+\setlength{\oddsidemargin}{3cm} \addtolength{\oddsidemargin}{-1in}
+\setlength{\topmargin}{2cm} \addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0cm} \setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt} \setlength{\textheight}{247mm}
+\setlength{\textwidth}{150mm}
+%\setlength{\captionwidth}{0.9\textwidth}
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0em} \setlength{\parskip}{1.5ex plus0.5ex
+minus0.5ex}
+
+\newenvironment{myrule}
+{\vspace{1ex} \\ \vspace{1ex} \begin{footnotesize}\begin{tabular}{lp{.65\textwidth}l}}
+{\end{tabular}\end{footnotesize} \\ }
+
+
+\input{source/titlepage.tex}
+
+%add here your author template
+\author{L. Scientist\\[1ex]
+Scientific Science Corporation,\\ Institute for Excellent Science
+\\ Phone: xxxx-xxxx, Fax: xxxx-xxxx\\ E-Mail: l.scientist@science.edu}
+
+\usepackage[hypertex]{hyperref}
+
+\begin{document}
+
+
+
+
+%\bibliographystyle{ieeetran}
+\sloppy
+
+%GERMAN version:
+%\renewcommand{\tablename}{\small{Tabelle}}\renewcommand{\figurename}{\small{Bild}}
+
+\renewcommand{\textfraction}{0}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\floatpagefraction}{1}
+
+\maketitle
+\today
+
+\tableofcontents
+
+\input{source/report_content.tex}
+
+%add here your bibliography
+%\bibliography{e:/mytex/biblio/biosignal}
+
+\end{document}

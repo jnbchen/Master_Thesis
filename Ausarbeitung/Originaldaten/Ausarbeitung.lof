@@ -1,0 +1,40 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Generated road profile for simulation of car models described in Sections~\ref {sec:antirollbar} to \ref {sec:positionofoutput}. Left and right profiles are different to investigate the influence of the anti-roll bar.}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Generated road profile for simulation of car models described in Sections~\ref {sec:antirollbar} to \ref {sec:positionofoutput}. Left and right profiles are different to investigate the influence of the anti-roll bar.}}{5}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces The strut equivalent schematic}}{6}{figure.2.3}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Full car model for simulation.}}{8}{figure.2.4}
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Bode Phase Plot of All Transfer Functions.}}{11}{figure.2.5}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Coherence of the response between MIMO- and SISO system}}{12}{figure.2.6}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Model of anti-roll bar as a torsion bar between two unsprung masses.}}{13}{figure.2.7}
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Influence of the anti-roll bar. The roll acceleration is distinct reduced as well as the magnitude of the transfer function for lower frequencies.}}{14}{figure.2.8}
+\contentsline {figure}{\numberline {\relax 2.9}{\ignorespaces One fourth of the full car model with active suspension.}}{15}{figure.2.9}
+\contentsline {figure}{\numberline {\relax 2.10}{\ignorespaces Block diagram of the \ac {LQR}.}}{16}{figure.2.10}
+\contentsline {figure}{\numberline {\relax 2.11}{\ignorespaces Control configuration of $H\infty $ control.}}{18}{figure.2.11}
+\contentsline {figure}{\numberline {\relax 2.12}{\ignorespaces Closed loop of $H\infty $ control.}}{19}{figure.2.12}
+\contentsline {figure}{\numberline {\relax 2.13}{\ignorespaces Bode plot of weighting functions $W_{heave}$, $W_{roll}$, $W_{pitch}$ and $W_{def.}$}}{20}{figure.2.13}
+\contentsline {figure}{\numberline {\relax 2.14}{\ignorespaces Influence of the active suspension on the vehicle dynamics.}}{21}{figure.2.14}
+\contentsline {figure}{\numberline {\relax 2.15}{\ignorespaces Body acceleration at different positions of the vehicle body.}}{24}{figure.2.15}
+\contentsline {figure}{\numberline {\relax 2.16}{\ignorespaces Rigid ring model.}}{26}{figure.2.16}
+\contentsline {figure}{\numberline {\relax 2.17}{\ignorespaces Contact situation with a short pothole.}}{29}{figure.2.17}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Geometric of the tire and speed bump.}}{31}{figure.3.1}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Profile of the simulated speed bump.}}{32}{figure.3.2}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Comparison of the vehicle response to a speed bump.}}{32}{figure.3.3}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Comparison of the standard deviation $\sigma $ of vertical acceleration, roll rate and pitch rate between real measurement and simulated results.}}{34}{figure.3.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Overview of the method to predict road features of class $K_i$ based on vehicle dynamic data from simulation.}}{37}{figure.4.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Classes separated by two aggregated features from 15 single features.}}{51}{figure.6.1}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces The classification with best 3 features of different suspensions}}{53}{figure.6.2}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Influence of different position on the accuracy of the classification.}}{56}{figure.6.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

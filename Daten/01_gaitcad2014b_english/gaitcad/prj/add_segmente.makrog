@@ -1,0 +1,32 @@
+% bis
+set(gaitfindobj('CE_Zeitreihen_Segment_Ende'),'string','7');eval(gaitfindobj_callback('CE_Zeitreihen_Segment_Ende'));
+
+%% Extrahieren,  Bearbeiten,  Zeitreihensegment als Einzug übernehmen 
+eval(gaitfindobj_callback('MI_Extraktion_Segment2Einzug'));
+
+% Zeitreihen-Segment von
+set(gaitfindobj('CE_Zeitreihen_Segment_Start'),'string','8');eval(gaitfindobj_callback('CE_Zeitreihen_Segment_Start'));
+
+% bis
+set(gaitfindobj('CE_Zeitreihen_Segment_Ende'),'string','17');eval(gaitfindobj_callback('CE_Zeitreihen_Segment_Ende'));
+
+%% Extrahieren,  Bearbeiten,  Zeitreihensegment als Einzug übernehmen 
+eval(gaitfindobj_callback('MI_Extraktion_Segment2Einzug'));
+
+% Zeitreihen-Segment von
+set(gaitfindobj('CE_Zeitreihen_Segment_Start'),'string','18');eval(gaitfindobj_callback('CE_Zeitreihen_Segment_Start'));
+
+% bis
+set(gaitfindobj('CE_Zeitreihen_Segment_Ende'),'string','24');eval(gaitfindobj_callback('CE_Zeitreihen_Segment_Ende'));
+
+%% Extrahieren,  Bearbeiten,  Zeitreihensegment als Einzug übernehmen 
+eval(gaitfindobj_callback('MI_Extraktion_Segment2Einzug'));
+
+% MAKRO AUSWAHLFENSTER Zeitreihe -> Zeitreihe, Zeitreihe -> Einzelmerkmal...
+auswahl.gen=[];
+auswahl.gen{1}={'Energy'};
+auswahl.gen{2}={'Whole time series (0...100%)','Sample points 1-7','Sample points 6-17','Sample points 16-24'};
+auswahl.gen{3}={'Maximum (MAX)','Median SF (MEDIAN)','Minimum (MIN)','Mean value SF (MEAN)','STD SF (STD SF)'};
+eval(gaitfindobj_callback('MI_Extraktion_ZRZR'));
+eval(get(figure_handle(size(figure_handle,1),1),'callback'));
+

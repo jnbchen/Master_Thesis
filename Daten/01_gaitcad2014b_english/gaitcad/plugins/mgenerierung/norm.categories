@@ -1,0 +1,27 @@
+#CategoryName 'Normative data'
+
+#DefaultTermName 'No'
+
+#TermName 'Normative data'
+#TermRelevance 0.1
+'plugin_normabweichung'      
+'plugin_normzahl_richtung'
+'plugin_normzahl_betrag'
+'plugin_normzeitreihe'       
+'plugin_normzahl_mittelwert'
+'NZR'
+'NZR ABS'
+
+#CategoryName 'Standard deviation time series'
+#TermName 'Yes'
+#TermRelevance 0.2
+'ZRSTD'
+
+
+
+
+
+
+
+
+

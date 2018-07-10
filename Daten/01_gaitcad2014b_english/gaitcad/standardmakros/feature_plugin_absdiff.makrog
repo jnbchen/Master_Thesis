@@ -1,0 +1,15 @@
+%Example for absolute value of the difference of two single features abs(feature 1-feature 2)
+%Exactly two selected single features are necessary, the result is one new single feature
+
+%check number of selected single features
+if length(parameter.gui.merkmale_und_klassen.ind_em)==2
+  %substract both features
+  d_org (:,end+1) = abs(d_org(:,parameter.gui.merkmale_und_klassen.ind_em(1)) - d_org(:,parameter.gui.merkmale_und_klassen.ind_em(2)));
+  %update variable names
+  dorgbez = strvcatnew(dorgbez(1:par.anz_einzel_merk,:),kill_lz(['ABSDIF ' dorgbez(parameter.gui.merkmale_und_klassen.ind_em(1),:) '-'  dorgbez(parameter.gui.merkmale_und_klassen.ind_em(2),:) ]));
+  %update variables and GUI
+  aktparawin;
+else
+  %error for wrong number
+  myerror('Wrong number of features!')
+end;

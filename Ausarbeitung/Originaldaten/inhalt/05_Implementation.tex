@@ -1,0 +1,242 @@
+\chapter{Implementation}
+
+Another feature of mechatronic systems is integrated digital information processing~\cite{isermann2007mechatronische}.
+%
+For this purpose some software is used to solve problems.
+%
+Consequently, the work on the employed software will be explained in this chapter.
+
+\section{Introduction of the software}
+
+\textsc{Matlab} is a numerical solution software environment for many technical and scientific problems.
+%
+It's suitable for quick analysis and synthesis dynamic processes in research and industry.
+%
+Meanwhile it has become the standard tool for many types of technical calculations as well as simulations in system dynamics, control engineering, aviation and vehicle developing.
+%
+
+\textsc{Matlab} comes with a basic set of tools for visualizing data and for performing calculations on matrices and vectors.
+%
+For specific technologies, it provides toolboxes, which add to the basic functionality.
+%
+The toolboxes used in this work are
+
+\begin{itemize}
+\item Control System Toolbox™
+\item Signal Processing Toolbox™
+\item Robust Control Toolbox™ 
+\item \textsc{ScixMiner} (available under \url{https://sourceforge.net/projects/scixminer/})
+\end{itemize}
+
+Control System Toolbox™ provides algorithms and apps for systematically analyzing, designing, and tuning linear control systems.
+%
+We can specify the system as a transfer function, state-space, zero-pole-gain, or frequency-response model and analyze, visualize the system behavior in the time and frequency domains~\cite{Mathworks_cst}.
+
+Signal Processing Toolbox™ provides functions and apps to generate, measure, transform, filter, and visualize signals.
+%
+The toolbox includes algorithms for resampling, smoothing, and synchronizing signals, designing and analyzing filters, estimating power spectra, and measuring peaks, bandwidth, and distortion.
+%
+We can use Signal Processing Toolbox to analyze and compare signals in time, frequency, and time-frequency domains, identify patterns and trends, extract features, and develop and validate custom algorithms to gain insight into the data~\cite{Mathworks_spt}.
+
+Robust Control Toolbox™ provides functions and blocks for analyzing and tuning control systems for performance and robustness in the presence of plant uncertainty.
+%
+We can analyze the impact of plant model uncertainty on control system performance, and identify worst-case combinations of uncertain elements.
+%
+H-infinity and mu-synthesis techniques can maximize the robust stability and performance of the controllers~\cite{Mathworks}.
+
+\section{Explanation of the scripts in \textsc{Matlab}}
+
+Here the basic part and the used commands in the script will be explained.
+%
+The version of \textsc{Matlab} which is used for the thesis is 2016a.
+%
+The details are hidden by abridgments due to the limit of the space.
+
+The road model is wrote as a function which can create a road profile with the given roughness and random number of obstacles that are distributed on the random position on the road.
+
+\begin{lstlisting}[caption={Function of the road model},label=code:road]
+function profile = road_model(typ)
+...
+% PSD is a function for creating a random road.
+% road is an empty matrix for storing the value of the desired road.
+roughness = PSD(IRI,L);
+road = zeros(size(roughness));
+...
+% cut the road into 100 pieces for inserting obstacles
+interval = L/100/dr;
+% random number of the obstacles (from 5 to 20)
+n = randi([5 20],1);
+% random position of the n obstacles on the road
+position = randi([1 100],[1 n]);
+% random gain (0.5 to 2.5) for shape of the obstacle
+k = 0.5+2*rand(2,n);
+...
+for i = 1:n
+    if strcmp(typ,'pothole')
+        % a/b is the length/height of the obstacle which are modified by k
+        a = k(1,n)*0.3;
+        b = k(2,n)*0.05;
+        % function of the pothole
+        obstacle = pothole(a,b);
+    elseif strcmp(typ,'manhole cover')
+        ...
+    end
+    % insert the obstacle at the corresponding position
+    road(interval*(n-1)+1:interval*(n-1)+length(obstacle)) = obstacle;
+end
+% add the roughness
+road = road + roughness;
+...
+end
+
+\end{lstlisting}
+
+where 'typ' is the type of the obstacle including 'pothole', 'manhole\_cover', 'cobbled\_road', 'railway\_crossing' etc.
+%
+'dr' is the sampling length of the road. 
+%
+'PSD' and 'pothole' are the function of the random road which are explained in Sec.~\ref{sec:roadmodel}
+%
+The output 'profile' is a matrix with two rows which store the information of the road profiles under the left and right wheels separately.
+
+The \ac{FCM} is also wrote as a function.
+%
+Here the road model which contains the road profiles of both side is as the input of the function.
+%
+The output of the function is the desired accelerations such as $\ddot{z}$, $\ddot{\phi}$ and $\ddot{\theta}$ etc.
+
+\begin{lstlisting}[caption={Function of the \ac{FCM}},label=code:fcm]
+function Output = FCM_passive(road_left,road_right,V,auto)
+...
+if strcmp(auto,'BMW_116d')
+    % body mass
+    Ms=1400;
+    % tire spring of front-right
+    Kwr1=160000;
+    % suspension damper of front-right
+    Csr1=1000;
+    ...
+elseif strcmp(auto,'S-Klasse_W220')
+    ...
+end
+...
+% sampling time
+dt = dr/V;
+% running time of the simulation
+tmax = L/V;
+% time array
+t = 0:dt:tmax; 
+% length of the car
+car = round((Lf+Lr)/dr);
+% front axle is one car ahead of the rear axle
+left1 = road_left(car+1:end);
+right1 = road_right(car+1:end);
+left2 = road_left(1:end-car);
+right2 = road_right(1:end-car);
+...
+% to implement the dynamic system as a state space model
+fcm = ss(A,B,C,D);
+% input is the road profile of each wheel
+input = [right1;left1;right2;left2];
+% solve the system with the input in time 't'
+output = lsim(fcm,input,t);
+...
+end
+
+\end{lstlisting}
+
+where 'V' is the setting velocity of the vehicle.
+%
+'auto' is the model of the selected vehicle.
+%
+'A', 'B', 'C' and 'D' are the Matrices of the state space which is introduced in Sec.~\ref{sec:full car model}.
+%
+The command 'ss' and 'lsim' in the Control System Toolbox™ are used to create and solve the dynamic system.
+
+Besides the road model and \ac{FCM} there are also several commands that will be used for the modelling and data processing.
+
+To design a filter for the feature extraction in Sec.~\ref{sec:feature_ex} and the weighting function in Sec.~\ref{sec:active full car model}, the Butterworth filer is chosen for its flat pass bands and wide transition bands.
+
+\begin{lstlisting}[caption={Butterworth filter design in Matlab},label=code:butter]
+[b,a] = butter(n,Wn,ftype)
+\end{lstlisting}
+
+It designs a lowpass, highpass, bandpass, or bandstop Butterworth filter, depending on the value of 'ftype' and the number of elements of ‘Wn'.
+%
+The resulting bandpass and bandstop designs are of order $2n$.
+%
+'b' and 'a' are the transfer function coefficients of the filter.
+
+To build the model of the \ac{FCM} with active suspension, the command below is used in Sec.~\ref{sec:active full car model} to compute q stabilizing $H\infty$ optimal controller.
+
+\begin{lstlisting}[caption={$H\infty$ controller design in Matlab},label=code:h8]
+K = hinfsyn(P,NMEAS,NCON)
+\end{lstlisting}
+
+where 'K' is the desired controller.
+%
+'P' is the plant including the weighting functions.
+%
+'NMEAS' and 'NCON' are the numbers of control signals and measurement signals.
+
+\section{Working with \textsc{ScixMiner}}
+
+\textsc{ScixMiner} bases on \textsc{Matlab} is designed for the visualization and analysis of time series and features with a special focus to data mining problems including classification, regression, and clustering~\cite{SciXMiner}.
+%
+It was developed at the Institute of Applied Computer Science of the Karlsruhe Institute of Technology.
+
+The graphical user interface of \textsc{ScixMiner} contains menu items and control elements like listboxes, checkboxes and text fields.
+%
+\textsc{ScixMiner} use the project file $*.prjz$ as the import of data, which can be generated by the function
+\texttt{generate\_new\_scixminer\_project}.
+
+Apply the design with the appropriately setting of the features selection e.g. \ac{MANOVA}, number of the features and type of classifier, the classification will be executed.
+%
+This process can be also automatically completed by macros, which are files containing sequences of clicked menu items and control elements.
+
+\begin{lstlisting}[caption={Marcos of the \textsc{ScixMiner}},label=code:scix]
+
+%% training %%
+
+% Selection of single features
+% {'MANOVA'}
+set_textauswahl_listbox(gaitfindobj('CE_Klassifikation_Merkmalsauswahl'),{'MANOVA'});eval(gaitfindobj_callback('CE_Klassifikation_Merkmalsauswahl'));
+
+% Number of selected features
+set(gaitfindobj('CE_Anzahl_Merkmale'),'string','15');eval(gaitfindobj_callback('CE_Anzahl_Merkmale'));
+
+% Chosen classifier
+% {'Support Vector Machine'}
+set_textauswahl_listbox(gaitfindobj('CE_Klassifikation_Klassifikator'),{'Support Vector Machine'});eval(gaitfindobj_callback('CE_Klassifikation_Klassifikator'));
+
+% Kernel order
+% 1
+set(gaitfindobj('CE_SVM_Ordnung'),'string','1');eval(gaitfindobj_callback('CE_SVM_Ordnung'));
+
+% Graphical evaluation of classification results
+set(gaitfindobj('CE_Anzeige_KlassiErg'),'value',1);eval(gaitfindobj_callback('CE_Anzeige_KlassiErg'));
+
+% Save confusion matrix in file
+set(gaitfindobj('CE_Konfusion_Datei'),'value',1);eval(gaitfindobj_callback('CE_Konfusion_Datei'));
+
+%% Classification,  Data mining,  Design and apply 
+eval(gaitfindobj_callback('MI_EMKlassi_EnAn'));
+
+%% Data mining,  File,  Save classifier 
+eval(gaitfindobj_callback('MI_Classifier_Export'));
+
+
+%% testing %%
+
+%% Data mining,  File,  Load classifier 
+eval(gaitfindobj_callback('MI_Classifier_Import'));
+
+%% Classification,  Data mining,  Apply 
+eval(gaitfindobj_callback('MI_EMKlassi_An'));
+
+\end{lstlisting}
+
+In the macro, the method of the feature selection is set as \ac{MANOVA}, the number of the selected features is 15, the method of the classification is set as \ac{SVM} and the order of the kernel is one.
+
+After the processing of the data, the results will be graphical evaluated and the confusion matrix will be saved in files.
+Besides, the trained classifier will also be saved and be applied to the testing process.

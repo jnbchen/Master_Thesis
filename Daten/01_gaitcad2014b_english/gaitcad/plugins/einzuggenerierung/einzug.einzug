@@ -1,0 +1,3 @@
+Bezeichner	Kurzbezeichner	Start	Stop
+0..50%	0..50%	1	maxtime/2
+50..100%	50..100%	maxtime/2	-1

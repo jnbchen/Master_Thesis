@@ -1,0 +1,39 @@
+
+
+% Auswahl Zeitreihe (ZR)
+% {'Energy'}
+set_textauswahl_listbox(gaitfindobj('CE_Auswahl_ZR'),{'Energy'});eval(gaitfindobj_callback('CE_Auswahl_ZR'));
+
+% Merkmalsklassen
+% {'Time series (TS)'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_Merkmalsklassen'),{'Time series (TS)'});eval(gaitfindobj_callback('CE_Cluster_Merkmalsklassen'));
+
+% Abstandsmaß
+% {'Euclidean distance'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_Abtandsmass'),{'Euclidean distance'});eval(gaitfindobj_callback('CE_Cluster_Abtandsmass'));
+
+% Cluster-Startzentren berechnen
+% {'Equally distributed'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_Startzentren'),{'Equally distributed'});eval(gaitfindobj_callback('CE_Cluster_Startzentren'));
+
+% Cluster als Ausgangsgröße anhängen
+% {'New cluster number'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_Anhaengen'),{'New cluster number'});eval(gaitfindobj_callback('CE_Cluster_Anhaengen'));
+
+% Video
+% {'On (without breaks)'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_Video'),{'On (without breaks)'});eval(gaitfindobj_callback('CE_Cluster_Video'));
+
+% Original-ZR einzeichnen
+% {'All time series'}
+set_textauswahl_listbox(gaitfindobj('CE_Cluster_OrigZR'),{'All time series'});eval(gaitfindobj_callback('CE_Cluster_OrigZR'));
+
+%% Cluster-Verfahren,  Data-Mining,  Entwurf und Anwendung 
+eval(gaitfindobj_callback('MI_Cluster_Ber'));
+
+%% Cluster-Verfahren,  Ansicht,  Cluster-Zugehörigkeiten (sortiert nach Clustern) 
+eval(gaitfindobj_callback('MI_Ansicht_ClusterZGH_sortiert'));
+
+%% Cluster-Verfahren,  Ansicht,  Cluster-Zugehörigkeiten (sortiert nach Datentupeln) 
+eval(gaitfindobj_callback('MI_Ansicht_ClusterZGH_unsortiert'));
+

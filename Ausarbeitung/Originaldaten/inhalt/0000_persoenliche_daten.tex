@@ -1,0 +1,72 @@
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%              Persönliche Daten              %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% 07.07.2017 Timo von Wysocki
+
+% Hier alles ausfüllen und bei Bedarf einkommentieren. Es muss nichts an den ersten vier Seiten von Hand geändert werden. Es kann alles hier in diesem Dokument eingestellt werden! Definiert den Inhalt für Titelseite, Aufgabenstellung sowie die Erklärungen zur Aufgabenstellung und Wissenschaftlichkeit.
+
+
+\newcommand{\mydegree}{B.\,Sc.} % Akademischer Grad des Bearbeiters, \, = halbes geschütztes Leerzeichen
+\newcommand{\anrede}{Mr}	% Herrn oder Frau oder leer
+\newcommand{\myname}{Jinbo Chen}
+\newcommand{\mymatnr}{1791575}
+\newcommand{\mytitle}{Simulation of vehicle model for road features detection} % Titel der Arbeit
+%\newcommand{\mysubtitle}{} % (Um zu benutzen nur einkommentiern, ausfüllen und compilen! Nichts im Deckblatt ändern)
+
+% Adresse des Bearbeiters:
+\newcommand{\mystreet}{Klosterweg.28}
+\newcommand{\mytown}{76131 Karlsruhe, Germany}
+\newcommand{\mytel}{49-176-7266-9331}
+
+% Betreuer der Arbeit:
+\newcommand{\reviewerone}{M.Sc. Johannes Masino}
+
+% Um zu benutzen nur einkommentiern, ausfüllen und compilen! Nichts im Deckblatt ändern:
+%\newcommand{\reviewertwo}{Name} 
+%\newcommand{\advisor}{Name}
+%\newcommand{\advisortwo}{Name}
+
+\newcommand{\timestart}{01.08.17} 	% Startzeitpunkt
+\newcommand{\timeend}{30.11.17}		% Endzeitpunkt
+\newcommand{\datetitle}{Karlsruhe, November 2017}	% Das Datum, das auf der Titelseite steht
+\newcommand{\dateerklaerung}{Karlsruhe, den 30.11.2017}	% Datum für die Erklärung zur Selbstständigkeit
+
+% Pfad zum Titelbild:
+\newcommand{\pathtitleimage}{./administration/grafiken/Titelbild.png} % Layout auf Titelbild im Format 1,618:1 optimiert
+\newcommand{\numberthesis}{17-F-0114}	% Nummer der Arbeit
+\newcommand{\thesistype}{Master Thesis}	% Typ der Arbeit
+
+\newcommand{\projektleiter}{M.Sc. Johannes Masino} % Name des Projektleiters
+
+% Hier kommt die Aufgabenstellung rein:
+\newcommand{\aufgabenstellung}{%
+%	Im Rahmen des industriegeförderten Forschungsprojektes sollen höhere Dimensionen erforscht werden.
+%	Die Lösung der Aufgabenstellung erfolgt durch die Bearbeitung folgender Teilaufgaben:
+The task of the research project is to detect the road features with data mining method in simulation environment.
+
+The solution of this task is split into the following subtasks:
+	\begin{itemize}
+		\item Induction of the theme by researching about the current state of the art
+		\item Implementation of different road surfaces and road damages.
+		\item Further development of the full car model
+		\item Extraciton of features for the Machine Learning.
+		\item Training the Support-Vector Machine for the Machine Learning.
+		\item Improving the classification for practical application
+		\item Documentation of the entire work.
+\end{itemize}
+}
+
+% Layouteinstellungen:
+
+% Soll die Titelseite einen Rahmen besitzen?
+\newif\ifFrame
+\Frametrue
+%\Framefalse
+
+% Soll das Institutslogo oder die Institutsadresse angezeigt werden?
+\newif\ifLogo
+%\Logotrue
+\Logofalse	

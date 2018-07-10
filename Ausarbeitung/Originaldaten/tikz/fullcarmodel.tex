@@ -1,0 +1,230 @@
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}
+\begin{tikzpicture}
+%\draw (-8.7,-2.7) rectangle (2,3.7);
+\clip (-8.7,-2.7) rectangle (2,3.7);
+		\def\lengthstreet{0.6cm};
+		\def\spacerstreet{0cm};
+		\def\tireheight{0.4cm};
+		\def\tirewidth{0.8cm};
+		\def\vectorlength{0.39cm};
+		\def\labledistanceleft{0.0cm};
+		\def\labledistanceright{0.15cm};
+		\def\myyshift{-0.19cm}
+		
+		\def\a{-0.2cm};
+		\def\b{-1.3cm};
+		\def\c{-2.8cm};
+		\def\d{0.21cm};
+		\tikzstyle{line}=[];
+     \tikzstyle{spring}=[line,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+		 
+     \tikzstyle{strasse}=[line,decorate,decoration={snake,pre length=0cm,post length=0.0cm,segment length=30, amplitude = 0.1cm}]%, pattern = north east lines] 
+     \tikzstyle{dampener}=[line,decoration={markings, mark connection node=dmp,mark=at position 0.5 with {
+     \node (dmp) [line,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+     \draw [line] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$); \draw [line] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);}}, decorate]
+     \tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=4cm,minimum height=0.3cm]
+
+		\newcommand\centerofmassfc{%
+    \tikz[radius=0.4em] {%
+        \fill (0,0) -- ++(0.4em,0) arc [start angle=0,end angle=90] -- ++(0,-0.8em) arc [start angle=270, end angle=180];%
+        \draw (0,0) circle;%
+			}%
+		}
+     \begin{scope}
+		
+		
+  \coordinate (A0) at (-7cm,0.5cm);% node at (A0){A0}; % central top point (To pick)
+	\coordinate (A1) at ($(A0) + (0cm,\a)$);% node at (A1){A1}; % central top point (To pick)
+	\coordinate (A3) at ($(A1) + (0cm,\c)$);
+	
+	
+	\coordinate (B0) at (-2.5cm,1.7cm);% node at (B0){B0}; % right vanishing point (To pick)
+	\coordinate (B1) at ($(B0) + (0cm,\a)$);% node at (B1){B1}; % right vanishing point (To pick)
+	\coordinate (B3) at ($(B1) + (0cm,\c)$);
+	
+	
+	\coordinate (C0) at (0cm,1.7cm);% node at (C0){C0}; % left vanishing point (To pick)
+	\coordinate (C1) at ($(C0) + (0cm,\a)$);% node at (C1){C1}; % left vanishing point (To pick)
+	\coordinate (C3) at ($(C1) + (0cm,\c)$);
+	
+	\coordinate (D0) at (-4.5cm,0.5cm);% node at (D0){D0}; % central bottom point (To pick)
+	\coordinate (D1) at ($(D0) + (0cm,\a)$);% node at (D1){D1}; % central bottom point (To pick)
+	\coordinate (D3) at ($(D1) + (0cm,\c)$);
+	
+	
+	
+	
+
+	%% (C1) and (B1) defines the 2 central points of the cuboid
+
+	
+
+%	\node at (barycentric cs:C1=1,B1=1,B1=1,D1=1) {\tiny f6};
+	
+	\fill[color=white] (D1) .. controls (B0) and (B0)  ..  (B0) .. controls (C1) and (C1) .. (D1);
+	
+	
+	
+ \draw[line, <->] ($(B0) + (0cm,0.2cm)$) -- ($(C0)!0.5!(B0)+ (0cm,0.2cm)$) node[midway, above]{$D_r$};
+ \draw[line, <->] ($(C0) + (0cm,0.2cm)$) -- ($(C0)!0.5!(B0)+ (0cm,0.2cm)$) node[midway,above]{$D_l$};
+	%% (C1) and (B1) defines the 2 central points of the cuboid
+
+
+	%\draw[thick, <->] ($(A0) + (0cm,0.5cm)$) -- ($(B0) + (0cm,0.5cm)$) node[midway, above] {b};
+	\draw[line, <->] ($(A0) + (0cm,0.2cm)$) -- ($(A0)!0.5!(B0)+ (0cm,0.2cm)$) node[midway, above] {$L_f$};
+	\draw[line, <->] ($(B0) + (0cm,0.2cm)$) -- ($(A0)!0.5!(B0)+ (0cm,0.2cm)$) node[midway, above] {$L_r$};
+%	\draw[thick, <->] (-2.5cm,3cm) -- (2cm,4.5cm) node[midway,above] {b};
+	
+\draw[very thick, <-] ($(A0)!-0.1!(B0) + (0cm,1.5cm)$) -- ($(A0)!0.3!(B0)+ (0cm,1.5cm)$) node[midway,above] {$ \vec v$};
+
+
+	
+% Vektoren
+
+	\node at ($(barycentric cs:C0=1,B0=1,A0=1,D0=1)+ (0cm,-0.1cm)$)(cg){};
+
+	     \draw [dashed,thick, -latex](cg.center) -- +(0,2) node[right] {$Z$}; % vektor
+			\draw [-latex, thick, rotate=0] ($(cg.center) +(0.15,2.2)$) arc [start angle=-70, end angle=250, x radius=0.4cm, y radius=0.06cm] node[above = 0.1cm] {$\psi$ }; 
+			
+			
+       \draw [dashed, thick, -latex](cg.center) -- +(-4.5,-1.2) node[above right, yshift=2] {$X$}; % vektor
+			\draw [-latex, thick, rotate=0] ($(cg.center) +(-4.6,-1.05)$) arc [start angle=20, end angle=340, x radius=0.15cm, y radius=0.4cm] node[below = 0.3cm] {$\phi$ }; 
+			
+			 \draw [dashed,thick, -latex](cg.center) -- +(4.7,-0) node[above left] {$Y$}; % vektor
+			\draw [-latex, thick, rotate=0] ($(cg.center) +(4.85,-0.15)$) arc [start angle=200, end angle=530, x radius=0.2cm, y radius=0.4cm] node[below = 0.45cm] {$\theta$ };
+			
+%\node at (cg)[circle,style={draw,outer sep=0pt,thick, fill = gray!0}]{\tiny M};
+			\node at (cg) {\centerofmassfc};
+			\node at ($(cg.center) + (0.3,0.3)$) [right]{ M};
+			
+%			\node at ($(A1)+(1,0)$) {\centerofmassfc};
+			
+			
+			\draw [line](C1) -- (C0);
+  		%\draw [line, opacity= 0.4](B1) -- (B0);
+  		\draw [line](A1) -- (A0);
+  		\draw [line](D1) -- (D0);
+  		\draw [line](D1) -- (C1);
+  		\draw [line](D1) -- (A1);
+  		%\draw [line, opacity= 0.4](B1) -- (A1);
+  		%\draw [line, opacity= 0.4](B1) -- (C1);
+  		\draw [line](D0) -- (A0);
+  		\draw [line](D0) -- (C0);
+  		\draw [line](B0) -- (C0);
+  		\draw [line](B0) -- (A0);
+
+
+
+
+% Rad unten rechts
+%	\node at (barycentric cs:A1=1,D1=1,C0=1,B0=1) {\tiny f3};
+%     \node at (2.5,0.5) [draw,rectangle, minimum width=9cm,minimum height=1cm,anchor=south,,transform shape](D2) {$D2$}; %Box D2
+%      \draw [very thick, -latex](D2.north) -- +(0,1); % vektor 
+		
+			\draw [line] ($(D1) + (-\d,-\d)$) -- (D1);
+  		\draw [line]($(D1) + (\d,-\d)$) -- (D1);
+     \node at ($(D1) + (0cm,\b)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=north,style={draw,outer sep=0pt}](D2) {$m_2$}; %Box C2
+     \draw [thick, -latex](D2.north) -- +(0,\vectorlength); % vektor
+     \draw [spring] (D2.135) -- ($(D1) + (-\d,-\d)$) node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_2$}; % Feder
+      \draw [dampener,label=D1,] (D2.45) -- ($(D1) + (\d,-\d)$)node[midway,right=\labledistanceright, yshift=\myyshift] {$d_2$}; % Dämpfer
+%      \node (ground1) at (-2,-5.5)  [ground, anchor=north] {}; % Boden
+%        \draw [ground] (-1,-5) -- (1,-5);
+      \draw [spring] ($(D3)$) -- (D2.270)node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_{t2}$}; % Feder
+%     \draw [spring] (-0.5,-5) -- (-0.5,-3)node[draw=none,midway,left=0.3cm] {k2}; % If you don't want borders around lables use [draw=none]
+%       \draw [dampener] (1.5,-6) -- (1.5,-4)node[midway,right=0.4cm] {d2}; %Dämpfer
+
+% Rad oben rechts
+
+ %    \node at (5,0) [draw,rectangle, minimum width=5cm,minimum height=1cm,anchor=south,,transform shape](A2) {$A2$}; %Box D2
+ %     \draw [very thick, -latex](A2.north) -- +(0,1); % vektor 
+		  \draw [line]($(C1) + (-\d,-\d)$) -- (C1);
+  		\draw [line]($(C1) + (\d,-\d)$) -- (C1);
+     \node at ($(C1) + (0cm,\b)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=north,style={draw,outer sep=0pt,line}](C2) {$m_4$}; %Box C2
+		
+     \draw [thick, -latex](C2.north) -- +(0,\vectorlength); % vektor
+     \draw [spring] (C2.135) -- ($(C1) + (-\d,-\d)$) node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_4$}; % Feder
+      \draw [dampener,label=D1,] (C2.45) -- ($(C1) + (\d,-\d)$)node[midway,right=\labledistanceright, yshift=\myyshift] {$d_4$}; % Dämpfer
+ %     \node (ground1) at (7,-2.5)  [ground, anchor=north] {}; % Boden
+%        \draw [ground] (-1,-5) -- (1,-5);
+      \draw [spring] ($(C3)$) -- (C2.270)node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_{t4}$}; % Feder
+%     \draw [spring] (-0.5,-5) -- (-0.5,-3)node[draw=none,midway,left=0.3cm] {k2}; % If you don't want borders around lables use [draw=none]
+%       \draw [dampener] (7.5,-3.5) -- (7.5,-1.5)node[midway,right=0.4cm] {d4}; %Dämpfer
+
+% Rad unten links
+
+			\draw [line]($(A1) + (-\d,-\d)$) -- (A1);
+  		\draw [line]($(A1) + (\d,-\d)$) -- (A1);
+     \node at ($(A1) + (0cm,\b)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=north,style={draw,outer sep=0pt,line}](A2) {$m_1$}; %Box C2
+     \draw [thick, -latex](A2.north) -- +(0,\vectorlength); % vektor
+     \draw [spring] (A2.135) --($(A1) + (-\d,-\d)$) node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_1$}; % Feder
+      \draw [dampener,label=D1,] (A2.45) -- ($(A1) + (\d,-\d)$)node[midway,right=\labledistanceright, yshift=\myyshift] {$d_1$}; % Dämpfer
+%      \node (ground1) at (-7,-5.5)  [ground, anchor=north] {}; % Boden
+%        \draw [ground] (-1,-5) -- (1,-5);
+      \draw [spring] ($(A3)$) -- (A2.270)node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_{t1}$}; % Feder
+%     \draw [spring] (-0.5,-5) -- (-0.5,-3)node[draw=none,midway,left=0.3cm] {k2}; % If you don't want borders around lables use [draw=none]
+%       \draw [dampener] (-2.5,-2.5) -- (-2.5,-0.5)node[midway,right=0.4cm] {d6}; %Dämpfer
+
+% Rad oben links
+
+\begin{pgfonlayer}{bg}
+		  \draw [line, opacity= 1]($(B1) + (-\d,-\d)$) -- (B1);
+  		\draw [line, opacity= 1]($(B1) + (\d,-\d)$) -- (B1);
+     \node at ($(B1) + (0cm,\b)$) [rectangle, minimum width=\tirewidth,minimum height=\tireheight,anchor=north,style={draw,outer sep=0pt,line}](B2) {$m_3$}; %Box C2
+		
+     \draw [thick, -latex](B2.north) -- +(0,\vectorlength); % vektor
+     \draw [spring, opacity= 1] (B2.135) -- ($(B1) + (-\d,-\d)$) node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_3$}; % Feder
+		
+      \draw [line,decoration={markings, mark connection node=dmp,mark=at position 0.5 with {
+     \node (dmp) [line,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+     \draw [line,opacity = 1] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$); \draw [line, opacity = 1] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);}}, decorate, opacity= 1] (B2.45) -- ($(B1) + (\d,-\d)$)node[midway,right=\labledistanceright, yshift=\myyshift] {$d_3$}; % Dämpfer
+
+%      \node (ground1) at (2,-2.5)  [ground, anchor=north] {}; % Boden
+%        \draw [ground] (-1,-5) -- (1,-5);
+      \draw [spring] ($(B3)$) -- (B2.270)node[midway,left=\labledistanceleft, yshift=\myyshift] {$k_{t3}$}; % Feder
+%     \draw [spring] (-0.5,-5) -- (-0.5,-3)node[draw=none,midway,left=0.3cm] {k2}; % If you don't want borders around lables use [draw=none]
+%       \draw [dampener] (3.5,-1.5) -- (3.5,0.5)node[midway,right=0.4cm] {d8}; %Dämpfer
+\end{pgfonlayer}
+
+
+
+			\draw [strasse] ($(A3) + (-\lengthstreet,\spacerstreet)$) -- ($(A3) + (\lengthstreet,\spacerstreet)$) node[midway,right=\lengthstreet] {$r_{1}$};
+			\draw [strasse] ($(D3) + (-\lengthstreet,\spacerstreet)$) -- ($(D3) + (\lengthstreet,\spacerstreet)$) node[midway,right=\lengthstreet] {$r_{2}$};
+			\draw [strasse] ($(B3) + (-\lengthstreet,\spacerstreet)$) -- ($(B3) + (\lengthstreet,\spacerstreet)$) node[midway,right=\lengthstreet] {$r_{3}$};	
+			\draw [strasse] ($(C3) + (-\lengthstreet,\spacerstreet)$) -- ($(C3) + (\lengthstreet,\spacerstreet)$) node[midway,right=\lengthstreet] {$r_{4}$};	
+			
+			%\draw[strasse, white ,pattern = north east lines,path fading=south] ($(A3)+ (\lengthstreet,\spacerstreet)$) rectangle +(1.2,-2);
+			%\draw[ white ,path fading=south,draw=black] ($(A3)+ (5,-4)$) rectangle +(3,3);
+			%\draw  (3,-6) -- (3,-3) -- (0,-3) -- (0,-6);
+			%\draw[line,decorate,decoration={snake,pre length=0cm,post length=0.0cm,segment length=30, amplitude = 0.1cm}]  (1.2,-3) -- (0,-3) ;
+			%\filldraw [thick, fill=red] ($(Origin)+(2,-6)$) coordinate (Square) -- ++(0,4) -- ++(4,0) -- ++(0,-4);
+			
+			%\coordinate (A) at ($(A3)+ (-\lengthstreet,\spacerstreet)$);
+			%\coordinate (B) at ($(A3)+ (\lengthstreet,\spacerstreet)$);
+			%\coordinate (C) at ($(A3)+ (\lengthstreet,-\spacerstreet)$);
+			%\coordinate (D) at ($(A3)+ (-\lengthstreet,-\spacerstreet)$);
+			%\begin{scope}[strasse]
+			%	\draw[fill=red,pattern = north east lines,path fading=south,] (B) to (C) 
+              %  decorate {-- (D)}  
+              %  to (A) 
+              %  to (B);
+				%\end{scope}
+			
+
+			%[line,decorate,decoration={snake,pre length=0cm,post length=0.0cm,segment length=30, amplitude = 0.1cm}]
+%			\draw[white ,pattern = north east lines,path fading=south] (-9,-5.63) rectangle +(4,-1.0);
+%			\draw[white ,pattern = north east lines,path fading=south] (-4,-5.63) rectangle +(4,-1.0);
+%			\draw[white ,pattern = north east lines,path fading=south] (5,-2.63) rectangle +(4,-1.0);
+			
+			
+      \end{scope}	
+					
+					\node at (-2,4.8)(a){};
+					\node at (-0.5,4.8)(b){};
+					%\draw [dashed,-latex]($(C1) + (0cm,-1.55cm)$) -- ($(C1) + (2.5cm,-1.55cm)$) node[above  ] {\scriptsize}; % vektor
+					%\draw [-latex, thick, rotate=0] (2.8cm,-0.4cm) arc [start angle=-160, end angle=180, x radius=0.3cm, y radius=0.5cm];
+					
+  				\node at (0.5,4.95)(c){};
+					\node at (2,5.5)(d){};
+					%\path[very thick, -latex] (d) edge[bend right = 60] node [above = 0.1cm] {Pitch} (c);
+\end{tikzpicture}

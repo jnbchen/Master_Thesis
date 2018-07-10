@@ -1,0 +1,61 @@
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                   Deckblatt                 %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% 07.07.2017 Timo von Wysocki
+
+%% Beinhaltet Seite 1 der offiziellen Anfangsseiten mit dem Deckblatt. Der Inhalt wird in der Datei ./inhalt/0000_persoenliche_daten definiert!
+
+
+\titletemplate{	% 1. Input für titletemplate:
+	\centering
+	\textbf{\scaletowidth{8cm}{\thesistype}} % Die Leerzeilen sind wichtig!
+	
+	\vspace{0.5cm}
+	\huge{\mytitle}
+	
+	\ifx\mysubtitle\undefined
+	\else
+	\vspace{0.5cm}		
+	\Large{\textit{\mysubtitle}}
+	\fi
+	
+	\vspace{0.5cm}
+	\Large{\mydegree{} \myname}	
+	
+}{
+
+% Titelbild
+\begin{textblock*}{\textwidth}[0.5,0](\paperwidth/2,\imageBorder)
+	\centering
+	\vspace{3cm}
+	\includegraphics[width=0.7\paperwidth]{\pathtitleimage}
+\end{textblock*}	
+
+\begin{textblock*}{\textwidth}[0,1](\border+\logoborder,\paperheight-\reviewerBorder)
+	\begin{tabular}{@{}lcl@{}}
+	\iflanguage{english}{Reviewer}{Project Manager}: & \qquad  & \reviewerone\\
+	% Füge weitere Namen ein, wenn diese definiert sind:
+	\ifx\reviewertwo\undefined
+	\else & \qquad  & \reviewertwo\\
+	\fi
+	\ifx\advisor\undefined
+	\else & \qquad  & \advisor\\
+	\fi
+	\ifx\advisortwo\undefined
+	\else & \qquad  & \advisortwo\\
+	\fi
+	\end{tabular}	
+\end{textblock*}
+
+% Nummer der Arbeit
+\begin{textblock*}{4cm}[0,1](\border+\logoborder,\paperheight-\border-\logoborder)
+	Nr.: \numberthesis
+\end{textblock*}
+
+\begin{textblock*}{5cm}[1,1](\paperwidth-\border-\logoborder,\paperheight-\border-\logoborder)
+	\raggedleft
+	\datetitle
+\end{textblock*}}

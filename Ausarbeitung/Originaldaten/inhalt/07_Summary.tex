@@ -1,0 +1,43 @@
+\chapter{Summary and outlook}
+
+In this thesis, the full car model with 7 \ac{DOF} is implemented to simulate the vibration of the vehicle caused by road infrastructure.
+%
+Different models of road features e.g. pothole, manhole cover, railway crossing and cobbled road as well as the components of the vehicle such as the anti-roll bar and active suspension have been investigated and developed to expand the diversity of data for machine learning.
+%
+Besides, the representation of the full car model has been converted from the state space to the transfer function, which makes the analysis of the inputs to any single output in frequency domain easier.
+%
+To describe the complicated contact between the road and tire, several commonly used tire models have been analysised and a concise way has been found: a modified point contact tire model which is relative to the vehicle velocity and the length of obstacles.
+
+After the identification of parameters the results of simulation match the actual measured data accurately and show a reasonable behavior in different situations.
+%
+Then several representative features have been extracted to simplify and divide the data which is simulated by different vehicles traversing different roads into different dimensions.
+%
+Additional, the loads, vehicles and suspensions are also regarded as the input of the classification.
+%
+Following this, different classifiers have been trained and tested by the simulated data and the corresponding ground truth.
+%
+Furthermore, the possibility of the application of the classifier on different vehicles has been analyzed.
+%
+Moreover, the influence of the variations e.g. the number of selected feature, the kernel order and the position of the output have also been investigated.
+
+With the comparison of the simulated results to the measured results the full car model and road model are proved to be valid.
+%
+Thus the data simulated from the model shall also be effective and could be applied in the machine learning.
+%
+From the results of the simulation with different situations it is proved that the data processing method using inertial sensors has a good performance in the road infrastructure monitoring. 
+%
+The data can be good classified with different selected features and the accuracy of the classifier which is trained and tested by the data in the same condition is very high ($>90\%$). 
+%
+With respect to the application, the classifier trained with the data of all variations reaches a relative high accuracy ($>84\%$) regardless the variant loads on the vehicle, the type of the chassis or the model of vehicles.
+
+Even though some good results have been achieved in the simulation, it is still essential to validate the accuracy of the classifier with the real measured data.
+%
+In case that the result of measured data is not as good as the simulation, introducing more signals e.g. the accelerations of the wheels and extracting new features in time and frequcency domain even the stiffness and damping ratios of the suspension etc. as well as expanding the variation or scale of the simulation may be a solution to improve the accuracy of the classifier.
+%
+Besides, further improvements of the model could be completed to make the simulation more detailed and accurate. 
+%
+As to the investigation of the full car model, the center of the gravity, pitch and roll are assumed to be coincide in one point, which ignores the additional pitch- and roll moment caused by the vehicle body. 
+%
+Due to the cost and time of this work, the rigid ring tire model has not been implemented into the full car model.
+%
+The tire model which considers not only the vertical also longitudinal dynamic has been shown to perform better and remain robust in the simulation of vertical spindle force.

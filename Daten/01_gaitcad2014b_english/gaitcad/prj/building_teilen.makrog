@@ -1,0 +1,21 @@
+% Auswahl Zeitreihe (ZR)
+% {'DAY V'}
+set_textauswahl_listbox(gaitfindobj('CE_Auswahl_ZR'),{'DAY V'});eval(gaitfindobj_callback('CE_Auswahl_ZR'));
+
+%manual part: definition of separation 
+datei_save = 'building_days.prjz';
+zr_trig.out.offset = [0 23];
+%use the selected time series as trigger time series
+zr_trig.out.trig_var = parameter.gui.merkmale_und_klassen.ind_zr; 
+
+%BEGIN: do not change this part 
+zr_trig.out.quelle = 1;
+zr_trig.out.trigger = 1;
+zr_trig.var_bez = var_bez;
+%END: do not change this part 
+
+
+%% Cluster-Verfahren,  Data-Mining,  Entwurf und Anwendung 
+eval(gaitfindobj_callback('MI_Extraktion_Teile_ZR'));
+
+

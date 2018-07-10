@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Ausarbeitung.aux
+A level-1 auxiliary file: ./administration/titletemplate.aux
+A level-1 auxiliary file: ./administration/deckblatt.aux
+A level-1 auxiliary file: ./administration/aufgabenstellung.aux
+A level-1 auxiliary file: ./administration/deckblatt2.aux
+A level-1 auxiliary file: ./administration/erklaerung.aux
+A level-1 auxiliary file: ./inhalt/00_kurzfassung.aux
+A level-1 auxiliary file: ./inhalt/00_abstract.aux
+A level-1 auxiliary file: ./inhalt/00_danksagung.aux
+A level-1 auxiliary file: ./inhalt/00_abkuerzungen.aux
+A level-1 auxiliary file: ./inhalt/01_Introduction.aux
+A level-1 auxiliary file: ./inhalt/02_Simulation.aux
+A level-1 auxiliary file: ./inhalt/03_Validation.aux
+A level-1 auxiliary file: ./inhalt/04_Methodology.aux
+A level-1 auxiliary file: ./inhalt/05_Implementation.aux
+A level-1 auxiliary file: ./inhalt/06_Results.aux
+A level-1 auxiliary file: ./inhalt/07_Summary.aux
+The style file: abbrv.bst
+Database file #1: ./quellen/quellen.bib
+Warning--empty author in _iso_2016
+Warning--empty journal in agharkakli2012simulation
+Warning--empty journal in doody2013design
+Warning--empty journal in zegelaar1998dynamic
+You've used 48 entries,
+            2118 wiz_defined-function locations,
+            783 strings with 13488 characters,
+and the built_in function-call counts, 15309 in all, are:
+= -- 1513
+> -- 672
+< -- 9
++ -- 280
+- -- 222
+* -- 984
+:= -- 2476
+add.period$ -- 143
+call.type$ -- 48
+change.case$ -- 252
+chr.to.int$ -- 0
+cite$ -- 52
+duplicate$ -- 630
+empty$ -- 1234
+format.name$ -- 222
+if$ -- 3257
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 50
+newline$ -- 237
+num.names$ -- 86
+pop$ -- 296
+preamble$ -- 1
+purify$ -- 211
+quote$ -- 0
+skip$ -- 482
+stack$ -- 0
+substring$ -- 880
+swap$ -- 150
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 176
+warning$ -- 4
+while$ -- 139
+width$ -- 50
+write$ -- 496
+(There were 4 warnings)

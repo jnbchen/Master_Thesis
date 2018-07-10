@@ -1,0 +1,55 @@
+#CategoryName 'Type of single feature'
+
+#DefaultTermName 'None'
+
+#TermName 'Minimum'
+'plugin_min' 
+'MIN ' 
+
+#TermName 'Minimum position'
+#TermRelevance 0.5
+'plugin_mipo' 
+'MIPO '
+
+#TermName 'Maximum'
+'plugin_max' 
+'MAX '
+
+#TermName 'Maximum position'
+#TermRelevance 0.5
+'plugin_mapo' 
+'MAPO '
+
+#TermName 'Mean value'
+'plugin_mean' 
+'plugin_mean_em_nan'
+'MEAN '
+
+#TermName 'Range of motion'
+'plugin_rom' 
+'ROM '
+
+#TermName 'Fuzzy set'
+'TERM1 ' 
+'TERM2 '
+'TERM3 '
+'TERM4 '
+'TERM5 '
+'TERM6 '
+'TERM7 '
+
+#TermName 'Principal component'
+'HK1 ' 
+'HK2 '
+'HK3 '
+'HK4 '
+'HK5 '
+'HK6 '
+'HK7 '
+
+#TermName 'Standard deviation'
+#TermRelevance 0.5
+'STD ' 
+
+#TermName 'Time smaller zero'
+'T<0 ' 

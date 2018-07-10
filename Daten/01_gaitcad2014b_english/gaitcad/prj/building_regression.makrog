@@ -1,0 +1,34 @@
+% Abtastpunkte
+set(gaitfindobj('CE_Regression_Abtastpunkte'),'string','-48:-24');eval(gaitfindobj_callback('CE_Regression_Abtastpunkte'));
+
+% Ausgangsgröße Regression
+% {'Energy'}
+set_textauswahl_listbox(gaitfindobj('CE_Regression_Output'),{'Energy'});eval(gaitfindobj_callback('CE_Regression_Output'));
+
+% Merkmalsauswahl
+% {'Selected features'}
+set_textauswahl_listbox(gaitfindobj('CE_Regression_Merkmalsauswahl'),{'Selected features'});eval(gaitfindobj_callback('CE_Regression_Merkmalsauswahl'));
+
+% Verfahren
+% {'Polynom'}
+set_textauswahl_listbox(gaitfindobj('CE_Spezielle_Verfahren'),{'Polynom'});eval(gaitfindobj_callback('CE_Spezielle_Verfahren'));
+
+% Grad Polynom
+set(gaitfindobj('CE_Regression_GradPolynom'),'string','2');eval(gaitfindobj_callback('CE_Regression_GradPolynom'));
+
+%% Regression,  Data-Mining,  Entwurf und Anwendung 
+eval(gaitfindobj_callback('MI_Regression_EnAn'));
+
+%% Regression,  Ansicht,  Ausgangsgröße und Schätzung 
+eval(gaitfindobj_callback('MI_Anzeige_Regression_y_ydach'));
+
+% Zeitreihen in Subplots zeichnen
+set(gaitfindobj('CE_Zeitreihen_Subplots'),'value',0);eval(gaitfindobj_callback('CE_Zeitreihen_Subplots'));
+
+% Auswahl Zeitreihe (ZR)
+%{'Energy','Estimation regression Energy (polynom)'}
+set_textauswahl_listbox(gaitfindobj('CE_Auswahl_ZR'),{'Energy','Estimation regression Energy (polynom)'});eval(gaitfindobj_callback('CE_Auswahl_ZR'));
+
+%% Zeitreihen,  Ansicht,  Originaldaten 
+eval(gaitfindobj_callback('MI_Anzeige_ZR_Orig'));
+

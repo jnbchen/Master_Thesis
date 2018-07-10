@@ -1,0 +1,15 @@
+%Example for mean value of all selected features
+
+%max of all features
+d_org (:,end+1) = mean(d_org(:,parameter.gui.merkmale_und_klassen.ind_em),2);
+%update variable names
+temp = dorgbez(parameter.gui.merkmale_und_klassen.ind_em,:)';
+temp = kill_lz(temp(:)');
+
+if length(temp)>100
+    temp = [temp(1:100) ' etc'];
+end;
+
+dorgbez = strvcatnew(dorgbez(1:par.anz_einzel_merk,:),kill_lz(['MEAN ' temp]));
+%update variables and GUI
+aktparawin;

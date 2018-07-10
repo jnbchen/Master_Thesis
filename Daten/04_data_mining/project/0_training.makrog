@@ -1,0 +1,23 @@
+% Selection of single features
+% {'MANOVA'}
+set_textauswahl_listbox(gaitfindobj('CE_Klassifikation_Merkmalsauswahl'),{'MANOVA'});eval(gaitfindobj_callback('CE_Klassifikation_Merkmalsauswahl'));
+
+% Number of selected features
+set(gaitfindobj('CE_Anzahl_Merkmale'),'string','15');eval(gaitfindobj_callback('CE_Anzahl_Merkmale'));
+
+% Chosen classifier
+% {'Support Vector Machine'}
+set_textauswahl_listbox(gaitfindobj('CE_Klassifikation_Klassifikator'),{'Support Vector Machine'});eval(gaitfindobj_callback('CE_Klassifikation_Klassifikator'));
+
+% Graphical evaluation of classification results
+set(gaitfindobj('CE_Anzeige_KlassiErg'),'value',1);eval(gaitfindobj_callback('CE_Anzeige_KlassiErg'));
+
+% Save confusion matrix in file
+set(gaitfindobj('CE_Konfusion_Datei'),'value',1);eval(gaitfindobj_callback('CE_Konfusion_Datei'));
+
+%% Classification,  Data mining,  Design and apply 
+eval(gaitfindobj_callback('MI_EMKlassi_EnAn'));
+
+%% Data mining,  File,  Save classifier 
+eval(gaitfindobj_callback('MI_Classifier_Export'));
+

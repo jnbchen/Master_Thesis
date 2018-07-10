@@ -1,0 +1,286 @@
+\begin{thebibliography}{10}
+
+\bibitem{_iso_2016}
+{{ISO}} 8608.
+\newblock {\em Mechanical vibration - Road surface profiles - Reporting of
+  measured data}, 2016.
+
+\bibitem{agharkakli2012simulation}
+A.~Agharkakli, G.~S. Sabet, and A.~Barouz.
+\newblock Simulation and analysis of passive and active suspension system using
+  quarter car model for different road profile.
+\newblock 2012.
+
+\bibitem{agostinacchio_vibrations_2014}
+M.~Agostinacchio, D.~Ciampa, and S.~Olita.
+\newblock The vibrations induced by surface irregularities in road pavements
+  \textendash{} a {{Matlab}}\textregistered{} approach.
+\newblock {\em European Transport Research Review}, 6(3):267--275, Sept. 2014.
+
+\bibitem{alpaydin2014introduction}
+E.~Alpaydin.
+\newblock {\em Introduction to Machine Learning}.
+\newblock MIT Press, 2014.
+
+\bibitem{barrand2008reducing}
+J.~Barrand and J.~Bokar.
+\newblock Reducing tire rolling resistance to save fuel and lower emissions.
+\newblock {\em SAE International Journal of Passenger Cars-Mechanical Systems},
+  1(2008-01-0154):9--17, 2008.
+
+\bibitem{bermingham2015application}
+M.~L. Bermingham, R.~Pong-Wong, A.~Spiliopoulou, C.~Hayward, I.~Rudan,
+  H.~Campbell, A.~F. Wright, J.~F. Wilson, F.~Agakov, P.~Navarro, et~al.
+\newblock Application of high-dimensional feature selection: evaluation for
+  genomic prediction in man.
+\newblock {\em Scientific reports}, 5, 2015.
+
+\bibitem{bmvi_statistik_2015}
+{BMVI}.
+\newblock Statistik des {{L{\"a}rmschutzes}} an {{Bundesfernstra{\ss}en}} 2014.
+\newblock Technical report, Bundesministerium f{\"u}r Verkehr und digitale
+  Infrastruktur, Bonn, 2015.
+
+\bibitem{cebon_handbook_1999-1}
+D.~Cebon and D.~Cebon.
+\newblock {\em Handbook of Vehicle-Road Interaction}.
+\newblock {Lisse ; Abingdon : Swets \& Zeitlinger}, 1999.
+
+\bibitem{Chen.2013}
+K.~Chen, M.~Lu, G.~Tan, and J.~Wu.
+\newblock {{CRSM}}: {{Crowdsourcing Based Road Surface Monitoring}}.
+\newblock In {\em High {{Performance Computing}} and {{Communications}} \& 2013
+  {{IEEE International Conference}} on {{Embedded}} and {{Ubiquitous
+  Computing}} ({{HPCCEUC}}), 2013 {{IEEE}} 10th {{International Conference}}
+  On}, pages 2151--2158, 2013.
+
+\bibitem{5069178}
+R.~Darus and Y.~M. Sam.
+\newblock Modeling and control active suspension system for a full car model.
+\newblock In {\em 2009 5th International Colloquium on Signal Processing Its
+  Applications}, pages 13--18, March 2009.
+
+\bibitem{descornet_road-surface_1990}
+G.~Descornet.
+\newblock Road-surface influence on tire rolling resistance.
+\newblock In {\em Surface characteristics of roadways: international research
+  and technologies}. ASTM International, 1990.
+
+\bibitem{doody2013design}
+M.~Doody.
+\newblock Design and development of a composite automotive anti-roll bar.
+\newblock 2013.
+
+\bibitem{eriksson_pothole_2008}
+J.~Eriksson, L.~Girod, B.~Hull, R.~Newton, S.~Madden, and H.~Balakrishnan.
+\newblock The {{Pothole Patrol}}: {{Using}} a {{Mobile Sensor Network}} for
+  {{Road Surface Monitoring}}.
+\newblock In {\em Proceedings of the 6th {{International Conference}} on
+  {{Mobile Systems}}, {{Applications}}, and {{Services}}}, pages 29--39. {ACM},
+  2008.
+
+\bibitem{forschungsgesellschaft_fur_strassen-_und_verkehrswesen_merkblatt_2004}
+{Forschungsgesellschaft f{\"u}r Strassen- und Verkehrswesen}.
+\newblock {\em {Merkblatt {\"u}ber den Finanzbedarf der Stra{\ss}enerhaltung in
+  den Gemeinden}}.
+\newblock {FGSV-Verlag}, 2004.
+
+\bibitem{frey2012development}
+N.~Frey.
+\newblock {\em Development of a Rigid Ring Tire Model and Comparison Among
+  Various Tire Models for Ride Comfort Simulations}.
+\newblock BiblioBazaar, 2012.
+
+\bibitem{guyon2003introduction}
+I.~Guyon and A.~Elisseeff.
+\newblock An introduction to variable and feature selection.
+\newblock {\em Journal of machine learning research}, 3(Mar):1157--1182, 2003.
+
+\bibitem{ihs_influence_2005}
+A.~Ihs.
+\newblock The influence of road surface condition on traffic safety and ride
+  comfort.
+\newblock In {\em 6th International Conference on Managing Pavements 19--24
+  October 2004. Brisbane Convention \& Exhibition Centre, Queensland
+  Australia.}, pages 11--21. Statens v{\"a}g-och transportforskningsinstitut,
+  2005.
+
+\bibitem{iliev2014systemansatz}
+V.~Iliev.
+\newblock {\em Systemansatz zur anregungsunabh{\"a}ngigen Charakterisierung des
+  Schwingungskomforts eines Fahrzeugs}.
+\newblock Karlsruher Institut f{\"u}r Technologie, 2014.
+
+\bibitem{isermann2007mechatronische}
+R.~Isermann.
+\newblock {\em Mechatronische systeme: grundlagen}.
+\newblock Springer-Verlag, 2007.
+
+\bibitem{jazar2008vehicle}
+R.~N. Jazar.
+\newblock Vehicle dynamics.
+\newblock {\em Theory and Applications. Riverdale, NY: Springer Science+
+  Business Media}, 2008.
+
+\bibitem{5937197}
+M.~Kaleemullah, W.~F. Faris, and F.~Hasbullah.
+\newblock Design of robust h, fuzzy and lqr controller for active suspension of
+  a quarter car model.
+\newblock In {\em 2011 4th International Conference on Mechatronics (ICOM)},
+  pages 1--6, May 2011.
+
+\bibitem{koch2011pothole}
+C.~Koch and I.~Brilakis.
+\newblock Pothole detection in asphalt pavement images.
+\newblock {\em Advanced Engineering Informatics}, 25(3):507--515, 2011.
+
+\bibitem{masino_identification_2017}
+J.~Masino, B.~Wohnhas, M.~Frey, and F.~Gauterin.
+\newblock Identification and {{Prediction}} of {{Road Features}} and their
+  {{Contribution}} on {{Tire Road Noise}}.
+\newblock {\em WSEAS Transactions on Systems and Control}, 12:201--212, 2017.
+
+\bibitem{Mathworks_cst}
+Control system toolbox: Design and analyze control systems.
+\newblock \url{https://www.mathworks.com/products/control.html}.
+
+\bibitem{SciXMiner}
+Scixminer: Open-source matlab toolbox for multidimension data mining.
+\newblock \url{https://sourceforge.net/projects/scixminer/}.
+
+\bibitem{Mathworks}
+Robust control of an active suspension.
+\newblock
+  \url{https://de.mathworks.com/help/robust/gs/active-suspension-control-design.html}.
+
+\bibitem{Mathworks_spt}
+Signal processing toolbox: Perform signal processing and analysis.
+\newblock \url{https://de.mathworks.com/help/signal/index.html}.
+
+\bibitem{mikut2017matlab}
+R.~Mikut, A.~Bartschat, W.~Doneit, J.~{\'A}.~G. Ordiano, B.~Schott,
+  J.~Stegmaier, S.~Waczowicz, and M.~Reischl.
+\newblock The matlab toolbox scixminer: User's manual and programmer's guide.
+\newblock {\em arXiv preprint arXiv:1704.03298}, 2017.
+
+\bibitem{na2016rigid}
+S.~Na, D.~Park, and W.~Yoo.
+\newblock Rigid ring with bouc--wen tire model for vehicle dynamic analysis.
+\newblock {\em Proceedings of the Institution of Mechanical Engineers, Part C:
+  Journal of Mechanical Engineering Science}, page 0954406216647416, 2016.
+
+\bibitem{ngwangwa_reconstruction_2010}
+H.~M. Ngwangwa, P.~S. Heyns, F.~J.~J. Labuschagne, and G.~K. Kululanga.
+\newblock Reconstruction of {{Road Defects}} and {{Road Roughness
+  Classification Using Vehicle Responses}} with {{Artificial Neural Networks
+  Simulation}}.
+\newblock {\em Journal of Terramechanics}, 47(2):97--111, Apr. 2010.
+
+\bibitem{nitsche_comparison_2012}
+P.~Nitsche, R.~St{\"u}tz, M.~Kammer, and P.~Maurer.
+\newblock Comparison of {{Machine Learning Methods}} for {{Evaluating Pavement
+  Roughness Based}} on {{Vehicle Response}}.
+\newblock {\em Journal of Computing in Civil Engineering}, 28(4):04014015,
+  2012.
+
+\bibitem{ohrstrom_effects_2006}
+E.~{\"O}hrstr{\"o}m, A.~Skanberg, H.~Svensson, and A.~Gidl{\"o}f-Gunnarsson.
+\newblock Effects of {{Road Traffic Noise}} and the {{Benefit}} of {{Access}}
+  to {{Quietness}}.
+\newblock {\em Journal of Sound and Vibration}, 295(1):40--59, 2006.
+
+\bibitem{radopoulou_automated_2016}
+S.~C. Radopoulou and I.~Brilakis.
+\newblock Automated {{Detection}} of {{Multiple Pavement Defects}}.
+\newblock {\em Journal of Computing in Civil Engineering}, page 04016057, 2016.
+
+\bibitem{radopoulou_improving_2016}
+S.~C. Radopoulou and I.~Brilakis.
+\newblock Improving {{Road Asset Condition Monitoring}}.
+\newblock {\em Transportation Research Procedia}, 14:3004--3012, 2016.
+
+\bibitem{doi:10.1076/vesd.39.4.279.14149}
+D.~Sammier, O.~Sename, and L.~Dugard.
+\newblock Skyhook and h8 control of semi-active suspensions: Some practical
+  aspects.
+\newblock {\em Vehicle System Dynamics}, 39(4):279--308, 2003.
+
+\bibitem{sandberg_road_1987-1}
+U.~Sandberg.
+\newblock Road traffic noise\textemdash{}{{The}} influence of the road surface
+  and its characterization.
+\newblock {\em Applied Acoustics}, 21(2):97--118, Jan. 1987.
+
+\bibitem{savaresi2010semi}
+S.~M. Savaresi, C.~Poussot-Vassal, C.~Spelta, O.~Sename, and L.~Dugard.
+\newblock {\em Semi-active suspension control design for vehicles}.
+\newblock Elsevier, 2010.
+
+\bibitem{schwela_world_2000}
+D.~H. Schwela.
+\newblock The {{World Health Organization Guidelines}} for {{Environmental
+  Noise}}.
+\newblock {\em Noise News International}, 8(1):9--22, 2000.
+
+\bibitem{seraj_roads:_2014}
+F.~Seraj, B.~J. {van der Zwaag}, A.~Dilo, T.~Luarasi, and P.~Havinga.
+\newblock {{RoADS}}: {{A Road Pavement Monitoring System}} for {{Anomaly
+  Detection Using Smart Phones}}.
+\newblock In {\em Big {{Data Analytics}} in the {{Social}} and {{Ubiquitous
+  Context}}}, pages 128--146. {Springer, Cham}, Apr. 2014.
+
+\bibitem{shariati2004decentralized}
+A.~Shariati, H.~Taghirad, and A.~Fatehi.
+\newblock Decentralized robust h controller design for a half--car active
+  suspension system.
+\newblock {\em Proceedings of Control 2004}, pages 1--5, 2004.
+
+\bibitem{Sokolova2009427}
+M.~Sokolova and G.~Lapalme.
+\newblock A systematic analysis of performance measures for classification
+  tasks.
+\newblock {\em Information Processing Management}, 45(4):427 -- 437, 2009.
+
+\bibitem{taylor_effect_1982}
+S.~M. Taylor, B.~E. Breston, and F.~L. Hall.
+\newblock The effect of road traffic noise on house prices.
+\newblock {\em Journal of Sound and Vibration}, 80(4):523--541, Feb. 1982.
+
+\bibitem{Theebe2004}
+M.~A.~J. Theebe.
+\newblock Planes, {{Trains}}, and {{Automobiles}}: {{The Impact}} of {{Traffic
+  Noise}} on {{House Prices}}.
+\newblock {\em The Journal of Real Estate Finance and Economics},
+  28(2):209--234, 2004.
+
+\bibitem{Tire_calculator}
+Reifenrechner: Reifen- und reifenhaendler suchmaschine fuer deutschland.
+\newblock \url{https://www.reifensuchmaschine.de/reifen_rechner/}.
+
+\bibitem{wallentowitz1997vertikal}
+H.~Wallentowitz.
+\newblock {\em Vertikal-, Querdynamik von Kraftfahrzeugen: Federungssysteme,
+  Fahrverhalten, Lenkung, Radaufh{\"a}ngung ; Vorlesungsumdruck Fahrzeugtechnik
+  II}.
+\newblock Schriftenreihe Automobiltechnik. Forschungsges. Kraftfahrwesen, 1997.
+
+\bibitem{ward_speed-independent_2009}
+C.~C. Ward and K.~Iagnemma.
+\newblock Speed-independent vibration-based terrain classification for
+  passenger vehicles.
+\newblock {\em Vehicle system dynamics}, 47(9):1095--1113, 2009.
+
+\bibitem{wilhelmsson_impact_2000}
+M.~Wilhelmsson.
+\newblock The {{Impact}} of {{Traffic Noise}} on the {{Values}} of
+  {{Single}}-family {{Houses}}.
+\newblock {\em Journal of Environmental Planning and Management},
+  43(6):799--815, Nov. 2000.
+
+\bibitem{zegelaar1998dynamic}
+P.~W.~A. Zegelaar.
+\newblock The dynamic response of tyres to brake torque variations and road
+  unevennesses.
+\newblock 1998.
+
+\end{thebibliography}

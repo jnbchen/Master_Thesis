@@ -1,0 +1,413 @@
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Mainfile                   %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% Latex-Vorlage für Abschlussarbeiten am Institut für Fahrzeugsystemtechnik (FAST), Teilinstitut Fahrzeugtechnik am Karlsruher Institut für Technologie (KIT)
+
+% Stand: 07.07.2017, Timo von Wysocki
+
+% Vollständig überarbeitete Version der Abschlussarbeitsvorlagen von Timo Rohrberg (2009) und Dominique Labonte (2012)
+
+% In der Finalen Version der Abschlussarbeit, ist die draft-Option in der Dokumentenklasse (\documentclass[draft]{scrbook}) auszukommentieren und die disable-option im todo-Paket (\usepackage[%disable]{todonotes}) einzukommentieren!
+
+\documentclass[				% Koma-Script
+%draft,                     % Wird das einkommentiert, werden Bilder nur als Platzhalter eingefügt (schnellere PDF-Generierung zum schnelleren Testen)
+a4paper,                    % Richtige Größe der Textfläche (A4)
+pagesize=auto,              % Richtige Größe des Papiers
+11pt,                       % Schriftgröße
+oneside,                    % Einseitiger Druck
+headsepline,                % Linie nach der Kopfzeile
+DIV=12,                     % Wird benötigt, um den Bereich auf dem Blatt zu definieren, in dem sich der Text befindet. DIV = 12: Faktor für die Satzspiegelkonstruktion. Je größer der Wert, desto mehr Textfläche (Kleinere Ränder an den Seiten und oben und unten). Siehe scrguide, S. 36. Automatische, von der Schriftgröße Abhängige Berechnung durch DIV=calc
+headinclude = true,         % Wenn die Kopfzeile in der Satzspiegelkonstruktion mitberücksichtigt werden soll, also zum Textbereich gezählt werden soll. Sinnvoll, wenn Kopfzeile mit viel Inhalt, bei eher leeren Kopfzeilen wirkt der obere Rand mit eingeschalteter Option zu leer. (siehe scrguide S.43)
+footinclude = false,        % wie headinclude mit Fußzeile
+%mpinclude = true,          % wie headinclude mit Randnotizen. Nur Sinnvoll, wenn man sehr viele Randnotizen hat
+%BCOR = 20mm,               % Bindekorrektur
+listof=totocnumbered,       % Gibt den Abbildungs- und Tabellen-Verzeichnissen einen (nummerierten) Eintrag im Inhaltsverzeichnis
+listof=entryprefix,			% Abbildung und Tabelle wird im Verzeichnis vor die NUmmer geschrieben
+index=totoc,				% Schreibt den Index ins Inhaltsverzeichnis
+toc=bibliography,			% Schreibt die Bibliografie ins Inhaltsverzeichnis
+parskip = half,             % Behandlung von Absätzen. Abstände zwischen den Absätzen, Einzug am Anfang der ersten Absatzzeile etc. Optionen siehe scrguide S.78
+captions=tableheading       % Formatierung von Tabellenüberschriften als ÜBERschrift
+]{scrbook}
+
+% Referenz auf scr-guide: https://komascript.de/~mkohm/scrguide.pdf
+
+\setcounter{secnumdepth}{2}	% Ebene, bis zu der nummeriert wird (chapter = 0; section = 1; etc.)
+\setcounter{tocdepth}{5}	% Ebene bis zu der Überschriften im Inhaltsverzeichnis stehen (chapter = 0; section = 1; etc.)
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%               Standardklassen               %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage[english]{babel}	% Sprache innerhalb des Dokuments (z.B. Überschrift toc)
+\usepackage[T1]{fontenc}	% Lädt Zeichensatz mit Umlauten, nötig für korrekte deutsche Trennung
+\usepackage[utf8]{inputenc}	% Umlaute können direkt eingetippt werden: äöüß
+\usepackage{microtype}		% Ordentlicher Randausgleich 
+
+\makeatletter
+\renewcommand{\@pnumwidth}{3em}
+\renewcommand{\@tocrmarg}{4em}
+\makeatother
+%\renewcommand\@pnumwidth{3em}% statt `2em' evtl. groesserer Wert 
+
+\usepackage{blindtext}		% Fülltext zum Testen
+
+\usepackage{tikz}			% Erstellen von Graphen
+\usepackage{pgfplots}		% TEST IN PROGRESS
+\pgfplotsset{compat=newest}
+%\pgfdeclarelayer{bg}    % declare background layer
+%\pgfsetlayers{bg,main}
+\usepgfplotslibrary{groupplots}
+
+\usepackage{filecontents}	% TEST IN PROGRESS
+
+\usetikzlibrary{calc}		% Zusatzbibliothek für Tikz, um Berechnungen durchzuführen
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{chains}
+\usetikzlibrary{circuits}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{fadings}
+\usetikzlibrary{fit}
+\usetikzlibrary{intersections}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{scopes}
+\usetikzlibrary{shadings}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usepackage{url}
+
+\usepackage{calc}			% Für berechnungen allgemein (genutzt bei Textboxen)
+
+\usepackage[				% Textboxen absolut auf Seiten platzieren
+absolute,					% Absolute Positionsangaben
+overlay,					% Einfügen als Overlay über dem Text
+]{textpos}
+\usepackage{textfit}		% Text auf bestimmte Breite skalieren	
+
+\usepackage{graphicx}		% Einbinden von Grafiken
+
+\usepackage{pdfpages}		% Einbinden von PDF-Dateien
+
+\usepackage{acronym}		% Für Abkürzungsverzeichnis
+
+\usepackage{color,soul}			% Eigene Farben definieren
+
+\usepackage{xcolor}
+
+\usepackage{colortbl}
+
+\usepackage[
+%disable			% Diese Zeile aktivieren für finale Version! Deaktiviert alle Todos und Todoliste!
+]{todonotes}      % Todos mit \todo{Aufgabe} als Randnotiz, kann als gesammelte Liste ausgegeben werden (Hier am Ende des Dokuments)
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Kopfzeile                  %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% Kein fancyhdr in Kombination mit KOMA!
+
+% Siehe Coma-Anleitung, S.231
+
+
+\usepackage[		% Das Koma-Script-Paket für Header und Footer
+autooneside=false,	% Nötig, da einseitiger Druck
+automark			% Definiert \leftmark und \rightmark sinnvoll
+]{scrlayer-scrpage}
+
+% Da das Dokument einseitig ist, ist jede Seite ungerade!
+
+% Definition des Inhalts für die Kopfzeile
+\lohead{\rightmark}			% lo = left odd, \rightrmark = Section, \leftmark = chapter
+\cohead{}					% Mitte soll leer sein
+\rohead{\pagemark}			% lo = right odd, \pagemark = Seitenzahl
+
+% Mit diesen Einstellungen wird in der Kopfzeile solange das Kapitel angezeigt, bis die erste Section definiert wird. Ab da nur noch die sections.
+
+\cofoot{}					% entfernt die Seitenzahl in der Fußzeile
+
+% Entfernen der Seitenzahl auf Kapitelseiten, da es keinen Sinn macht, die Seitenzahl auf einer einzelnen Seite wo anders hinzuschreiben:
+\renewcommand*{\chapterpagestyle}{empty}
+
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                 Schriftart                  %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% Laden der serifenlosen Schriftart Helvetica:
+\usepackage[
+scaled
+]{helvet}	% scaled skaliert die Schriftart, da helvetica größer its als andere Schriften. Werden in einem dokument verschiedene Schriften verwendet (z.B. Serifen oder Kapitälchen) sollte Helvetica skaliert werden. Die Option scaled ohne Größenangabe skaliert automatisch auf eine Standardschriftgröße.
+
+% Zuweisen der Serifenlosen Schrift als Standardschrift
+\renewcommand\familydefault{\sfdefault}
+
+% Zeeilenabstand ändern:
+\usepackage[onehalfspacing]{setspace}
+% onehalfspaceing schaltet auf 1,5-fachen Zeilenabstand
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Tabellen                   %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage{tabularx} 
+\usepackage{booktabs}	% Für schöne Tabellenzwischenlinien
+\usepackage{arydshln}	% Für gestrichelte Tebellenlinien, nach longtable einbinden!
+\usepackage{longtable}	% Für mehrseitige Tabellen
+\usepackage{multirow}
+
+% Erstellen neuer Tabellenspaltentypen
+\usepackage{array}		% Benötigt, um Text in Tabellenzeilen mit fester Breite auszurichten
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe 
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe 
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  SI-Units                   %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% Mit dem Paket werden Zahlen mit Einheiten mit einem halben geschützten Leerzeichen gesetzt, sowie Darstellungen können global geändert werden.
+
+\usepackage[
+per-mode=symbol,			% Darstellung von Einheitenbrüchen %[per-mode=symbol] oder [per-mode=fraction]. 1.Schrägstrich, 2. Bruchstrich
+decimalsymbol=comma,		% Dezimalsymbol (Zahl immer mit Punkt schreiben!)
+exponent-product = \cdot,	% Malzeichen für *10^n
+repeatunits=false,			% Einheiten wiederholen bei SIrange
+tophrase={{ bis }}	% benötigt 2 Klammern, wegen den Leerzeichen
+]{siunitx}	% Darstellung von Zahlen mit Einheiten
+\usepackage{siunitx}
+
+% Eigene Einheiten definieren:
+\DeclareSIUnit\g{g}	% Gewichtskraft
+\DeclareSIUnit{\million}{\text{Mio.}}	% Million z.B. \million\kilo\metre
+\DeclareSIUnit{\none}{-}	% Keine Einheit
+
+% Benutzung:
+% \SI{5}{\kilo\hertz} -> 5 kHz
+% \si{\hertz} -> Hz
+% \SIrange{5}{10}{\kilo\hertz} -> 5 bis 10 kHz
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%          Codedarstellung im Text            %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+% Farbdefinitionen
+\definecolor{mycomment}{rgb}{0.4,0.4,0.4}
+\definecolor{mykeyword}{rgb}{0,0,1}
+\definecolor{mynumber}{rgb}{0.5,0.5,0.5}
+\definecolor{mystring}{rgb}{0.58,0,0.82}
+
+\usepackage{scrhack}			% Wird benötigt, damit ein Bug zwischen listings und koma-Script behoben wird
+\usepackage{listings}			% Darstellung von Codebeispielen
+\lstset{%
+	language=Matlab,	 		%Standardsprache, wenn keine Option angegeben wird. Individuell änderbar mit \begin{lstlisting}[language=Python]...\end{lstlisting}. Auflistung verfügbarer Sprachen. https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+	frame=single,				% Rahmen um den Code	
+	extendedchars=true, 		% Für nicht Ascii-Zeichen, jedoch nur bei Latin-Codierung. UTF8 benötigt spezielle Definition unten
+	basicstyle=\footnotesize,	% Schriftgröße des Codes
+	basicstyle=\ttfamily,		% Schriftart des Codes als Monospace
+	numbers=left,				% Zeilennummern links
+	%tabsize=2,					% Breite für Tabs
+	commentstyle=\color{mycomment},		% Farbe für Kommentare
+	keywordstyle=\color{mykeyword}, 	% Farbe für Keywords
+	numberstyle=\tiny\color{mynumber},	% Farbe für Zeilennummern
+	stringstyle=\color{mystring},	% Farbe für Strings
+	showspaces=false,			% Markiere Leerzeichen im Code
+	showstringspaces=false,		% Markiere Leerzeichen in Strings
+	breaklines=true,			% Aktiviert Zeilenumbrüche innerhalb des Codes (ansonsten laufen zu lange Zeilen nach rechts aus der Seite raus)
+	breakatwhitespace=false,    % Sollen Zeilenumbrüche nur an Leerzeichen gestattet sein?	
+	escapeinside={\%*}{*)},		% Escapecharacter um Latex-Code zwischen den Code zu schreiben. Verwendung: %*\label{codeline:add}*). Werden verschiedene Sprachen in einem Dokument definiert, kann es sinnvoller sein, die Escapecharacters individuell in den optionen der lstlisting-Umgebung zu definieren, so dass in jeder Sprache der Escapecharacter mit dem entsprechenden Kommentarsymbol beginnt.
+}  
+
+%\renewcommand{\lstlistingname}{Codebeispiel}	% Umbenennen der Code-Umgebung
+
+% Behandlung von nicht Ascii-Zeichen in UTF8-Dokumenten
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}        
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                    Mathe                    %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage{amsmath}		% Mathe-Paket. Z.B. für \align
+\usepackage{amssymb}		% Mathe-Symbole, lädt automatisch amsfonts mit, insbesondere Mengen
+\usepackage{amsbsy}			% Fette Mathe-Buchstaben
+\usepackage{mathtools}
+
+\newcommand{\punkt}{\quad\text{.}}
+\newcommand{\komma}{\quad\text{,}}
+
+% Vektoren:
+%\newcommand{\ve}[1]{\vec{#1}}						% Vektorpfeil
+%\newcommand{\ve}[1]{\underline{#1}}				% Unterstrich
+\newcommand{\ve}[1]{\boldsymbol{#1}}				% Fettdruck
+
+% Matrizen:
+%\newcommand{\ma}[1]{\underline{\underline{#1}}}	% Doppelter Unterstrich
+\newcommand{\ma}[1]{\boldsymbol{#1}}				% Fettdruck
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Zitieren                   %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage{cite}
+
+%\usepackage{csquotes}	% Erweitert die Zitiermöglichkeiten, wird von Biblatex benötigt, sonst Warnung
+
+
+%\usepackage[
+%backend=biber,			% Backend für die Bibliografieerzeugung. %Alternativ Bibtex
+%style=alphabetic,		% Stil des Literaturverzeichnisses
+%citestyle=alphabetic	% Stil der Zitation
+%]{biblatex} 
+
+% Einbinden der Literaturdatei:
+%\bibliography{./quellen/quellen}	
+
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Variablen                  %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\include{./inhalt/0000_persoenliche_daten}
+
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                    Index                    %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage{makeidx}	% Paket zum Erstellen von Indizes
+\makeindex				% Generiert den Index
+% Index muss beim ersten mal von Hand erzeugt werden!
+
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                  Hyperref                   %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\usepackage[
+bookmarksopenlevel=1,
+bookmarksopen=true,		% öffnet die Bookmarks standardmäßig im adobe reader
+bookmarksnumbered=true,
+pdfborder={0 0 0.5},	% Setzt die Liniendicke von Kästen				
+linkbordercolor={0 0.61 0.50},   
+citebordercolor={0 0.61 0.50},
+hyperfootnotes=false,	% Warum sollte man das abschalten?
+linktoc=all				% Im Inhaltsverzeichnis ist Bezeichnung ond Seitenzahl ein Link
+]{hyperref} 
+
+\hypersetup{	% Titel etc. sollten erst nach dem laden des Pakets hyperref definiert werden
+	pdfauthor={\myname},
+	pdftitle={\mytitle},
+	%pdfsubject={Not set},
+	%pdfkeywords={Not set}
+}
+
+
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%                                             %
+%                 MainDocument                %
+%                                             %
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+%% +++++++++++++++++++++++++++++++++++++++++ %%
+
+\input{mysty.sty}
+
+\begin{document}
+	\frontmatter	% Schaltet u.a. in den römischen Nummerierungsmodus
+	\include{./administration/titletemplate}
+	
+	\include{./administration/deckblatt}
+	\include{./administration/aufgabenstellung}
+	\include{./administration/deckblatt2}
+	\include{./administration/erklaerung}
+	
+	
+	\include{./inhalt/00_kurzfassung}
+	\include{./inhalt/00_abstract}
+	\include{./inhalt/00_danksagung}
+	
+	
+	
+	\microtypesetup{protrusion=false}	% Ordnet die Seitenzahlen ordentlicher an
+	\tableofcontents	% Inhaltsverzeichnis	
+	\microtypesetup{protrusion=true}
+	
+%	\include{./inhalt/00_symbole}
+	
+	\include{./inhalt/00_abkuerzungen}
+	
+	\mainmatter	% Schaltet in den Hauptdokumentenmodus (normale Nummerierung und Benennung)
+	
+	
+	\include{./inhalt/01_Introduction}	
+	\include{./inhalt/02_Simulation}	
+	\include{./inhalt/03_Validation}	
+	\include{./inhalt/04_Methodology}	
+	\include{./inhalt/05_Implementation}
+	\include{./inhalt/06_Results}	
+	\include{./inhalt/07_Summary}	
+	
+	
+	%\include{./inhalt/06_validierung}
+	
+\appendix	% Schaltet in den Anhangsmodus (Kapitel mit Buchstaben benannt)
+
+	%\include{./inhalt/zz_anhang_01}
+
+\microtypesetup{protrusion=false}	% Ordnet die Seitenzahlen ordentlicher an
+\listoffigures	% Abbildungsverzeichnis
+
+\listoftables	% Tabellenverzeichnis
+\microtypesetup{protrusion=true}
+
+\backmatter		% Schaltet in den "Schlussmodus" des Dokuments ohne Nummerierung der Kapitel
+%\printbibheading%[title=Blub]	% Schreibt den Übertitel des Literaturverzeichnis
+%\printbibliography%[heading=subbibliography,title={Quellen}]% Alle Quellen außer Normen
+%\printbibliography[heading=subbibliography,keyword=norm, title={Normen und Standards}] % Normen
+
+\bibliographystyle{abbrv}
+\bibliography{./quellen/quellen}
+
+\printindex % Gibt den Index aus
+	
+\end{document} % Ende des Dokuments

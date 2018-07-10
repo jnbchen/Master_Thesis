@@ -1,0 +1,38 @@
+\BOOKMARK [0][]{chapter*.1}{Kurzfassung}{}% 1
+\BOOKMARK [0][]{chapter*.3}{Abstract}{}% 2
+\BOOKMARK [0][]{chapter*.5}{Danksagung}{}% 3
+\BOOKMARK [0][]{chapter*.7}{Glossary}{}% 4
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 5
+\BOOKMARK [0][]{chapter.2}{2 Simulation}{}% 6
+\BOOKMARK [1][-]{section.2.1}{2.1 Road model}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{2.2 Basic full car model}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{2.3 Transfer function of the Full Car Model}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{2.4 Full car model with anti-roll bar}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{2.5 Full car model with active suspension}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.6}{2.6 Position of output}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.7}{2.7 Tire model}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.7.1}{2.7.1 Rigid Ring Model}{section.2.7}% 14
+\BOOKMARK [2][-]{subsection.2.7.2}{2.7.2 Modified Point Contact Tire Model}{section.2.7}% 15
+\BOOKMARK [0][]{chapter.3}{3 Identification and validation}{}% 16
+\BOOKMARK [1][-]{section.3.1}{3.1 Identification and validation of the damping ratio}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{3.2 Identification and validation of the tire model}{chapter.3}% 18
+\BOOKMARK [0][]{chapter.4}{4 Methodology}{}% 19
+\BOOKMARK [1][-]{section.4.1}{4.1 Data processing}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{4.2 Road events and data labelling}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{4.3 Feature extraction}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{4.4 Display and evaluation of the classification}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.5}{4.5 Variation of simulation}{chapter.4}% 24
+\BOOKMARK [0][]{chapter.5}{5 Implementation}{}% 25
+\BOOKMARK [1][-]{section.5.1}{5.1 Introduction of the software}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{5.2 Explanation of the scripts in Matlab}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.3}{5.3 Working with ScixMiner}{chapter.5}% 28
+\BOOKMARK [0][]{chapter.6}{6 Results}{}% 29
+\BOOKMARK [1][-]{section.6.1}{6.1 Variation of vehicle parameters}{chapter.6}% 30
+\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Classification accuracy}{section.6.1}% 31
+\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Feature selection}{section.6.1}% 32
+\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Application of the classifier}{section.6.1}% 33
+\BOOKMARK [1][-]{section.6.2}{6.2 Variation of simulation}{chapter.6}% 34
+\BOOKMARK [0][]{chapter.7}{7 Summary and outlook}{}% 35
+\BOOKMARK [0][]{appendix.A}{A List of Figures}{}% 36
+\BOOKMARK [0][]{appendix.B}{B List of Tables}{}% 37
+\BOOKMARK [0][]{chapter*.23}{Bibliography}{}% 38

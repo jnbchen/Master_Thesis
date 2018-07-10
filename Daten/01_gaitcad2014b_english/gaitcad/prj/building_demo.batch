@@ -1,0 +1,10 @@
+building.prjz
+building_regression.makrog
+show_report.makrog
+building_trigger.makrog
+building_teilen.makrog
+building_days.prjz
+building_cluster.makrog
+gaitcad_extern.user.test = 1;
+
+show_report.makrog

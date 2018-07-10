@@ -1,0 +1,50 @@
+  function fuzzy_system=fuzzy_en_regr(d,ykont,output_name,mode,dorgbez_rule,parameter_regelsuche)
+% function fuzzy_system=fuzzy_en_regr(d,ykont,output_name,mode,dorgbez_rule,parameter_regelsuche)
+%
+% 
+% 
+% designs a fuzzy system for regression
+% Example function call:
+% fuzzy_en_regr(d,ykont,regr_single.klasse,'fuzzy_system',regr_single.merkmalsextraktion.var_bez,kp.fuzzy_system);
+% 
+% Design Output MBFS + defuzzification
+%
+% The function fuzzy_en_regr is part of the MATLAB toolbox Gait-CAD. 
+% Copyright (C) 2010  [Ralf Mikut, Tobias Loose, Ole Burmeister, Sebastian Braun, Andreas Bartschat, Johannes Stegmaier, Markus Reischl]
+
+
+% Last file change: 26-Nov-2014 11:55:59
+% 
+% This program is free software; you can redistribute it and/or modify,
+% it under the terms of the GNU General Public License as published by 
+% the Free Software Foundation; either version 2 of the License, or any later version.
+% 
+% This program is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of 
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License along with this program;
+% if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA.
+% 
+% You will find further information about Gait-CAD in the manual or in the following conference paper:
+% 
+% MIKUT, R.; BURMEISTER, O.; BRAUN, S.; REISCHL, M.: The Open Source Matlab Toolbox Gait-CAD and its Application to Bioelectric Signal Processing.  
+% In:  Proc., DGBMT-Workshop Biosignal processing, Potsdam, pp. 109-111; 2008 
+% Online available: https://sourceforge.net/projects/gait-cad/files/mikut08biosig_gaitcad.pdf/download
+% 
+% Please refer to this paper, if you use Gait-CAD for your scientific work.
+
+[regr.output_zgf,regr.zgf_bez] = zgf_en(ykont,parameter_regelsuche);
+[y_fuz,y_quali]=fuzz(ykont,regr.output_zgf);
+regr.bez = output_name;
+
+%design step (same function as for classification, but with "fuzzified" 
+%output variables as class, actually crisp for the design step)
+fuzzy_system      = fuzzy_en(d,y_quali,regr,mode,dorgbez_rule,parameter_regelsuche);
+if ~isempty(fuzzy_system)
+    fuzzy_system.regr = regr;
+end;
+
+
+
+

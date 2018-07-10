@@ -1,0 +1,597 @@
+\chapter{Results}
+
+
+\section{Variation of vehicle parameters}
+\label{sec:var_vehicle}
+
+Here the performance of the classifiers applied in same or different vehilces will be analysised.
+%
+To better compare the variation of vehicles, the setting of the classification in \textsc{ScixMiner} is set to be invariant.
+%
+The number of the selected feature is set to 15 and the oder of the kernel is set to one.
+%
+The position of the output is at the middle point of the front axle.
+
+\subsection{Classification accuracy}
+\label{subsec:accuracy}
+
+In this part the classifier is trained by the data which is simulated from the BMW 116d passive full car model driving on a $4km$-long road with fixed size of events.
+%
+The number of overdrives is approximately equally distributed over the events.
+%
+The accuracy is 98.2~\% on average.
+%
+The confusion matrix of the training is shown in table~\ref{tbl:fcm_passiv}.
+%
+It can be seen that there is some missclassification among asphalt, manhole cover and railway crossing.
+%
+The outliers may caused by the similar distribution of the response signals when traversing the asphalt, manhole cover and railway crossing in the validation process, which is shown fig.~\ref{fig:validation_events}.
+%
+In general, the classifier can tell the difference of these classes clearly.
+
+Fig.~\ref{fig:aggregated_features} shows the classes in feature space, described by two aggregated features from 15 single features.
+%
+The figure indicates, that the road features pothole and cobbled stones are clearly separable to the other classes.
+%
+Unevenness is close to the road features railway and cobbled stones but still good divisible. 
+%
+However, railway crossing, manhole cover and smooth asphalt are very close and show some missclassifications.
+%
+The aggregated features are good for graphic representation but difficult to interpret.
+%
+The most important selected single features for this classification problem are discussed in Section~\ref{subsec:variationfeatureselection}.
+
+
+
+\begin{table}
+\centering
+\caption{Confusion matrix of the training with BMW 116d passive suspention}
+\label{tbl:fcm_passiv}
+\begin{tabular}{llllllll}
+\hline
+true class & \multicolumn{6}{c}{prediction}  & recall 
+ \\
+                 & as.  & ph.  & m.c. & c.r. & r.c.  & un.   &     
+ \\ \hline
+asphalt          & 231  & 0    & 9   & 0    & 1     & 0     & 96\%        \\
+pothole          & 0    & 206  & 0    & 0    & 0     & 0     & 100\%        \\
+manhole cover    & 10   & 0    & 226  & 10   & 0     & 0     & 96\%        \\
+cobbled road     & 0   & 0    & 0    & 316   & 0     & 0     & 100\%        \\
+railway crossing & 2    & 0    & 0    & 0    & 234   & 0     & 99\%       \\
+unevenness       & 0    & 0    & 0    & 0    & 0     & 316   & 100\%       \\ \hline
+precision        & 95\% & 100\% & 96\% & 97\% & 99\% & 100\% & 98.2\%   
+ \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{figure}
+ \centering
+ \begin{tikzpicture}
+ \begin{groupplot}[mygroupplot,width=7cm,height=4cm,
+ group style={group name=my plots,group size= 1 by 1}
+ ]
+ 		
+
+    \nextgroupplot[
+	xlabel=aggregated feature 1,
+	ylabel=aggregated feature 2,
+	%xmin=27,   
+	%xmax=93,
+   	%ymin=0,   
+   	%ymax=30,
+ 	legend columns=3,
+ 	legend entries={pothole~, manhole~, cobbled~, railway~, unevenness~, asphalt~},
+ 	legend style={at={(0.5,1.03)},anchor=south,name=leg},
+ 	legend style={/tikz/every even column/.append style={column sep=0.5cm}},
+ 	cycle list name=mycyclelist,
+    ]
+    \newcommand{\point}{1};
+    \newcommand{\mysize}{1pt};
+    
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class02.txt};
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class03.txt};
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class04.txt};
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class05.txt};
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class06.txt};
+    \addplot+[only marks, mark size=\mysize, each nth point=\point] table[x=y,y=x] {data/aggregatedfeatures_class01.txt};
+
+ 
+ \end{groupplot}
+ \end{tikzpicture}
+ \label{fig:aggregated_features}
+ \caption{Classes separated by two aggregated features from 15 single features.}
+ \end{figure}
+
+The process of training and testing is also applied in othre different types of vehicles and vehicle set-ups.
+%
+The results are shown in Table~\ref{tbl:vehicle train test}.
+%
+It is obvious that the separately trained classifiers reach a good accuracy in the testing.
+%
+Overall, the generalization error remain good with a maximum of 10.2~\%.
+%
+It signifies the feasibility of method using the data-mining to classify the acceleration signals.
+
+\begin{table}
+\centering
+\caption{Performance of classifiers for different vehicles.}
+\label{tbl:vehicle train test}
+\begin{tabular}{llcccc}
+\hline
+\multirow{2}{*}{Vehicle} & & \multirow{2}{*}{Precision} & \multirow{2}{*}{Recall} & \multirow{2}{*}{Accuracy} & Generalization \\ 
+ & & & & & error \\ \hline
+\multirow{2}{*}{BWM 116d} & training & 98.6 \% & 98.6 \% & 98.2 \% & \multirow{2}{*}{7.6 \%} \\
+ & testing & 90.4 \% & 90.8 \% & 90.6 \% &  \\ \hline
+\multirow{2}{*}{BMW 116d anti-roll bar} & training & 99.1 \% & 99.3 \% & 99.2 \% &  \multirow{2}{*}{9.1 \%} \\
+ & testing & 88.5\% & 91.6\% & 90.1\% &  \\ \hline
+\multirow{2}{*}{BMW 116d act. susp.} & training & 99.4 \% & 100 \% & 99.7 \% &  \multirow{2}{*}{8.5 \%} \\
+ & testing & 90.8 \% & 91.6 \% & 91.2 \% &  \\ 
+ \hline
+\multirow{2}{*}{S-Klasse W220} & training & 98.2 \% & 97.4 \% & 97.8 \% &  \multirow{2}{*}{10.2 \%} \\
+ & testing & 86.1\% & 89.0\% & 87.6\% &  \\ \hline
+\multirow{2}{*}{Sprinter} & training & 99.9 \% & 99.8 \% & 99.9 \% &  \multirow{2}{*}{5.0 \%} \\ 
+ & testing & 94.9 \% & 94.9 \% & 94.9 \% &  \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Feature selection}
+\label{subsec:variationfeatureselection}
+
+The results of three different classifier which have been trained respectively by \ac{FCM} with passive suspension, passive suspension with anti-roll bar and active suspension is shown in fig.~\ref{fig:feature selection}.
+%
+The data is classified by the best three features among the 15 features which are selected by \ac{MANOVA}, which is indicated by the three axle.
+%
+It is observed that the points are divided into different parts in the space, despite there are some overlaps.
+%
+Those overlaps shall be separated in the classification of other features. 
+
+The most important factors of the classification in passive suspension are range of the pitch acceleration, \ac{intBP} of the roll acceleration from $5Hz$ to $7Hz$ and \ac{intBP} of the roll acceleration from $9Hz$ to $11Hz$. 
+%
+These are most important features to separate the six classes.
+%
+The range of the pitch acceleration of pothole due to the greater and longer excitation in vertical direction are obviously larger than others.
+%
+The \ac{intBP} of the roll acceleration is the critical criterion to classify other classes because the roll acceleration of cobbled road and unevenness due to the irregular distribution are lager than that of asphalt, manhole cover and railway crossing.
+%
+The length of the cobble and unevenness correspond to different frequencies of the output signals.
+%
+The cobbled road with small cobbles has a greater part of \ac{intBP} from $9Hz$ to $11Hz$, while unevenness with long curves has a greater part of \ac{intBP} from $5Hz$ to $7Hz$.
+
+Instead of \ac{intBP} of roll acceleration, the \ac{intBP} of pitch acceleration plays an important role in the classification while the response of the roll acceleration is significantly reduced by the anti-roll bar.
+%
+The range of the pitch acceleration classifies the pothole and unevenness from others clearly.
+%
+The value of the \ac{intBP} from $5Hz$ to $7Hz$ of pitch acceleration is much smaller than that of roll acceleration before, which classifies the cobbled road, railway crossing, manhole cover and asphalt.
+%
+Due to the wider band-pass caused by the random shape of the cobbles, the \ac{intBP} of cobbled road has higher values than others.
+%
+Besides, the unevenness has the most part of the \ac{intBP} in high frequencies ($15Hz$ to $17Hz$).
+
+The features of the classification with active suspension are different to the previous simulations.
+%
+The response of vertical-, roll- and pitch acceleration have been reduced by the regulation of the controller.
+%
+The maximum value of pitch acceleration, \ac{Std} of vertical acceleration and the centroid of roll acceleration are selected as the most important features to represent the difference of classes.
+%
+Moreover, the distribution of the classes is not as well as above, which indicates the difficulty of the classification for \ac{FCM} with active suspension.
+
+
+\begin{figure}
+ \centering
+ \begin{tikzpicture}
+ \begin{groupplot}[mygroupplot,
+ group style={group name=my plots,group size= 3 by 1, horizontal sep=\myGroupSep, 
+ vertical sep=\myGroupVertSep},
+ ]
+ 		
+ 	\nextgroupplot[
+ 	view={30}{25},
+	xlabel=range p,
+	ylabel=int.BP r 5-7,
+	ylabel style={rotate=-90},
+	zlabel=int.BP r 9-11,
+	zmode = log,
+	xmin=0,
+	cycle list name=mycyclelist,
+% 	legend columns=1,
+% 	legend entries={center of gravity, middle of left side},
+% 	legend style={at={\myLegendPosition},anchor=south,name=leg},
+    ]
+    \newcommand{\point}{1};
+    \addplot3[
+        scatter,only marks,scatter src=explicit symbolic,
+        scatter/classes={
+            1={mark=*,mark size=0.5,red},
+            2={mark=*,mark size=0.5,green},
+            3={mark=*,mark size=0.5,blue},
+            4={mark=*,mark size=0.5,magenta},
+            5={mark=*,mark size=0.5,gray},
+            6={mark=*,mark size=0.5,cyan}
+        }
+    ]
+    table[x=x,y=y,z=z,meta=label]{data/feature_passive.txt};
+    
+    \nextgroupplot[
+ 	view={30}{30},
+	xlabel=range p,
+	ylabel=int.BP p 15-17,
+	ylabel style={rotate=-90},
+	zlabel=int.BP p 5-7,
+	zmode = log,
+	ymode=log,
+	xmin=0,
+	cycle list name=mycyclelist,
+% 	legend columns=1,
+% 	legend entries={center of gravity, middle of left side},
+% 	legend style={at={\myLegendPosition},anchor=south,name=leg},
+    ]
+    \newcommand{\point}{1};
+    \addplot3[
+        scatter,only marks,scatter src=explicit symbolic,
+        scatter/classes={
+            1={mark=*,mark size=0.5,red},
+            2={mark=*,mark size=0.5,green},
+            3={mark=*,mark size=0.5,blue},
+            4={mark=*,mark size=0.5,magenta},
+            5={mark=*,mark size=0.5,gray},
+            6={mark=*,mark size=0.5,cyan}
+        }
+    ]
+    table[x=x,y=y,z=z,meta=label]{data/feature_arb.txt};
+    
+    \nextgroupplot[
+ 	view={30}{30},
+	xlabel=max p,
+	ylabel=std z,
+	ylabel style={rotate=-90},
+	zlabel=centroid r,
+	xmin=0,
+	cycle list name=mycyclelist,
+% 	legend columns=1,
+% 	legend entries={center of gravity, middle of left side},
+% 	legend style={at={\myLegendPosition},anchor=south,name=leg},
+    ]
+    \newcommand{\point}{1};
+    \addplot3[
+        scatter,only marks,scatter src=explicit symbolic,
+        scatter/classes={
+            1={mark=*,mark size=0.5,red},
+            2={mark=*,mark size=0.5,green},
+            3={mark=*,mark size=0.5,blue},
+            4={mark=*,mark size=0.5,magenta},
+            5={mark=*,mark size=0.5,gray},
+            6={mark=*,mark size=0.5,cyan}
+        }
+    ]
+    table[x=x,y=y,z=z,meta=label]{data/feature_active.txt};
+    
+
+ \end{groupplot}
+ 
+ \node[below = \myLabelSep of my plots c1r1.south] {(a) passive suspension};
+ \node[below = \myLabelSep of my plots c2r1.south] {(b) pass. with anti-roll bar};
+ \node[below = \myLabelSep of my plots c3r1.south] {(c) active suspension};
+ 
+ \end{tikzpicture}
+ \label{fig:feature selection}
+ \caption{The classification with best 3 features of different suspensions}
+ \end{figure}
+
+
+\subsection{Application of the classifier}
+
+From \ref{subsec:accuracy} it is known that the classifier has a satisfied accuracy when it is only tested on the data of the same source.
+%
+That is to say, in the application every different vehicle needs a different classifier which is specially trained for itself.
+%
+It seems to be laborious and time-consuming.
+
+Then we use the classifier which is trained by BMW 116d to predict unseen data, which are simulated by other different vehicles, loads and suspensions.
+%
+In the simulation the \ac{FCM} drives on a $2km$-long road model with random size of events.
+%
+The testing results are shown in table~\ref{tbl:vehicle variation}.
+
+\begin{table}
+\centering
+\caption{Performance of the classifier for BMW 116d applied on different vehicles.}
+\label{tbl:vehicle variation}
+\begin{tabular}{lcccc}
+\hline
+\multirow{2}{*}{Vehicle} & \multirow{2}{*}{Precision} & \multirow{2}{*}{Recall} & \multirow{2}{*}{Accuracy} & Generalization \\
+ & & & & error \\ \hline
+BMW 116d $200kg$ loaded & 87.1 \% & 88.3 \% & 87.7 \% & 10.5 \% \\
+BMW 116d $400kg$ loaded & 81.2 \% & 80.8 \% & 81.0 \% & 17.2 \% \\
+BMW 116d anti-roll bar & 82.1 \% & 80.7 \% & 81.4 \% & 16.8 \% \\
+BMW 116d act. susp. & 42.7 \% & 38.0 \% & 40.4 \% & 57.8 \% \\ 
+S-Klasse W220 & 77.2 \% & 68.4 \% & 72.8 \% & 25.4 \% \\
+Sprinter & 75.6 \% & 68.5 \% & 72.1 \% & 26.1 \% \\ \hline
+\end{tabular}
+\end{table}
+
+It can be seen when the classifier applies on the same vehicle but with different loads, the accuracy of the testing declines from $90.6\%$ to $87.7\%$ till $81.0\%$ with the increasing of the load on the vehicle.
+%
+This means that the classifier is not robust enough because its performance is affected by the changing load, which is very common in daily life.
+
+When the classifier is applied on the same vehicles but with different type of suspension, the accuracy falls down especially on the active suspension.
+%
+This may due to the different selected features in the respective classification.
+%
+As mentioned in Sec. \ref{subsec:variationfeatureselection}, the best features of the three different suspension and the distribution of the data in the space are not same cause the different dynamic of different suspensions.
+%
+
+When the classifier is applied on other vehicles, e.g. S-Klasse W220 and Sprinter, the accuracy of the classifier also declines, which means the mass, size and parameters of spring and damping all has an individual effect on the accuracy of the classifier.
+
+With the current features it is hard to implement the classifier into other occasions.
+%
+Thus except the the 98 extracted features, the load on the vehice, the paramter of the veicle and the type of the chassis which have unignored influences on the classification should be also considered as the inputs of the data.
+%
+The three variatons will be extracted as three new features: load, vehicle and suspension which represent the current load on the vehicle, the model of vehicle that is driving on the road and the suspention type of it.
+
+To get the data of all variations, a simulation including the six different road events, loads from $0kg$ to $400kg$, chassis with anti-roll bar, passive and active suspensions and vehicles including BWM 116d, S-Klasse W220 and Sprinter have been executed.
+%
+The total length of the simulated distance is $180km$ and  the result of the classification is shown in table~\ref{tbl:class_all}.
+
+\begin{table}
+\centering
+\caption{Confusion matrix of the training with all variations}
+\label{tbl:class_all}
+\begin{tabular}{llllllll}
+\hline
+true class & \multicolumn{6}{c}{prediction}  & recall 
+ \\
+                 & as.  & ph.  & m.c. & c.r. & r.c.  & un.   &     
+ \\ \hline
+asphalt          & 6107  & 0    & 13  & 0    & 0     & 0     & 99.8\%        \\
+pothole          & 180    & 2880  & 0    & 0    & 0     & 0     & 94.0\%        \\
+manhole cover    & 36   & 0    & 2844  & 10   & 0     & 0     & 98.8\%        \\
+cobbled road     & 0   & 0    & 0    & 4140   & 0     & 0     & 100\%        \\
+railway crossing & 0    & 0    & 0    & 0    & 3060   & 0     & 100\%       \\
+unevenness       & 0    & 0    & 0    & 0    & 0     & 4140   & 100\%       \\ \hline
+precision        & 96.6\% & 100\% & 99.5\% & 100\% & 100\% & 100\% & 99.2\%   
+ \\ \hline
+\end{tabular}
+\end{table}
+
+The accuracy of the new trained classifier is $99.2\%$.
+%
+Then apply it in all the occasions which are already tested in table \ref{tbl:vehicle variation}.
+%
+The new result of the testing is shown in table \ref{tbl:new_feature}.
+ 
+\begin{table}
+\centering
+\caption{Testing results of the classifier of all variations}
+\label{tbl:new_feature}
+\begin{tabular}{lcccc}
+\hline
+\multirow{2}{*}{Vehicle} & \multirow{2}{*}{Precision} & \multirow{2}{*}{Recall} & \multirow{2}{*}{Accuracy} & Generalization \\
+ & & & & error \\ \hline
+BMW 116d $200kg$ loaded & 73.5 \% & 75.9 \% & 74.7 \% &  24.5\% \\
+BMW 116d $400kg$ loaded & 82.2 \% & 79.4 \% & 80.8 \% &  18.4\% \\
+BMW 116d anti-roll bar & 82.0 \% & 77.2 \% & 79.1 \% &  20.1\% \\
+BMW 116d act. susp. & 80.4 \% & 78.0 \% & 79.2 \% &  20.0\% \\ 
+S-Klasse W220 & 81.4 \% & 74.0 \% & 77.7 \% & 21.5 \% \\
+Sprinter & 73.8 \% & 76.2 \% & 75.0 \% &  22.2\% \\ \hline
+\end{tabular}
+\end{table} 
+ 
+
+It can be seen that several accuracies of the classifier are probably not as good as the classifier in table \ref{tbl:new_feature}, but the performance of the classifier is much robuster even it is applied on different chassis and vehicles.
+%
+What's more, the accuracy of the test on the active suspension is two times better than before.
+%
+It shows that the performance and robustness of the classifier has improved with the additional features.
+%
+Furthermore, all the results are based on the setting of 15 selected features and one order of kernel.
+%
+There is still room for improvement with a better settings of the classification.
+
+ 
+\section{Variation of simulation}
+
+
+\begin{figure}
+ \centering
+ \begin{tikzpicture}
+ \begin{groupplot}[mygroupplot,width=3cm,
+ group style={group name=my plots,group size= 1 by 1, horizontal sep=17pt}
+ ]
+ 		
+% 	\nextgroupplot[
+%	xlabel=Number of selected feature,
+%	ylabel=Missclassification ($\%$),
+%	%xmin=27,   
+%	%xmax=93,
+%   	ymin=0,   
+%   	ymax=30,
+%% 	legend columns=1,
+%% 	legend entries={center of gravity, middle of left side},
+%% 	legend style={at={\myLegendPosition},anchor=south,name=leg},
+%    cycle list name=mycyclelist,
+%    ]
+%    \newcommand{\point}{1};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_train] {data/feature_number_accuracy.txt};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_test] {data/feature_number_accuracy.txt};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=ge] {data/feature_number_accuracy.txt};
+%    
+%    
+%    \nextgroupplot[
+%	xlabel=Kernel order,
+%	%ylabel=Missclassification ($\%$),
+%	%xmin=27,   
+%	%xmax=93,
+%   	ymin=0,   
+%   	ymax=30,
+% 	legend columns=3,
+% 	legend entries={training data,testing data,generalization error},
+% 	legend style={at={(0.5,1.03)},anchor=south,name=leg},
+%  	cycle list name=mycyclelist,
+%    ]
+%    \newcommand{\point}{1};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_train] {data/kernel_number_accuracy.txt};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_test] {data/kernel_number_accuracy.txt};
+%    \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=ge] {data/kernel_number_accuracy.txt};
+%    
+%%     \nextgroupplot[
+%% 	xlabel=\ac{SNR},
+%% 	ylabel=Missclassification ($\%$),
+%% 	%xmin=27,   
+%% 	%xmax=93,
+%%   	ymin=0,   
+%%   	ymax=40,
+%%   	cycle list name=mycyclelist,
+%%     ]
+%%     \newcommand{\point}{1};
+%%     \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_train] {data/snr_accuracy.txt};
+%%     \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=mis_test] {data/snr_accuracy.txt};
+%%     \addplot+[smooth,tension=0.1,no marks, each nth point=\point] table[x=n,y=ge] {data/snr_accuracy.txt};
+    
+    
+    \nextgroupplot[
+	xlabel=Position,
+	ylabel=Missclassification ($\%$),
+	xtick=data,
+	xticklabels={S1,S2,S3,S4},
+	%xmin=27,   
+	%xmax=93,
+    ymin=0,   
+  	ymax=20,
+ 	legend columns=3,
+ 	legend entries={training data,testing data,generalization error},
+ 	legend style={at={(0.5,1.03)},anchor=south,name=leg},
+    cycle list name=mycyclelist,
+    ]
+    \newcommand{\point}{1};
+    \addplot+[smooth,tension=0.1,only marks, each nth point=\point] table[x=n,y=mis_train] {data/position_accuracy.txt};
+    \addplot+[smooth,tension=0.1,only marks, each nth point=\point] table[x=n,y=mis_test] {data/position_accuracy.txt};
+    \addplot+[smooth,tension=0.1,only marks, each nth point=\point] table[x=n,y=ge] {data/position_accuracy.txt};
+    
+ 
+ \end{groupplot}
+ \end{tikzpicture}
+ \label{fig:simulation variation}
+ \caption{Influence of different position on the accuracy of the classification.}
+ \end{figure}
+ 
+ 
+The influences of the position in the simulation is shown in Fig.~\ref{fig:simulation variation}. 
+%
+It is observed that the best accuracy can be achieved with output obtaining from position S2.
+%
+Because in this position the output signal provides the most information in the frequency domain, which offers the classification more options and potentiality.
+
+Besides the position of outputs, the number of selected features and the order of kernel have also affected the accuracy of the classification.
+%
+In the practical application on the vehicle, the classifier should at least maintain at a high level no matter how the load of the vehicle changes.
+%
+Thus each data flow contains the output simulated by a selected vehicle model driving across different road events with a series of loads from $0kg$ to $400kg$.
+%
+The number of selected features is set from 10 to 30.
+%
+The order of the kernel is set from 1 to 5.
+%
+Test the data with every association of those settings separately.
+%
+The results are represented in the blow five tables.
+
+\begin{table}
+\centering
+\caption{Missclassification of application in BWM 116d with passive suspension}
+\label{tbl:setting_1}
+\begin{tabular}{llllll}
+\hline
+{[}\%{]} & \multicolumn{5}{l}{number of selected features} \\ \hline
+kernel oder & 10 & 15 & 20 & 25 & 30 \\
+1 & 27.46 & 25.77 & 25.62 & 18.46 & 20.23 \\
+2 & 24.85 & 21.92 & 20.15 & \cellcolor{blue!25}13.08 & 18.00 \\
+3 & 25.69 & 19.62 & 16.00 & \cellcolor{blue!50}13.38 & 16.23 \\
+4 & 26.15 & 19.46 & 18.23 & 15.85 & 15.38 \\
+5 & 26.00 & 20.23 & 19.08 & 16.31 & 16.46 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Missclassification of application in BWM 116d with anti-roll bar}
+\label{tbl:setting_2}
+\begin{tabular}{llllll}
+\hline
+{[}\%{]} & \multicolumn{5}{l}{number of selected features} \\ \hline
+kernel oder & 10 & 15 & 20 & 25 & 30 \\ 
+1 & 23.00 & 19.77 & 21.31 & 15.62 & 19.38 \\
+2 & 21.92 & 18.23 & 17.54 & \cellcolor{blue!25}13.85 & 17.46 \\
+3 & 22.77 & 17.62 & 16.62 & \cellcolor{blue!50}14.38 & 15.92 \\
+4 & 23.08 & 18.08 & 16.62 & 16.08 & 16.62 \\
+5 & 23.31 & 18.54 & 17.72 & 17.23 & 17.15 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Missclassification of application in BWM 116d with active suspension}
+\label{tbl:setting_3}
+\begin{tabular}{llllll}
+\hline
+{[}\%{]} & \multicolumn{5}{l}{number of selected features} \\ \hline
+kernel oder & 10 & 15 & 20 & 25 & 30 \\ 
+1 & 24.46 & 21.23 & 22.15 & 19.38 & 19.23 \\
+2 & 23.00 & 18.92 & 17.54 & \cellcolor{blue!25}17.54 & 17.69 \\
+3 & 23.63 & 17.85 & 17.54 & \cellcolor{blue!50}15.17 & 16.46 \\
+4 & 24.23 & 17.46 & 16.23 & 16.08 & 16.62 \\
+5 & 24.23 & 17.15 & 17.15 & 15.54 & 17.23 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Missclassification of application in S-Klasse W220 with passive suspension}
+\label{tbl:setting_4}
+\begin{tabular}{llllll}
+\hline
+{[}\%{]} & \multicolumn{5}{l}{number of selected features} \\ \hline
+kernel oder & 10 & 15 & 20 & 25 & 30 \\ 
+1 & 23.37 & 23.38 & 23.54 & 15.92 & 15.38 \\
+2 & 21.54 & 23.38 & 19.77 & \cellcolor{blue!25}12.37 & 18.62 \\
+3 & 25.62 & 22.00 & 18.37 & \cellcolor{blue!50}12.37 & 18.77 \\
+4 & 27.62 & 23.08 & 22.69 & 15.23 & 21.15 \\
+5 & 28.39 & 25.00 & 24.85 & 14.92 & 24.00 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Missclassification of application in Sprinter with passive suspension}
+\label{tbl:setting_5}
+\begin{tabular}{llllll}
+\hline
+{[}\%{]} & \multicolumn{5}{l}{number of selected features} \\ \hline
+kernel oder & 10 & 15 & 20 & 25 & 30 \\ 
+1 & 23.23 & 24.92 & 24.62 & 15.69 & 19.38 \\
+2 & 22.54 & 29.54 & 27.46 & \cellcolor{blue!25}14.77 & 23.00 \\
+3 & 22.62 & 28.80 & 17.08 & \cellcolor{blue!50}15.46 & 25.08 \\
+4 & 23.85 & 28.54 & 28.92 & 17.37 & 25.38 \\
+5 & 24.23 & 28.31 & 29.92 & 17.77 & 26.92 \\ \hline
+\end{tabular}
+\end{table}
+
+The best result of all the five tables is located in the column that indicates the setting of 25 selected features.
+%
+As to the setting of the kernel oder, the order two has a good accuracy which is close or even better than that of kernel order three.
+%
+However, the missclassification of the vehicle with active suspension is obvious higher ($17.54\%$) than kernel oder three ($15.17\%$).
+
+Hence, the the best setting of the classifier are
+\begin{itemize}
+\item 25 selected features
+\item kernel order three
+\item the data collected at the position S2
+\end{itemize}
+
+With this setting the total accuracy of the classifier applied in different vehicles and different suspensions with variant loads is above $84.83\%$. 
+Cause the limitation of the time and computing resource, the data may not be enough for a comprehensive training.
+%
+But it is believed that with more variations, detailed parameters and longer simulation the accuracy of the classifier still has the potential to improve. 

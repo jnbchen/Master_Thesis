@@ -1,0 +1,63 @@
+%Element 1: File or directory name 
+parameter.gui.import.quelle = 'C:\rohdaten\eng\karlsruhe_mai08\2008-06-06\RatteH_Elektrode32_abisoliert\2008-06-06_RatteH_abisoliert_wach_Lichtaus_Gainauf10.txt';
+
+%Element 2: look for subdirectories: 1 yes, 0 no
+parameter.gui.import.ordner_rekursiv = 1;
+
+% trennzeichen =   1: None, 2:7: strvcatnew(' ', '_', '-', sprintf('\t'), ';', ',');
+%Element 3: Number of separator for directories
+parameter.gui.import.klassentrennzeichen.ordner = 1;
+
+%Element 4: Number of separator for files 
+% trennzeichen = 1: None, 2:7 strvcatnew(' ', '_', '-', ';', ',');
+parameter.gui.import.klassentrennzeichen.datei = 1;
+
+%Element 5: separator for decimal digits, 1: '.', 2: ',' 
+parameter.gui.import.dezimaltrennzeichen = 1;
+
+%Element 6: separator for columns in an ascii file
+%'Leerzeichen|Unterstrich|Bindestrich|Tabulator|Semikolon|Komma'
+parameter.gui.import.spaltentrennzeichen = 1;
+
+%Element 7: names in the first line of a file? 
+parameter.gui.import.firstline_bez = 1;
+
+%Element 8: ignore lines starting with the following character 
+parameter.gui.import.ignoriere_zeilen_mit = '';
+
+%Element 9: ignore the first n lines (use a string with a number, e.g. '3')
+parameter.gui.import.ignore_firstlines = '';
+
+%Element 10: Import time series: 1, Import single features: 2
+parameter.gui.import.inhalt = 1;
+
+%Element 13: File extension
+parameter.gui.import.dateiendung = '.txt';
+
+%Element 14: Matching of time series lengths: 1:  'resampling', 2: 'zeros', 3: '(copy) last_value'
+parameter.gui.import.gleiche_laenge = 1;
+
+%Element 15: Import style
+% 'Read row by row|Write copy and read again|Normal mode|Standard ASCII'
+parameter.gui.import.importfct = 4;
+
+%Element 16: Write in separate projects (import of files from a directory)
+parameter.gui.import.separate_projects = 0 ;
+
+%Saves a project file automatically if 1
+parameter.gui.import.auto_save_file = 1;
+
+%Ignore GUI warnings if 1
+parameter.gui.import.ignore_warnings = 1 ;
+
+
+
+
+%%%%%%%%%%%%%%%%%DO NOT CHANGE THIS PART%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%import from file 
+modus = 1; 
+callback_import;
+
+%and press the OK button
+eval(get(import_gui.ce(11).h,'callback'));
+%%%%%%%%%%%%%%%%%DO NOT CHANGE THIS PART%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

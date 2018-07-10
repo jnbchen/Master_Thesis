@@ -1,0 +1,3 @@
+%% Zeitreihen-Klassifikation,  Data-Mining,  Entwurf 
+eval(gaitfindobj_callback('MI_ZRKlassi_En'));
+
